@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
+		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
+		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
+		EB0AE7921542902D008497E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE7911542902D008497E7 /* CoreData.framework */; };
+		EB0AE7981542902D008497E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE7961542902D008497E7 /* InfoPlist.strings */; };
+		EB0AE79A1542902D008497E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE7991542902D008497E7 /* main.m */; };
+		EB0AE79E1542902D008497E7 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE79D1542902D008497E7 /* MCAppDelegate.m */; };
+		EB0AE7A11542902D008497E7 /* MCKlotski.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE79F1542902D008497E7 /* MCKlotski.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB0AE78F1542902D008497E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB0AE7911542902D008497E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EB0AE7951542902D008497E7 /* MCKlotski-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCKlotski-Info.plist"; sourceTree = "<group>"; };
+		EB0AE7971542902D008497E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB0AE7991542902D008497E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB0AE79B1542902D008497E7 /* MCKlotski-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MCKlotski-Prefix.pch"; sourceTree = "<group>"; };
+		EB0AE79C1542902D008497E7 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
+		EB0AE79D1542902D008497E7 /* MCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppDelegate.m; sourceTree = "<group>"; };
+		EB0AE7A01542902D008497E7 /* MCKlotski.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MCKlotski.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB0AE7841542902D008497E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */,
+				EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */,
+				EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */,
+				EB0AE7921542902D008497E7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB0AE77C1542902C008497E7 = {
+			isa = PBXGroup;
+			children = (
+				EB0AE7931542902D008497E7 /* MCKlotski */,
+				EB0AE78A1542902D008497E7 /* Frameworks */,
+				EB0AE7881542902D008497E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB0AE7881542902D008497E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB0AE7871542902D008497E7 /* MCKlotski.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB0AE78A1542902D008497E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB0AE78B1542902D008497E7 /* UIKit.framework */,
+				EB0AE78D1542902D008497E7 /* Foundation.framework */,
+				EB0AE78F1542902D008497E7 /* CoreGraphics.framework */,
+				EB0AE7911542902D008497E7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB0AE7931542902D008497E7 /* MCKlotski */ = {
+			isa = PBXGroup;
+			children = (
+				EB0AE79C1542902D008497E7 /* MCAppDelegate.h */,
+				EB0AE79D1542902D008497E7 /* MCAppDelegate.m */,
+				EB0AE79F1542902D008497E7 /* MCKlotski.xcdatamodeld */,
+				EB0AE7941542902D008497E7 /* Supporting Files */,
+			);
+			path = MCKlotski;
+			sourceTree = "<group>";
+		};
+		EB0AE7941542902D008497E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB0AE7951542902D008497E7 /* MCKlotski-Info.plist */,
+				EB0AE7961542902D008497E7 /* InfoPlist.strings */,
+				EB0AE7991542902D008497E7 /* main.m */,
+				EB0AE79B1542902D008497E7 /* MCKlotski-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB0AE7861542902D008497E7 /* MCKlotski */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB0AE7A41542902D008497E7 /* Build configuration list for PBXNativeTarget "MCKlotski" */;
+			buildPhases = (
+				EB0AE7831542902D008497E7 /* Sources */,
+				EB0AE7841542902D008497E7 /* Frameworks */,
+				EB0AE7851542902D008497E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCKlotski;
+			productName = MCKlotski;
+			productReference = EB0AE7871542902D008497E7 /* MCKlotski.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB0AE77E1542902C008497E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "TJUT-SCCE-SIPC";
+			};
+			buildConfigurationList = EB0AE7811542902C008497E7 /* Build configuration list for PBXProject "MCKlotski" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB0AE77C1542902C008497E7;
+			productRefGroup = EB0AE7881542902D008497E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB0AE7861542902D008497E7 /* MCKlotski */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB0AE7851542902D008497E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB0AE7981542902D008497E7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB0AE7831542902D008497E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB0AE79A1542902D008497E7 /* main.m in Sources */,
+				EB0AE79E1542902D008497E7 /* MCAppDelegate.m in Sources */,
+				EB0AE7A11542902D008497E7 /* MCKlotski.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EB0AE7961542902D008497E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB0AE7971542902D008497E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB0AE7A21542902D008497E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB0AE7A31542902D008497E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB0AE7A51542902D008497E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
+				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EB0AE7A61542902D008497E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
+				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB0AE7811542902C008497E7 /* Build configuration list for PBXProject "MCKlotski" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB0AE7A21542902D008497E7 /* Debug */,
+				EB0AE7A31542902D008497E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB0AE7A41542902D008497E7 /* Build configuration list for PBXNativeTarget "MCKlotski" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB0AE7A51542902D008497E7 /* Debug */,
+				EB0AE7A61542902D008497E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB0AE79F1542902D008497E7 /* MCKlotski.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB0AE7A01542902D008497E7 /* MCKlotski.xcdatamodel */,
+			);
+			currentVersion = EB0AE7A01542902D008497E7 /* MCKlotski.xcdatamodel */;
+			path = MCKlotski.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EB0AE77E1542902C008497E7 /* Project object */;
+}
