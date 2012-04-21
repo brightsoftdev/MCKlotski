@@ -79,6 +79,12 @@
     }
 }
 
+-(void)dealloc  
+{  
+    [_window release];  
+    [super dealloc];  
+}  
+
 #pragma mark - Core Data stack
 
 /**

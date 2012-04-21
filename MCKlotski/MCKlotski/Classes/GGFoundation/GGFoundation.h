@@ -6,8 +6,12 @@
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define GGFOUNDATION_VERSION 0x00000001
 
-@interface GGFoundation : NSObject
+#import "GGSingleton.h"
+#import "GGSoundManager.h"
+#import "GGUtil.h"
+#import "GGPath.h"
 
-@end
+// free functions
+NSString * ggFoundationVersion(void);

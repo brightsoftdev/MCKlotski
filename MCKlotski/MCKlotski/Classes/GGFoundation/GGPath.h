@@ -10,4 +10,10 @@
 
 @interface GGPath : NSObject
 
++ (NSString *) documentPath;
+
++ (NSString *) bundleFile:(NSString *) fileName;
+
++ (NSData *) dataOfFile:(NSString *) fileName;
+
 @end

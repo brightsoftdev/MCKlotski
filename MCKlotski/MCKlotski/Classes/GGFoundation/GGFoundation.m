@@ -6,8 +6,15 @@
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "GGFoundation.h"
 
-@implementation GGFoundation
+static NSString *version = @"GGFoundation v0.1";
 
-@end
+NSString * ggFoundationVersion()
+{
+    return version;
+}
+
+
+

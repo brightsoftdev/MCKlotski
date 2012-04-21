@@ -10,4 +10,21 @@
 
 @implementation GGPath
 
++ (NSString *) documentPath
+{
+    NSArray *arrDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [arrDir objectAtIndex:0];
+}
+
++ (NSString *) bundleFile:(NSString *) fileName
+{
+    NSString *path = [[NSBundle mainBundle] resourcePath];
+    return [path stringByAppendingPathComponent:fileName];
+}
+
++ (NSData *) dataOfFile:(NSString *) fileName
+{
+    return [NSData dataWithContentsOfFile:[GGPath bundleFile:fileName]];
+}
+
 @end
