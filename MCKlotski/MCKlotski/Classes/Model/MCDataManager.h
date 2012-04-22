@@ -1,15 +1,13 @@
 //
-//  GGUtil.h
+//  MCDataManager.h
 //  MCKlotski
 //
-//  Created by lim edwon on 12-4-21.
+//  Created by lim edwon on 12-4-22.
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface GGUtil : NSObject
-
-+ (CGRect) screenFrame;
+@interface MCDataManager : NSObject
 
 @end

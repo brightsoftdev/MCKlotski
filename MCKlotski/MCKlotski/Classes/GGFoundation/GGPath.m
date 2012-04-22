@@ -27,4 +27,12 @@
     return [NSData dataWithContentsOfFile:[GGPath bundleFile:fileName]];
 }
 
++ (BOOL) isFileExist:(NSString *)fileName
+{
+    NSString *path = [GGPath documentPath];
+    NSString *finalPath = [path stringByAppendingPathComponent:fileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager fileExistsAtPath:finalPath];
+}
+
 @end

@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class MCRootViewController;
+
 @interface MCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (retain, nonatomic) UIWindow *window;
+@property (retain, nonatomic) UINavigationController *navigationController;
+@property (retain, nonatomic) MCRootViewController *rootViewCotroller;
 
 @property (readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, nonatomic) NSManagedObjectModel *managedObjectModel;

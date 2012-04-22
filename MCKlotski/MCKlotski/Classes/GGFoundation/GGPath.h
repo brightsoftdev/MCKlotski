@@ -16,4 +16,10 @@
 
 + (NSData *) dataOfFile:(NSString *) fileName;
 
+/**
+ * file is or not exist
+ *@fileName:file name
+ */
++ (BOOL) isFileExist:(NSString *)fileName;
+
 @end

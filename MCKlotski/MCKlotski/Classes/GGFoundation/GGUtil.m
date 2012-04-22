@@ -10,4 +10,10 @@
 
 @implementation GGUtil
 
++ (CGRect) screenFrame
+{
+    CGRect rect = [UIScreen mainScreen].applicationFrame;
+    return CGRectMake(0, 0, rect.origin.x + rect.size.width, rect.origin.y + rect.size.height);
+}
+
 @end

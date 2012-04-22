@@ -7,10 +7,20 @@
 //
 
 #import "MCAppDelegate.h"
+#import "MCRootViewController.h"
+#import "GGFoundation.h"
+
+@interface MCAppDelegate (Private)
+
+- (void)launchViewController;
+
+@end
 
 @implementation MCAppDelegate
 
 @synthesize window = _window;
+@synthesize navigationController = _navigationController;
+@synthesize rootViewCotroller = _rootViewCotroller;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -21,6 +31,25 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    UIImageView *niceView = [[UIImageView alloc] initWithFrame:[GGUtil screenFrame]];
+    niceView.image = [UIImage imageNamed:@"Default.png"];
+    [self.window addSubview:niceView];
+    // set scene top layer
+    [self.window bringSubviewToFront:niceView];
+    // set animation
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:2.0];
+    [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
+    [UIView setAnimationDelegate:self];
+    //這裡還可以設置回調函數;
+    //[UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
+    
+    niceView.alpha = 0.0;
+    niceView.frame = CGRectMake(-60, -85, 440, 635);
+    [UIView commitAnimations];
+    [niceView release];
+    
+    [self launchViewController];
     return YES;
 }
 
@@ -82,6 +111,8 @@
 -(void)dealloc  
 {  
     [_window release];  
+    self.navigationController = nil;
+    self.rootViewCotroller = nil;
     [super dealloc];  
 }  
 
@@ -177,6 +208,20 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Private method
+- (void)launchViewController
+{
+    MCRootViewController *viewController = [[MCRootViewController alloc] init];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [viewController wantsFullScreenLayout];
+    [viewController.navigationController setNavigationBarHidden:YES];
+    self.rootViewCotroller = viewController;
+    self.navigationController = navigation;
+    [viewController release];
+    [navigation release];
+    [self.window addSubview:self.rootViewCotroller.view];
 }
 
 @end

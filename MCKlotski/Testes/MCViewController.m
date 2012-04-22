@@ -7,6 +7,7 @@
 //
 
 #import "MCViewController.h"
+#import "MCTestSound.h"
 
 @implementation MCViewController
 
@@ -16,11 +17,18 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (IBAction)sound:(id)sender
+{
+    MCTestSound *soundController = [[MCTestSound alloc] initWithNibName:@"MCTestSound" bundle:nil];
+    [self.navigationController pushViewController:soundController animated:YES];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"项目功能测试";
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

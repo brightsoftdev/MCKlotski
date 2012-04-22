@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MCViewController : UIViewController
+
+@interface MCViewController : UIViewController{
+    
+}
+
+- (IBAction)sound:(id)sender;
 
 @end
