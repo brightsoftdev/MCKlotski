@@ -17,7 +17,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [GGSoundManager sharedGGSoundManager].loadEffectArr = [NSArray arrayWithObjects:@"Click.wav", nil];
+        NSArray *effects = [NSArray arrayWithObjects:@"Click.wav", nil];
+        [[GGSoundManager sharedGGSoundManager] loadEffect:effects];
     }
     return self;
 }

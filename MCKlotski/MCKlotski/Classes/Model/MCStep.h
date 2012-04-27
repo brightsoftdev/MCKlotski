@@ -8,6 +8,14 @@
 
 #import "MCModel.h"
 
-@interface MCStep : MCModel
+@interface MCStep : MCModel{
+    int _blockID;
+    CGRect _frameOld;
+    BOOL _isNewActiving;
+}
+
+@property (nonatomic, assign)int blockID;
+@property (nonatomic, assign)CGRect frameOld;
+@property (nonatomic, assign)BOOL isNewActiving;
 
 @end

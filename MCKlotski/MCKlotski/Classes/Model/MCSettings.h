@@ -8,6 +8,12 @@
 
 #import "MCModel.h"
 
-@interface MCSettings : MCModel
+@interface MCSettings : MCModel{
+    BOOL _isSoundEnable;
+    BOOL _isNeedTutorial;
+}
+
+@property (nonatomic, assign) BOOL isSoundEnable;
+@property (nonatomic, assign) BOOL isNeedTutorial;
 
 @end

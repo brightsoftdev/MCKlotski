@@ -8,6 +8,16 @@
 
 #import "MCModel.h"
 
-@interface MCRectFrame : MCModel
+@interface MCRectFrame : MCModel{
+    float _frameX;
+    float _frameY;
+    float _frameWidth;
+    float _frameHeight;
+}
+@property (nonatomic, assign) float frameX;
+@property (nonatomic, assign) float frameY;
+@property (nonatomic, assign) float frameWidth;
+@property (nonatomic, assign) float frameHeight;
+@property (nonatomic, assign) CGRect frameRect;
 
 @end

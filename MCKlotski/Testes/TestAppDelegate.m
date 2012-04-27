@@ -6,11 +6,11 @@
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
-#import "MCAppDelegate.h"
+#import "TestAppDelegate.h"
 
-#import "MCViewController.h"
+#import "TestViewController.h"
 
-@implementation MCAppDelegate
+@implementation TestAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
@@ -27,7 +27,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[MCViewController alloc] initWithNibName:@"MCViewController" bundle:nil] autorelease];
+    self.viewController = [[[TestViewController alloc] initWithNibName:@"MCViewController" bundle:nil] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
     [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];

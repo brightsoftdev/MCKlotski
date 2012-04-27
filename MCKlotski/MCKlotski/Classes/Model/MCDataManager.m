@@ -10,4 +10,18 @@
 
 @implementation MCDataManager
 
+- (id) initWithDictionary:(NSDictionary *)dict
+{
+    if ((self = [self initWithDictionary:dict])) {
+        NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
+    }
+    return self;
+}
+
+- (void) dealloc
+{
+    NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
+    [super dealloc];
+}
+
 @end

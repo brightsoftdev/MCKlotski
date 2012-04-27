@@ -9,12 +9,8 @@
 #import "MCViewController.h"
 
 
-@class MCChooseLevelViewController;
-
 @interface MCRootViewController : MCViewController{
     UIButton *_btnPlay;
 }
-
-@property (nonatomic, retain) MCChooseLevelViewController *chooseLevelController;
 
 @end

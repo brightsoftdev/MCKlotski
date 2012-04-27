@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCConfig.h"
 
-@interface MCAlertView : UIView
+@class MCAlertView;
+
+@protocol MCAlertDelegate
+@optional
+
+- (void) alertView:(MCAlertView *)view andButton:(UIButton *)button;
 
 @end
+
+@interface MCAlertView : UIView{
+    id<MCAlertDelegate> _delegate;
+    BOOL _isShowing;
+    UIView *_border;
+}
+
+@property (nonatomic, assign) id<MCAlertDelegate> delegate;
+@property (nonatomic, readonly) BOOL isShowing;
+
+- (void) showAlertView;
+
+@end
+
+

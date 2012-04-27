@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCAlertPassLevelView.h"
 
 
-@interface MCViewController : UIViewController{
+@interface TestViewController : UIViewController<MCAlertDelegate>{
     
 }
 
-- (IBAction)sound:(id)sender;
 
 @end

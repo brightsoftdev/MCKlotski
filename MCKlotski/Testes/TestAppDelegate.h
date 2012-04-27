@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class MCViewController;
+@class TestViewController;
 
-@interface MCAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TestAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) MCViewController *viewController;
+@property (strong, nonatomic) TestViewController *viewController;
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 

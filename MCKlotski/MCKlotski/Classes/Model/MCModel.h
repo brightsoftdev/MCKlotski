@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MCConfig.h"
 
-@interface MCModel : NSObject <NSCoding, NSCopying>
+@interface MCModel : NSObject <NSCoding>
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
+- (void)initAttributes;
 
+- (void) refreshWithModel:(MCModel *)model;
 
 @end

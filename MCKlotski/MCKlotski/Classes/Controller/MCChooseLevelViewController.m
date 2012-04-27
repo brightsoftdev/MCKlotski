@@ -15,10 +15,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     }
     return self;
 }
 
+- (void)dealloc
+{
+     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
+    [super dealloc];
+}
 
 
 @end

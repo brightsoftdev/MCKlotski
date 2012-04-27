@@ -6,10 +6,9 @@
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
-#import "MCViewController.h"
-#import "MCTestSound.h"
+#import "TestViewController.h"
 
-@implementation MCViewController
+@implementation TestViewController
 
 - (void)didReceiveMemoryWarning
 {
@@ -17,11 +16,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (IBAction)sound:(id)sender
-{
-    MCTestSound *soundController = [[MCTestSound alloc] initWithNibName:@"MCTestSound" bundle:nil];
-    [self.navigationController pushViewController:soundController animated:YES];
-}
 
 #pragma mark - View lifecycle
 
@@ -29,7 +23,16 @@
 {
     [super viewDidLoad];
     self.title = @"项目功能测试";
+    MCAlertPassLevelView *view = [[MCAlertPassLevelView alloc] init];
+    [view showAlertView];
+    view.delegate = self;
+    
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) alertView:(MCAlertView *)view andButton:(UIButton *)button
+{
+    
 }
 
 - (void)viewDidUnload

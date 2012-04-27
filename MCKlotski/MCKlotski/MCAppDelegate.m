@@ -25,12 +25,8 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)addDefaultImage
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     UIImageView *niceView = [[UIImageView alloc] initWithFrame:[GGUtil screenFrame]];
     niceView.image = [UIImage imageNamed:@"Default.png"];
     [self.window addSubview:niceView];
@@ -38,17 +34,24 @@
     [self.window bringSubviewToFront:niceView];
     // set animation
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:2.0];
+    [UIView setAnimationDuration:3.0];
     [UIView setAnimationTransition:UIViewAnimationTransitionNone forView:self.window cache:YES];
     [UIView setAnimationDelegate:self];
-    //這裡還可以設置回調函數;
+    //可以在这儿设置回调函数;
     //[UIView setAnimationDidStopSelector:@selector(startupAnimationDone:finished:context:)];
-    
     niceView.alpha = 0.0;
     niceView.frame = CGRectMake(-60, -85, 440, 635);
     [UIView commitAnimations];
     [niceView release];
-    
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    [self addDefaultImage];
     [self launchViewController];
     return YES;
 }
@@ -221,7 +224,7 @@
     self.navigationController = navigation;
     [viewController release];
     [navigation release];
-    [self.window addSubview:self.rootViewCotroller.view];
+    [self.window addSubview:self.navigationController.view];
 }
 
 @end
