@@ -102,7 +102,6 @@
     rect = CGRectMake(left , top + offset + height, width, height);
     imageNames = [NSArray arrayWithObjects:@"play_red.png", @"play_white.png", nil];
     [self.view addSubview:[self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(levelsAction:)]];
-
 }
 
 - (UIButton *) addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector  
