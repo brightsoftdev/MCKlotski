@@ -51,4 +51,14 @@
 #define KeySteps @"steps"
 #define KeyIsFirstStep @"isFirstStep"
 
+// 数字颜色枚举
+typedef enum NUMBERTYPE{
+    NumberRGBInvalid = 0,
+    NumberRGBRed,
+    NumberRGBWhite,
+    NumberRGBYellow,
+    NumberRGBGray,
+    NumberRGBMax,
+}NumberRBGType;
+
 #endif

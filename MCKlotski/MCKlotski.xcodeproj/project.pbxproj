@@ -7,6 +7,152 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213B0A0B15524EFA0056D938 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CA15524EFA0056D938 /* CDAudioManager.m */; };
+		213B0A0C15524EFA0056D938 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CA15524EFA0056D938 /* CDAudioManager.m */; };
+		213B0A0D15524EFA0056D938 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CD15524EFA0056D938 /* CDOpenALSupport.m */; };
+		213B0A0E15524EFA0056D938 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CD15524EFA0056D938 /* CDOpenALSupport.m */; };
+		213B0A0F15524EFA0056D938 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CF15524EFA0056D938 /* CocosDenshion.m */; };
+		213B0A1015524EFA0056D938 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09CF15524EFA0056D938 /* CocosDenshion.m */; };
+		213B0A1115524EFA0056D938 /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D115524EFA0056D938 /* SimpleAudioEngine.m */; };
+		213B0A1215524EFA0056D938 /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D115524EFA0056D938 /* SimpleAudioEngine.m */; };
+		213B0A1315524EFA0056D938 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D415524EFA0056D938 /* FontLabel.m */; };
+		213B0A1415524EFA0056D938 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D415524EFA0056D938 /* FontLabel.m */; };
+		213B0A1515524EFA0056D938 /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D615524EFA0056D938 /* FontLabelStringDrawing.m */; };
+		213B0A1615524EFA0056D938 /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D615524EFA0056D938 /* FontLabelStringDrawing.m */; };
+		213B0A1715524EFA0056D938 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D815524EFA0056D938 /* FontManager.m */; };
+		213B0A1815524EFA0056D938 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09D815524EFA0056D938 /* FontManager.m */; };
+		213B0A1915524EFA0056D938 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DA15524EFA0056D938 /* ZAttributedString.m */; };
+		213B0A1A15524EFA0056D938 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DA15524EFA0056D938 /* ZAttributedString.m */; };
+		213B0A1B15524EFA0056D938 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DD15524EFA0056D938 /* ZFont.m */; };
+		213B0A1C15524EFA0056D938 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DD15524EFA0056D938 /* ZFont.m */; };
+		213B0A1D15524EFA0056D938 /* GGFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DF15524EFA0056D938 /* GGFoundation.m */; };
+		213B0A1E15524EFA0056D938 /* GGFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09DF15524EFA0056D938 /* GGFoundation.m */; };
+		213B0A1F15524EFA0056D938 /* GGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E115524EFA0056D938 /* GGPath.m */; };
+		213B0A2015524EFA0056D938 /* GGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E115524EFA0056D938 /* GGPath.m */; };
+		213B0A2115524EFA0056D938 /* GGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E415524EFA0056D938 /* GGSoundManager.m */; };
+		213B0A2215524EFA0056D938 /* GGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E415524EFA0056D938 /* GGSoundManager.m */; };
+		213B0A2315524EFA0056D938 /* GGUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E615524EFA0056D938 /* GGUtil.m */; };
+		213B0A2415524EFA0056D938 /* GGUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09E615524EFA0056D938 /* GGUtil.m */; };
+		213B0A2515524EFA0056D938 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EA15524EFA0056D938 /* NSObject+SBJSON.m */; };
+		213B0A2615524EFA0056D938 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EA15524EFA0056D938 /* NSObject+SBJSON.m */; };
+		213B0A2715524EFA0056D938 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EC15524EFA0056D938 /* NSString+SBJSON.m */; };
+		213B0A2815524EFA0056D938 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EC15524EFA0056D938 /* NSString+SBJSON.m */; };
+		213B0A2915524EFA0056D938 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EE15524EFA0056D938 /* SBJsonBase.m */; };
+		213B0A2A15524EFA0056D938 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09EE15524EFA0056D938 /* SBJsonBase.m */; };
+		213B0A2B15524EFA0056D938 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09F015524EFA0056D938 /* SBJsonParser.m */; };
+		213B0A2C15524EFA0056D938 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09F015524EFA0056D938 /* SBJsonParser.m */; };
+		213B0A2D15524EFA0056D938 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09F215524EFA0056D938 /* SBJsonWriter.m */; };
+		213B0A2E15524EFA0056D938 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09F215524EFA0056D938 /* SBJsonWriter.m */; };
+		213B0A2F15524EFA0056D938 /* POP字体mix-w5.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F415524EFA0056D938 /* POP字体mix-w5.TTF */; };
+		213B0A3015524EFA0056D938 /* POP字体mix-w5.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F415524EFA0056D938 /* POP字体mix-w5.TTF */; };
+		213B0A3115524EFA0056D938 /* 全新硬笔隶书简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F515524EFA0056D938 /* 全新硬笔隶书简.ttf */; };
+		213B0A3215524EFA0056D938 /* 全新硬笔隶书简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F515524EFA0056D938 /* 全新硬笔隶书简.ttf */; };
+		213B0A3315524EFA0056D938 /* 国祥手写体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F615524EFA0056D938 /* 国祥手写体.ttf */; };
+		213B0A3415524EFA0056D938 /* 国祥手写体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F615524EFA0056D938 /* 国祥手写体.ttf */; };
+		213B0A3515524EFA0056D938 /* 字体图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F715524EFA0056D938 /* 字体图片.png */; };
+		213B0A3615524EFA0056D938 /* 字体图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F715524EFA0056D938 /* 字体图片.png */; };
+		213B0A3715524EFA0056D938 /* 方正卡通简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F815524EFA0056D938 /* 方正卡通简体.ttf */; };
+		213B0A3815524EFA0056D938 /* 方正卡通简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F815524EFA0056D938 /* 方正卡通简体.ttf */; };
+		213B0A3915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF */; };
+		213B0A3A15524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 213B09F915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF */; };
+		213B0A3B15524EFA0056D938 /* 韩绍杰邯郸体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09FA15524EFA0056D938 /* 韩绍杰邯郸体.ttf */; };
+		213B0A3C15524EFA0056D938 /* 韩绍杰邯郸体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 213B09FA15524EFA0056D938 /* 韩绍杰邯郸体.ttf */; };
+		213B0A3D15524EFA0056D938 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09FD15524EFA0056D938 /* CDataScanner.m */; };
+		213B0A3E15524EFA0056D938 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B09FD15524EFA0056D938 /* CDataScanner.m */; };
+		213B0A3F15524EFA0056D938 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0015524EFA0056D938 /* CDataScanner_Extensions.m */; };
+		213B0A4015524EFA0056D938 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0015524EFA0056D938 /* CDataScanner_Extensions.m */; };
+		213B0A4115524EFA0056D938 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0215524EFA0056D938 /* NSDictionary_JSONExtensions.m */; };
+		213B0A4215524EFA0056D938 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0215524EFA0056D938 /* NSDictionary_JSONExtensions.m */; };
+		213B0A4315524EFA0056D938 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0515524EFA0056D938 /* CJSONDeserializer.m */; };
+		213B0A4415524EFA0056D938 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0515524EFA0056D938 /* CJSONDeserializer.m */; };
+		213B0A4515524EFA0056D938 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0715524EFA0056D938 /* CJSONScanner.m */; };
+		213B0A4615524EFA0056D938 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0715524EFA0056D938 /* CJSONScanner.m */; };
+		213B0A4715524EFA0056D938 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0915524EFA0056D938 /* CJSONSerializer.m */; };
+		213B0A4815524EFA0056D938 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A0915524EFA0056D938 /* CJSONSerializer.m */; };
+		213B0A52155254970056D938 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0A51155254970056D938 /* locked.png */; };
+		213B0A53155254970056D938 /* locked.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0A51155254970056D938 /* locked.png */; };
+		213B0A56155257FF0056D938 /* MCNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A55155257FF0056D938 /* MCNumberView.m */; };
+		213B0A57155257FF0056D938 /* MCNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213B0A55155257FF0056D938 /* MCNumberView.m */; };
+		213B0AFF1552682C0056D938 /* white_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD71552682C0056D938 /* white_0.png */; };
+		213B0B001552682C0056D938 /* white_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD71552682C0056D938 /* white_0.png */; };
+		213B0B011552682C0056D938 /* white_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD81552682C0056D938 /* white_0@2x.png */; };
+		213B0B021552682C0056D938 /* white_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD81552682C0056D938 /* white_0@2x.png */; };
+		213B0B031552682C0056D938 /* white_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD91552682C0056D938 /* white_1.png */; };
+		213B0B041552682C0056D938 /* white_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AD91552682C0056D938 /* white_1.png */; };
+		213B0B051552682C0056D938 /* white_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADA1552682C0056D938 /* white_1@2x.png */; };
+		213B0B061552682C0056D938 /* white_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADA1552682C0056D938 /* white_1@2x.png */; };
+		213B0B071552682C0056D938 /* white_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADB1552682C0056D938 /* white_2.png */; };
+		213B0B081552682C0056D938 /* white_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADB1552682C0056D938 /* white_2.png */; };
+		213B0B091552682C0056D938 /* white_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADC1552682C0056D938 /* white_2@2x.png */; };
+		213B0B0A1552682C0056D938 /* white_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADC1552682C0056D938 /* white_2@2x.png */; };
+		213B0B0B1552682C0056D938 /* white_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADD1552682C0056D938 /* white_3.png */; };
+		213B0B0C1552682C0056D938 /* white_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADD1552682C0056D938 /* white_3.png */; };
+		213B0B0D1552682C0056D938 /* white_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADE1552682C0056D938 /* white_3@2x.png */; };
+		213B0B0E1552682C0056D938 /* white_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADE1552682C0056D938 /* white_3@2x.png */; };
+		213B0B0F1552682C0056D938 /* white_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADF1552682C0056D938 /* white_4.png */; };
+		213B0B101552682C0056D938 /* white_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0ADF1552682C0056D938 /* white_4.png */; };
+		213B0B111552682C0056D938 /* white_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE01552682C0056D938 /* white_4@2x.png */; };
+		213B0B121552682C0056D938 /* white_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE01552682C0056D938 /* white_4@2x.png */; };
+		213B0B131552682C0056D938 /* white_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE11552682C0056D938 /* white_5.png */; };
+		213B0B141552682C0056D938 /* white_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE11552682C0056D938 /* white_5.png */; };
+		213B0B151552682C0056D938 /* white_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE21552682C0056D938 /* white_5@2x.png */; };
+		213B0B161552682C0056D938 /* white_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE21552682C0056D938 /* white_5@2x.png */; };
+		213B0B171552682C0056D938 /* white_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE31552682C0056D938 /* white_6.png */; };
+		213B0B181552682C0056D938 /* white_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE31552682C0056D938 /* white_6.png */; };
+		213B0B191552682C0056D938 /* white_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE41552682C0056D938 /* white_6@2x.png */; };
+		213B0B1A1552682C0056D938 /* white_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE41552682C0056D938 /* white_6@2x.png */; };
+		213B0B1B1552682C0056D938 /* white_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE51552682C0056D938 /* white_7.png */; };
+		213B0B1C1552682C0056D938 /* white_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE51552682C0056D938 /* white_7.png */; };
+		213B0B1D1552682C0056D938 /* white_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE61552682C0056D938 /* white_7@2x.png */; };
+		213B0B1E1552682C0056D938 /* white_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE61552682C0056D938 /* white_7@2x.png */; };
+		213B0B1F1552682C0056D938 /* white_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE71552682C0056D938 /* white_8.png */; };
+		213B0B201552682C0056D938 /* white_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE71552682C0056D938 /* white_8.png */; };
+		213B0B211552682C0056D938 /* white_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE81552682C0056D938 /* white_8@2x.png */; };
+		213B0B221552682C0056D938 /* white_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE81552682C0056D938 /* white_8@2x.png */; };
+		213B0B231552682C0056D938 /* white_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE91552682C0056D938 /* white_9.png */; };
+		213B0B241552682C0056D938 /* white_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AE91552682C0056D938 /* white_9.png */; };
+		213B0B251552682C0056D938 /* white_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEA1552682C0056D938 /* white_9@2x.png */; };
+		213B0B261552682C0056D938 /* white_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEA1552682C0056D938 /* white_9@2x.png */; };
+		213B0B271552682C0056D938 /* yellow_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEB1552682C0056D938 /* yellow_0.png */; };
+		213B0B281552682C0056D938 /* yellow_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEB1552682C0056D938 /* yellow_0.png */; };
+		213B0B291552682C0056D938 /* yellow_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEC1552682C0056D938 /* yellow_0@2x.png */; };
+		213B0B2A1552682C0056D938 /* yellow_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEC1552682C0056D938 /* yellow_0@2x.png */; };
+		213B0B2B1552682C0056D938 /* yellow_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AED1552682C0056D938 /* yellow_1.png */; };
+		213B0B2C1552682C0056D938 /* yellow_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AED1552682C0056D938 /* yellow_1.png */; };
+		213B0B2D1552682C0056D938 /* yellow_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEE1552682C0056D938 /* yellow_1@2x.png */; };
+		213B0B2E1552682C0056D938 /* yellow_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEE1552682C0056D938 /* yellow_1@2x.png */; };
+		213B0B2F1552682C0056D938 /* yellow_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEF1552682C0056D938 /* yellow_2.png */; };
+		213B0B301552682C0056D938 /* yellow_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AEF1552682C0056D938 /* yellow_2.png */; };
+		213B0B311552682C0056D938 /* yellow_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF01552682C0056D938 /* yellow_2@2x.png */; };
+		213B0B321552682C0056D938 /* yellow_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF01552682C0056D938 /* yellow_2@2x.png */; };
+		213B0B331552682C0056D938 /* yellow_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF11552682C0056D938 /* yellow_3.png */; };
+		213B0B341552682C0056D938 /* yellow_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF11552682C0056D938 /* yellow_3.png */; };
+		213B0B351552682C0056D938 /* yellow_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF21552682C0056D938 /* yellow_3@2x.png */; };
+		213B0B361552682C0056D938 /* yellow_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF21552682C0056D938 /* yellow_3@2x.png */; };
+		213B0B371552682C0056D938 /* yellow_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF31552682C0056D938 /* yellow_4.png */; };
+		213B0B381552682C0056D938 /* yellow_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF31552682C0056D938 /* yellow_4.png */; };
+		213B0B391552682C0056D938 /* yellow_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF41552682C0056D938 /* yellow_4@2x.png */; };
+		213B0B3A1552682C0056D938 /* yellow_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF41552682C0056D938 /* yellow_4@2x.png */; };
+		213B0B3B1552682C0056D938 /* yellow_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF51552682C0056D938 /* yellow_5.png */; };
+		213B0B3C1552682C0056D938 /* yellow_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF51552682C0056D938 /* yellow_5.png */; };
+		213B0B3D1552682C0056D938 /* yellow_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF61552682C0056D938 /* yellow_5@2x.png */; };
+		213B0B3E1552682C0056D938 /* yellow_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF61552682C0056D938 /* yellow_5@2x.png */; };
+		213B0B3F1552682C0056D938 /* yellow_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF71552682C0056D938 /* yellow_6.png */; };
+		213B0B401552682C0056D938 /* yellow_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF71552682C0056D938 /* yellow_6.png */; };
+		213B0B411552682C0056D938 /* yellow_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF81552682C0056D938 /* yellow_6@2x.png */; };
+		213B0B421552682C0056D938 /* yellow_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF81552682C0056D938 /* yellow_6@2x.png */; };
+		213B0B431552682C0056D938 /* yellow_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF91552682C0056D938 /* yellow_7.png */; };
+		213B0B441552682C0056D938 /* yellow_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AF91552682C0056D938 /* yellow_7.png */; };
+		213B0B451552682C0056D938 /* yellow_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFA1552682C0056D938 /* yellow_7@2x.png */; };
+		213B0B461552682C0056D938 /* yellow_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFA1552682C0056D938 /* yellow_7@2x.png */; };
+		213B0B471552682C0056D938 /* yellow_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFB1552682C0056D938 /* yellow_8.png */; };
+		213B0B481552682C0056D938 /* yellow_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFB1552682C0056D938 /* yellow_8.png */; };
+		213B0B491552682C0056D938 /* yellow_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFC1552682C0056D938 /* yellow_8@2x.png */; };
+		213B0B4A1552682C0056D938 /* yellow_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFC1552682C0056D938 /* yellow_8@2x.png */; };
+		213B0B4B1552682C0056D938 /* yellow_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFD1552682C0056D938 /* yellow_9.png */; };
+		213B0B4C1552682C0056D938 /* yellow_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFD1552682C0056D938 /* yellow_9.png */; };
+		213B0B4D1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
+		213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -125,79 +271,120 @@
 		EBD6632D15464E66009C94F6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE8191542DD2D008497E7 /* Icon.png */; };
 		EBD6632E15464E68009C94F6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE81A1542DD2D008497E7 /* Icon@2x.png */; };
 		EBD6632F15464E6B009C94F6 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE81B1542DD2D008497E7 /* iTunesArtwork */; };
-		EBD664251546AF44009C94F6 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F01546AF44009C94F6 /* CDAudioManager.m */; };
-		EBD664261546AF44009C94F6 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F01546AF44009C94F6 /* CDAudioManager.m */; };
-		EBD664271546AF44009C94F6 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F31546AF44009C94F6 /* CDOpenALSupport.m */; };
-		EBD664281546AF44009C94F6 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F31546AF44009C94F6 /* CDOpenALSupport.m */; };
-		EBD664291546AF44009C94F6 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F51546AF44009C94F6 /* CocosDenshion.m */; };
-		EBD6642A1546AF44009C94F6 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F51546AF44009C94F6 /* CocosDenshion.m */; };
-		EBD6642B1546AF44009C94F6 /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F71546AF44009C94F6 /* SimpleAudioEngine.m */; };
-		EBD6642C1546AF44009C94F6 /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663F71546AF44009C94F6 /* SimpleAudioEngine.m */; };
-		EBD6642D1546AF44009C94F6 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FA1546AF44009C94F6 /* FontLabel.m */; };
-		EBD6642E1546AF44009C94F6 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FA1546AF44009C94F6 /* FontLabel.m */; };
-		EBD6642F1546AF44009C94F6 /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FC1546AF44009C94F6 /* FontLabelStringDrawing.m */; };
-		EBD664301546AF44009C94F6 /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FC1546AF44009C94F6 /* FontLabelStringDrawing.m */; };
-		EBD664311546AF44009C94F6 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FE1546AF44009C94F6 /* FontManager.m */; };
-		EBD664321546AF44009C94F6 /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD663FE1546AF44009C94F6 /* FontManager.m */; };
-		EBD664331546AF44009C94F6 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664001546AF44009C94F6 /* ZAttributedString.m */; };
-		EBD664341546AF44009C94F6 /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664001546AF44009C94F6 /* ZAttributedString.m */; };
-		EBD664351546AF44009C94F6 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664031546AF44009C94F6 /* ZFont.m */; };
-		EBD664361546AF44009C94F6 /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664031546AF44009C94F6 /* ZFont.m */; };
-		EBD664371546AF44009C94F6 /* GGFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664051546AF44009C94F6 /* GGFoundation.m */; };
-		EBD664381546AF44009C94F6 /* GGFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664051546AF44009C94F6 /* GGFoundation.m */; };
-		EBD664391546AF44009C94F6 /* GGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664071546AF44009C94F6 /* GGPath.m */; };
-		EBD6643A1546AF44009C94F6 /* GGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664071546AF44009C94F6 /* GGPath.m */; };
-		EBD6643B1546AF44009C94F6 /* GGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6640A1546AF44009C94F6 /* GGSoundManager.m */; };
-		EBD6643C1546AF44009C94F6 /* GGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6640A1546AF44009C94F6 /* GGSoundManager.m */; };
-		EBD6643D1546AF44009C94F6 /* GGUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6640C1546AF44009C94F6 /* GGUtil.m */; };
-		EBD6643E1546AF44009C94F6 /* GGUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6640C1546AF44009C94F6 /* GGUtil.m */; };
-		EBD6643F1546AF44009C94F6 /* POP字体mix-w5.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EBD6640E1546AF44009C94F6 /* POP字体mix-w5.TTF */; };
-		EBD664401546AF44009C94F6 /* POP字体mix-w5.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EBD6640E1546AF44009C94F6 /* POP字体mix-w5.TTF */; };
-		EBD664411546AF44009C94F6 /* 全新硬笔隶书简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD6640F1546AF44009C94F6 /* 全新硬笔隶书简.ttf */; };
-		EBD664421546AF44009C94F6 /* 全新硬笔隶书简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD6640F1546AF44009C94F6 /* 全新硬笔隶书简.ttf */; };
-		EBD664431546AF44009C94F6 /* 国祥手写体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664101546AF44009C94F6 /* 国祥手写体.ttf */; };
-		EBD664441546AF44009C94F6 /* 国祥手写体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664101546AF44009C94F6 /* 国祥手写体.ttf */; };
-		EBD664451546AF44009C94F6 /* 字体图片.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664111546AF44009C94F6 /* 字体图片.png */; };
-		EBD664461546AF44009C94F6 /* 字体图片.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664111546AF44009C94F6 /* 字体图片.png */; };
-		EBD664471546AF44009C94F6 /* 方正卡通简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664121546AF44009C94F6 /* 方正卡通简体.ttf */; };
-		EBD664481546AF44009C94F6 /* 方正卡通简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664121546AF44009C94F6 /* 方正卡通简体.ttf */; };
-		EBD664491546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EBD664131546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF */; };
-		EBD6644A1546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EBD664131546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF */; };
-		EBD6644B1546AF44009C94F6 /* 韩绍杰邯郸体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664141546AF44009C94F6 /* 韩绍杰邯郸体.ttf */; };
-		EBD6644C1546AF44009C94F6 /* 韩绍杰邯郸体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD664141546AF44009C94F6 /* 韩绍杰邯郸体.ttf */; };
-		EBD6644D1546AF44009C94F6 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664171546AF44009C94F6 /* CDataScanner.m */; };
-		EBD6644E1546AF44009C94F6 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664171546AF44009C94F6 /* CDataScanner.m */; };
-		EBD6644F1546AF44009C94F6 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641A1546AF44009C94F6 /* CDataScanner_Extensions.m */; };
-		EBD664501546AF44009C94F6 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641A1546AF44009C94F6 /* CDataScanner_Extensions.m */; };
-		EBD664511546AF44009C94F6 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641C1546AF44009C94F6 /* NSDictionary_JSONExtensions.m */; };
-		EBD664521546AF44009C94F6 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641C1546AF44009C94F6 /* NSDictionary_JSONExtensions.m */; };
-		EBD664531546AF44009C94F6 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641F1546AF44009C94F6 /* CJSONDeserializer.m */; };
-		EBD664541546AF44009C94F6 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD6641F1546AF44009C94F6 /* CJSONDeserializer.m */; };
-		EBD664551546AF44009C94F6 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664211546AF44009C94F6 /* CJSONScanner.m */; };
-		EBD664561546AF44009C94F6 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664211546AF44009C94F6 /* CJSONScanner.m */; };
-		EBD664571546AF44009C94F6 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664231546AF44009C94F6 /* CJSONSerializer.m */; };
-		EBD664581546AF44009C94F6 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD664231546AF44009C94F6 /* CJSONSerializer.m */; };
 		EBD6647A1546D725009C94F6 /* play_red.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664761546D723009C94F6 /* play_red.png */; };
 		EBD6647B1546D725009C94F6 /* play_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664771546D723009C94F6 /* play_red@2x.png */; };
 		EBD6647C1546D725009C94F6 /* play_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664781546D724009C94F6 /* play_white.png */; };
 		EBD6647D1546D725009C94F6 /* play_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD664791546D724009C94F6 /* play_white@2x.png */; };
 		EBF765971547DBC3007DD255 /* MCRectFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765961547DBC3007DD255 /* MCRectFrame.m */; };
 		EBF765981547DBC3007DD255 /* MCRectFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765961547DBC3007DD255 /* MCRectFrame.m */; };
-		EBF765A61547ED50007DD255 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF7659D1547ED50007DD255 /* NSObject+SBJSON.m */; };
-		EBF765A71547ED50007DD255 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF7659D1547ED50007DD255 /* NSObject+SBJSON.m */; };
-		EBF765A81547ED50007DD255 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF7659F1547ED50007DD255 /* NSString+SBJSON.m */; };
-		EBF765A91547ED50007DD255 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF7659F1547ED50007DD255 /* NSString+SBJSON.m */; };
-		EBF765AA1547ED50007DD255 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A11547ED50007DD255 /* SBJsonBase.m */; };
-		EBF765AB1547ED50007DD255 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A11547ED50007DD255 /* SBJsonBase.m */; };
-		EBF765AC1547ED50007DD255 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A31547ED50007DD255 /* SBJsonParser.m */; };
-		EBF765AD1547ED50007DD255 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A31547ED50007DD255 /* SBJsonParser.m */; };
-		EBF765AE1547ED50007DD255 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A51547ED50007DD255 /* SBJsonWriter.m */; };
-		EBF765AF1547ED50007DD255 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765A51547ED50007DD255 /* SBJsonWriter.m */; };
 		EBF765B21547EF39007DD255 /* MCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765B11547EF39007DD255 /* MCBlock.m */; };
 		EBF765B31547EF39007DD255 /* MCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF765B11547EF39007DD255 /* MCBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		213B09C915524EFA0056D938 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
+		213B09CA15524EFA0056D938 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
+		213B09CB15524EFA0056D938 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
+		213B09CC15524EFA0056D938 /* CDOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpenALSupport.h; sourceTree = "<group>"; };
+		213B09CD15524EFA0056D938 /* CDOpenALSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpenALSupport.m; sourceTree = "<group>"; };
+		213B09CE15524EFA0056D938 /* CocosDenshion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDenshion.h; sourceTree = "<group>"; };
+		213B09CF15524EFA0056D938 /* CocosDenshion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDenshion.m; sourceTree = "<group>"; };
+		213B09D015524EFA0056D938 /* SimpleAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAudioEngine.h; sourceTree = "<group>"; };
+		213B09D115524EFA0056D938 /* SimpleAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAudioEngine.m; sourceTree = "<group>"; };
+		213B09D315524EFA0056D938 /* FontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontLabel.h; sourceTree = "<group>"; };
+		213B09D415524EFA0056D938 /* FontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontLabel.m; sourceTree = "<group>"; };
+		213B09D515524EFA0056D938 /* FontLabelStringDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontLabelStringDrawing.h; sourceTree = "<group>"; };
+		213B09D615524EFA0056D938 /* FontLabelStringDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontLabelStringDrawing.m; sourceTree = "<group>"; };
+		213B09D715524EFA0056D938 /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontManager.h; sourceTree = "<group>"; };
+		213B09D815524EFA0056D938 /* FontManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontManager.m; sourceTree = "<group>"; };
+		213B09D915524EFA0056D938 /* ZAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAttributedString.h; sourceTree = "<group>"; };
+		213B09DA15524EFA0056D938 /* ZAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAttributedString.m; sourceTree = "<group>"; };
+		213B09DB15524EFA0056D938 /* ZAttributedStringPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAttributedStringPrivate.h; sourceTree = "<group>"; };
+		213B09DC15524EFA0056D938 /* ZFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFont.h; sourceTree = "<group>"; };
+		213B09DD15524EFA0056D938 /* ZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFont.m; sourceTree = "<group>"; };
+		213B09DE15524EFA0056D938 /* GGFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGFoundation.h; sourceTree = "<group>"; };
+		213B09DF15524EFA0056D938 /* GGFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGFoundation.m; sourceTree = "<group>"; };
+		213B09E015524EFA0056D938 /* GGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGPath.h; sourceTree = "<group>"; };
+		213B09E115524EFA0056D938 /* GGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPath.m; sourceTree = "<group>"; };
+		213B09E215524EFA0056D938 /* GGSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSingleton.h; sourceTree = "<group>"; };
+		213B09E315524EFA0056D938 /* GGSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSoundManager.h; sourceTree = "<group>"; };
+		213B09E415524EFA0056D938 /* GGSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSoundManager.m; sourceTree = "<group>"; };
+		213B09E515524EFA0056D938 /* GGUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGUtil.h; sourceTree = "<group>"; };
+		213B09E615524EFA0056D938 /* GGUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGUtil.m; sourceTree = "<group>"; };
+		213B09E815524EFA0056D938 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		213B09E915524EFA0056D938 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		213B09EA15524EFA0056D938 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		213B09EB15524EFA0056D938 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		213B09EC15524EFA0056D938 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		213B09ED15524EFA0056D938 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		213B09EE15524EFA0056D938 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		213B09EF15524EFA0056D938 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		213B09F015524EFA0056D938 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		213B09F115524EFA0056D938 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		213B09F215524EFA0056D938 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		213B09F415524EFA0056D938 /* POP字体mix-w5.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "POP字体mix-w5.TTF"; sourceTree = "<group>"; };
+		213B09F515524EFA0056D938 /* 全新硬笔隶书简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "全新硬笔隶书简.ttf"; sourceTree = "<group>"; };
+		213B09F615524EFA0056D938 /* 国祥手写体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "国祥手写体.ttf"; sourceTree = "<group>"; };
+		213B09F715524EFA0056D938 /* 字体图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "字体图片.png"; sourceTree = "<group>"; };
+		213B09F815524EFA0056D938 /* 方正卡通简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正卡通简体.ttf"; sourceTree = "<group>"; };
+		213B09F915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "钟齐王庆华毛笔简体.TTF"; sourceTree = "<group>"; };
+		213B09FA15524EFA0056D938 /* 韩绍杰邯郸体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "韩绍杰邯郸体.ttf"; sourceTree = "<group>"; };
+		213B09FC15524EFA0056D938 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		213B09FD15524EFA0056D938 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		213B09FF15524EFA0056D938 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		213B0A0015524EFA0056D938 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		213B0A0115524EFA0056D938 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		213B0A0215524EFA0056D938 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		213B0A0415524EFA0056D938 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		213B0A0515524EFA0056D938 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		213B0A0615524EFA0056D938 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		213B0A0715524EFA0056D938 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		213B0A0815524EFA0056D938 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		213B0A0915524EFA0056D938 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		213B0A0A15524EFA0056D938 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		213B0A51155254970056D938 /* locked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locked.png; sourceTree = "<group>"; };
+		213B0A54155257FF0056D938 /* MCNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNumberView.h; sourceTree = "<group>"; };
+		213B0A55155257FF0056D938 /* MCNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNumberView.m; sourceTree = "<group>"; };
+		213B0AD71552682C0056D938 /* white_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_0.png; sourceTree = "<group>"; };
+		213B0AD81552682C0056D938 /* white_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_0@2x.png"; sourceTree = "<group>"; };
+		213B0AD91552682C0056D938 /* white_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_1.png; sourceTree = "<group>"; };
+		213B0ADA1552682C0056D938 /* white_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_1@2x.png"; sourceTree = "<group>"; };
+		213B0ADB1552682C0056D938 /* white_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_2.png; sourceTree = "<group>"; };
+		213B0ADC1552682C0056D938 /* white_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_2@2x.png"; sourceTree = "<group>"; };
+		213B0ADD1552682C0056D938 /* white_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_3.png; sourceTree = "<group>"; };
+		213B0ADE1552682C0056D938 /* white_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_3@2x.png"; sourceTree = "<group>"; };
+		213B0ADF1552682C0056D938 /* white_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_4.png; sourceTree = "<group>"; };
+		213B0AE01552682C0056D938 /* white_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_4@2x.png"; sourceTree = "<group>"; };
+		213B0AE11552682C0056D938 /* white_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_5.png; sourceTree = "<group>"; };
+		213B0AE21552682C0056D938 /* white_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_5@2x.png"; sourceTree = "<group>"; };
+		213B0AE31552682C0056D938 /* white_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_6.png; sourceTree = "<group>"; };
+		213B0AE41552682C0056D938 /* white_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_6@2x.png"; sourceTree = "<group>"; };
+		213B0AE51552682C0056D938 /* white_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_7.png; sourceTree = "<group>"; };
+		213B0AE61552682C0056D938 /* white_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_7@2x.png"; sourceTree = "<group>"; };
+		213B0AE71552682C0056D938 /* white_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_8.png; sourceTree = "<group>"; };
+		213B0AE81552682C0056D938 /* white_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_8@2x.png"; sourceTree = "<group>"; };
+		213B0AE91552682C0056D938 /* white_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_9.png; sourceTree = "<group>"; };
+		213B0AEA1552682C0056D938 /* white_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white_9@2x.png"; sourceTree = "<group>"; };
+		213B0AEB1552682C0056D938 /* yellow_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_0.png; sourceTree = "<group>"; };
+		213B0AEC1552682C0056D938 /* yellow_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_0@2x.png"; sourceTree = "<group>"; };
+		213B0AED1552682C0056D938 /* yellow_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_1.png; sourceTree = "<group>"; };
+		213B0AEE1552682C0056D938 /* yellow_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_1@2x.png"; sourceTree = "<group>"; };
+		213B0AEF1552682C0056D938 /* yellow_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_2.png; sourceTree = "<group>"; };
+		213B0AF01552682C0056D938 /* yellow_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_2@2x.png"; sourceTree = "<group>"; };
+		213B0AF11552682C0056D938 /* yellow_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_3.png; sourceTree = "<group>"; };
+		213B0AF21552682C0056D938 /* yellow_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_3@2x.png"; sourceTree = "<group>"; };
+		213B0AF31552682C0056D938 /* yellow_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_4.png; sourceTree = "<group>"; };
+		213B0AF41552682C0056D938 /* yellow_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_4@2x.png"; sourceTree = "<group>"; };
+		213B0AF51552682C0056D938 /* yellow_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_5.png; sourceTree = "<group>"; };
+		213B0AF61552682C0056D938 /* yellow_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_5@2x.png"; sourceTree = "<group>"; };
+		213B0AF71552682C0056D938 /* yellow_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_6.png; sourceTree = "<group>"; };
+		213B0AF81552682C0056D938 /* yellow_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_6@2x.png"; sourceTree = "<group>"; };
+		213B0AF91552682C0056D938 /* yellow_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_7.png; sourceTree = "<group>"; };
+		213B0AFA1552682C0056D938 /* yellow_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_7@2x.png"; sourceTree = "<group>"; };
+		213B0AFB1552682C0056D938 /* yellow_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_8.png; sourceTree = "<group>"; };
+		213B0AFC1552682C0056D938 /* yellow_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_8@2x.png"; sourceTree = "<group>"; };
+		213B0AFD1552682C0056D938 /* yellow_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_9.png; sourceTree = "<group>"; };
+		213B0AFE1552682C0056D938 /* yellow_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_9@2x.png"; sourceTree = "<group>"; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -289,72 +476,12 @@
 		EBD1474A15492E360087EBD7 /* MCGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameState.m; sourceTree = "<group>"; };
 		EBD1474D154935BC0087EBD7 /* MCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAlertView.h; sourceTree = "<group>"; };
 		EBD1474E154935BC0087EBD7 /* MCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAlertView.m; sourceTree = "<group>"; };
-		EBD663EF1546AF44009C94F6 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
-		EBD663F01546AF44009C94F6 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
-		EBD663F11546AF44009C94F6 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
-		EBD663F21546AF44009C94F6 /* CDOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpenALSupport.h; sourceTree = "<group>"; };
-		EBD663F31546AF44009C94F6 /* CDOpenALSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpenALSupport.m; sourceTree = "<group>"; };
-		EBD663F41546AF44009C94F6 /* CocosDenshion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDenshion.h; sourceTree = "<group>"; };
-		EBD663F51546AF44009C94F6 /* CocosDenshion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDenshion.m; sourceTree = "<group>"; };
-		EBD663F61546AF44009C94F6 /* SimpleAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAudioEngine.h; sourceTree = "<group>"; };
-		EBD663F71546AF44009C94F6 /* SimpleAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAudioEngine.m; sourceTree = "<group>"; };
-		EBD663F91546AF44009C94F6 /* FontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontLabel.h; sourceTree = "<group>"; };
-		EBD663FA1546AF44009C94F6 /* FontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontLabel.m; sourceTree = "<group>"; };
-		EBD663FB1546AF44009C94F6 /* FontLabelStringDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontLabelStringDrawing.h; sourceTree = "<group>"; };
-		EBD663FC1546AF44009C94F6 /* FontLabelStringDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontLabelStringDrawing.m; sourceTree = "<group>"; };
-		EBD663FD1546AF44009C94F6 /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontManager.h; sourceTree = "<group>"; };
-		EBD663FE1546AF44009C94F6 /* FontManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontManager.m; sourceTree = "<group>"; };
-		EBD663FF1546AF44009C94F6 /* ZAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAttributedString.h; sourceTree = "<group>"; };
-		EBD664001546AF44009C94F6 /* ZAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAttributedString.m; sourceTree = "<group>"; };
-		EBD664011546AF44009C94F6 /* ZAttributedStringPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAttributedStringPrivate.h; sourceTree = "<group>"; };
-		EBD664021546AF44009C94F6 /* ZFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFont.h; sourceTree = "<group>"; };
-		EBD664031546AF44009C94F6 /* ZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFont.m; sourceTree = "<group>"; };
-		EBD664041546AF44009C94F6 /* GGFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGFoundation.h; sourceTree = "<group>"; };
-		EBD664051546AF44009C94F6 /* GGFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGFoundation.m; sourceTree = "<group>"; };
-		EBD664061546AF44009C94F6 /* GGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGPath.h; sourceTree = "<group>"; };
-		EBD664071546AF44009C94F6 /* GGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPath.m; sourceTree = "<group>"; };
-		EBD664081546AF44009C94F6 /* GGSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSingleton.h; sourceTree = "<group>"; };
-		EBD664091546AF44009C94F6 /* GGSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSoundManager.h; sourceTree = "<group>"; };
-		EBD6640A1546AF44009C94F6 /* GGSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSoundManager.m; sourceTree = "<group>"; };
-		EBD6640B1546AF44009C94F6 /* GGUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGUtil.h; sourceTree = "<group>"; };
-		EBD6640C1546AF44009C94F6 /* GGUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGUtil.m; sourceTree = "<group>"; };
-		EBD6640E1546AF44009C94F6 /* POP字体mix-w5.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "POP字体mix-w5.TTF"; sourceTree = "<group>"; };
-		EBD6640F1546AF44009C94F6 /* 全新硬笔隶书简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "全新硬笔隶书简.ttf"; sourceTree = "<group>"; };
-		EBD664101546AF44009C94F6 /* 国祥手写体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "国祥手写体.ttf"; sourceTree = "<group>"; };
-		EBD664111546AF44009C94F6 /* 字体图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "字体图片.png"; sourceTree = "<group>"; };
-		EBD664121546AF44009C94F6 /* 方正卡通简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正卡通简体.ttf"; sourceTree = "<group>"; };
-		EBD664131546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "钟齐王庆华毛笔简体.TTF"; sourceTree = "<group>"; };
-		EBD664141546AF44009C94F6 /* 韩绍杰邯郸体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "韩绍杰邯郸体.ttf"; sourceTree = "<group>"; };
-		EBD664161546AF44009C94F6 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
-		EBD664171546AF44009C94F6 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
-		EBD664191546AF44009C94F6 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
-		EBD6641A1546AF44009C94F6 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
-		EBD6641B1546AF44009C94F6 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
-		EBD6641C1546AF44009C94F6 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
-		EBD6641E1546AF44009C94F6 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
-		EBD6641F1546AF44009C94F6 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
-		EBD664201546AF44009C94F6 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
-		EBD664211546AF44009C94F6 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
-		EBD664221546AF44009C94F6 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
-		EBD664231546AF44009C94F6 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		EBD664241546AF44009C94F6 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		EBD664761546D723009C94F6 /* play_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_red.png; sourceTree = "<group>"; };
 		EBD664771546D723009C94F6 /* play_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_red@2x.png"; sourceTree = "<group>"; };
 		EBD664781546D724009C94F6 /* play_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_white.png; sourceTree = "<group>"; };
 		EBD664791546D724009C94F6 /* play_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_white@2x.png"; sourceTree = "<group>"; };
 		EBF765951547DBC3007DD255 /* MCRectFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRectFrame.h; sourceTree = "<group>"; };
 		EBF765961547DBC3007DD255 /* MCRectFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRectFrame.m; sourceTree = "<group>"; };
-		EBF7659B1547ED50007DD255 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		EBF7659C1547ED50007DD255 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		EBF7659D1547ED50007DD255 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		EBF7659E1547ED50007DD255 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		EBF7659F1547ED50007DD255 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		EBF765A01547ED50007DD255 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		EBF765A11547ED50007DD255 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		EBF765A21547ED50007DD255 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		EBF765A31547ED50007DD255 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		EBF765A41547ED50007DD255 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		EBF765A51547ED50007DD255 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		EBF765B01547EF38007DD255 /* MCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBlock.h; sourceTree = "<group>"; };
 		EBF765B11547EF39007DD255 /* MCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -395,11 +522,181 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213B09C715524EFA0056D938 /* GGFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				213B09C815524EFA0056D938 /* CocosDenshion */,
+				213B09D215524EFA0056D938 /* FontLabel */,
+				213B09DE15524EFA0056D938 /* GGFoundation.h */,
+				213B09DF15524EFA0056D938 /* GGFoundation.m */,
+				213B09E015524EFA0056D938 /* GGPath.h */,
+				213B09E115524EFA0056D938 /* GGPath.m */,
+				213B09E215524EFA0056D938 /* GGSingleton.h */,
+				213B09E315524EFA0056D938 /* GGSoundManager.h */,
+				213B09E415524EFA0056D938 /* GGSoundManager.m */,
+				213B09E515524EFA0056D938 /* GGUtil.h */,
+				213B09E615524EFA0056D938 /* GGUtil.m */,
+				213B09E715524EFA0056D938 /* JSON */,
+				213B09F315524EFA0056D938 /* Resources */,
+				213B09FB15524EFA0056D938 /* TouchJSON */,
+			);
+			name = GGFoundation;
+			path = ../../../GGFoundation/GGDemo/GGFoundation;
+			sourceTree = "<group>";
+		};
+		213B09C815524EFA0056D938 /* CocosDenshion */ = {
+			isa = PBXGroup;
+			children = (
+				213B09C915524EFA0056D938 /* CDAudioManager.h */,
+				213B09CA15524EFA0056D938 /* CDAudioManager.m */,
+				213B09CB15524EFA0056D938 /* CDConfig.h */,
+				213B09CC15524EFA0056D938 /* CDOpenALSupport.h */,
+				213B09CD15524EFA0056D938 /* CDOpenALSupport.m */,
+				213B09CE15524EFA0056D938 /* CocosDenshion.h */,
+				213B09CF15524EFA0056D938 /* CocosDenshion.m */,
+				213B09D015524EFA0056D938 /* SimpleAudioEngine.h */,
+				213B09D115524EFA0056D938 /* SimpleAudioEngine.m */,
+			);
+			path = CocosDenshion;
+			sourceTree = "<group>";
+		};
+		213B09D215524EFA0056D938 /* FontLabel */ = {
+			isa = PBXGroup;
+			children = (
+				213B09D315524EFA0056D938 /* FontLabel.h */,
+				213B09D415524EFA0056D938 /* FontLabel.m */,
+				213B09D515524EFA0056D938 /* FontLabelStringDrawing.h */,
+				213B09D615524EFA0056D938 /* FontLabelStringDrawing.m */,
+				213B09D715524EFA0056D938 /* FontManager.h */,
+				213B09D815524EFA0056D938 /* FontManager.m */,
+				213B09D915524EFA0056D938 /* ZAttributedString.h */,
+				213B09DA15524EFA0056D938 /* ZAttributedString.m */,
+				213B09DB15524EFA0056D938 /* ZAttributedStringPrivate.h */,
+				213B09DC15524EFA0056D938 /* ZFont.h */,
+				213B09DD15524EFA0056D938 /* ZFont.m */,
+			);
+			path = FontLabel;
+			sourceTree = "<group>";
+		};
+		213B09E715524EFA0056D938 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				213B09E815524EFA0056D938 /* JSON.h */,
+				213B09E915524EFA0056D938 /* NSObject+SBJSON.h */,
+				213B09EA15524EFA0056D938 /* NSObject+SBJSON.m */,
+				213B09EB15524EFA0056D938 /* NSString+SBJSON.h */,
+				213B09EC15524EFA0056D938 /* NSString+SBJSON.m */,
+				213B09ED15524EFA0056D938 /* SBJsonBase.h */,
+				213B09EE15524EFA0056D938 /* SBJsonBase.m */,
+				213B09EF15524EFA0056D938 /* SBJsonParser.h */,
+				213B09F015524EFA0056D938 /* SBJsonParser.m */,
+				213B09F115524EFA0056D938 /* SBJsonWriter.h */,
+				213B09F215524EFA0056D938 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		213B09F315524EFA0056D938 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				213B09F415524EFA0056D938 /* POP字体mix-w5.TTF */,
+				213B09F515524EFA0056D938 /* 全新硬笔隶书简.ttf */,
+				213B09F615524EFA0056D938 /* 国祥手写体.ttf */,
+				213B09F715524EFA0056D938 /* 字体图片.png */,
+				213B09F815524EFA0056D938 /* 方正卡通简体.ttf */,
+				213B09F915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF */,
+				213B09FA15524EFA0056D938 /* 韩绍杰邯郸体.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		213B09FB15524EFA0056D938 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				213B09FC15524EFA0056D938 /* CDataScanner.h */,
+				213B09FD15524EFA0056D938 /* CDataScanner.m */,
+				213B09FE15524EFA0056D938 /* Extensions */,
+				213B0A0315524EFA0056D938 /* JSON */,
+			);
+			path = TouchJSON;
+			sourceTree = "<group>";
+		};
+		213B09FE15524EFA0056D938 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				213B09FF15524EFA0056D938 /* CDataScanner_Extensions.h */,
+				213B0A0015524EFA0056D938 /* CDataScanner_Extensions.m */,
+				213B0A0115524EFA0056D938 /* NSDictionary_JSONExtensions.h */,
+				213B0A0215524EFA0056D938 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		213B0A0315524EFA0056D938 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				213B0A0415524EFA0056D938 /* CJSONDeserializer.h */,
+				213B0A0515524EFA0056D938 /* CJSONDeserializer.m */,
+				213B0A0615524EFA0056D938 /* CJSONScanner.h */,
+				213B0A0715524EFA0056D938 /* CJSONScanner.m */,
+				213B0A0815524EFA0056D938 /* CJSONSerializer.h */,
+				213B0A0915524EFA0056D938 /* CJSONSerializer.m */,
+				213B0A0A15524EFA0056D938 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		213B0A58155266160056D938 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				213B0AD71552682C0056D938 /* white_0.png */,
+				213B0AD81552682C0056D938 /* white_0@2x.png */,
+				213B0AD91552682C0056D938 /* white_1.png */,
+				213B0ADA1552682C0056D938 /* white_1@2x.png */,
+				213B0ADB1552682C0056D938 /* white_2.png */,
+				213B0ADC1552682C0056D938 /* white_2@2x.png */,
+				213B0ADD1552682C0056D938 /* white_3.png */,
+				213B0ADE1552682C0056D938 /* white_3@2x.png */,
+				213B0ADF1552682C0056D938 /* white_4.png */,
+				213B0AE01552682C0056D938 /* white_4@2x.png */,
+				213B0AE11552682C0056D938 /* white_5.png */,
+				213B0AE21552682C0056D938 /* white_5@2x.png */,
+				213B0AE31552682C0056D938 /* white_6.png */,
+				213B0AE41552682C0056D938 /* white_6@2x.png */,
+				213B0AE51552682C0056D938 /* white_7.png */,
+				213B0AE61552682C0056D938 /* white_7@2x.png */,
+				213B0AE71552682C0056D938 /* white_8.png */,
+				213B0AE81552682C0056D938 /* white_8@2x.png */,
+				213B0AE91552682C0056D938 /* white_9.png */,
+				213B0AEA1552682C0056D938 /* white_9@2x.png */,
+				213B0AEB1552682C0056D938 /* yellow_0.png */,
+				213B0AEC1552682C0056D938 /* yellow_0@2x.png */,
+				213B0AED1552682C0056D938 /* yellow_1.png */,
+				213B0AEE1552682C0056D938 /* yellow_1@2x.png */,
+				213B0AEF1552682C0056D938 /* yellow_2.png */,
+				213B0AF01552682C0056D938 /* yellow_2@2x.png */,
+				213B0AF11552682C0056D938 /* yellow_3.png */,
+				213B0AF21552682C0056D938 /* yellow_3@2x.png */,
+				213B0AF31552682C0056D938 /* yellow_4.png */,
+				213B0AF41552682C0056D938 /* yellow_4@2x.png */,
+				213B0AF51552682C0056D938 /* yellow_5.png */,
+				213B0AF61552682C0056D938 /* yellow_5@2x.png */,
+				213B0AF71552682C0056D938 /* yellow_6.png */,
+				213B0AF81552682C0056D938 /* yellow_6@2x.png */,
+				213B0AF91552682C0056D938 /* yellow_7.png */,
+				213B0AFA1552682C0056D938 /* yellow_7@2x.png */,
+				213B0AFB1552682C0056D938 /* yellow_8.png */,
+				213B0AFC1552682C0056D938 /* yellow_8@2x.png */,
+				213B0AFD1552682C0056D938 /* yellow_9.png */,
+				213B0AFE1552682C0056D938 /* yellow_9@2x.png */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
 		EB0AE77C1542902C008497E7 = {
 			isa = PBXGroup;
 			children = (
 				EB0AE7DA1542D7AD008497E7 /* README.md */,
-				EBD663ED1546AF44009C94F6 /* GGFoundation */,
 				EB0AE7931542902D008497E7 /* MCKlotski */,
 				EB0AE83E1542F005008497E7 /* Testes */,
 				EB0AE78A1542902D008497E7 /* Frameworks */,
@@ -435,6 +732,7 @@
 		EB0AE7931542902D008497E7 /* MCKlotski */ = {
 			isa = PBXGroup;
 			children = (
+				213B09C715524EFA0056D938 /* GGFoundation */,
 				EB0AE80F1542DB16008497E7 /* Classes */,
 				EB0AE79C1542902D008497E7 /* MCAppDelegate.h */,
 				EB0AE79D1542902D008497E7 /* MCAppDelegate.m */,
@@ -549,6 +847,7 @@
 		EB0AE8181542DC30008497E7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				213B0A58155266160056D938 /* Numbers */,
 				EB179A1F154AA28800E32807 /* base */,
 				EB2144BF15442CDD00F6D171 /* Buttons */,
 				EB2144BB15442AE500F6D171 /* background */,
@@ -582,6 +881,7 @@
 		EB179A1F154AA28800E32807 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				213B0A51155254970056D938 /* locked.png */,
 				EB179A21154AA2C400E32807 /* star1.png */,
 				EB179A22154AA2C400E32807 /* star1@2x.png */,
 				EB179A23154AA2C400E32807 /* star2.png */,
@@ -619,6 +919,8 @@
 				EB179A0A154A3D0200E32807 /* MCButton.m */,
 				EB179A0E154A7E1B00E32807 /* MCSelectLevelButton.h */,
 				EB179A0F154A7E1B00E32807 /* MCSelectLevelButton.m */,
+				213B0A54155257FF0056D938 /* MCNumberView.h */,
+				213B0A55155257FF0056D938 /* MCNumberView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -667,130 +969,6 @@
 				EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */,
 			);
 			name = AlertView;
-			sourceTree = "<group>";
-		};
-		EBD663ED1546AF44009C94F6 /* GGFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				EBF7659A1547ED50007DD255 /* JSON */,
-				EBD663EE1546AF44009C94F6 /* CocosDenshion */,
-				EBD663F81546AF44009C94F6 /* FontLabel */,
-				EBD664041546AF44009C94F6 /* GGFoundation.h */,
-				EBD664051546AF44009C94F6 /* GGFoundation.m */,
-				EBD664061546AF44009C94F6 /* GGPath.h */,
-				EBD664071546AF44009C94F6 /* GGPath.m */,
-				EBD664081546AF44009C94F6 /* GGSingleton.h */,
-				EBD664091546AF44009C94F6 /* GGSoundManager.h */,
-				EBD6640A1546AF44009C94F6 /* GGSoundManager.m */,
-				EBD6640B1546AF44009C94F6 /* GGUtil.h */,
-				EBD6640C1546AF44009C94F6 /* GGUtil.m */,
-				EBD6640D1546AF44009C94F6 /* Resources */,
-				EBD664151546AF44009C94F6 /* TouchJSON */,
-			);
-			name = GGFoundation;
-			path = ../../GGFoundation/GGDemo/GGFoundation;
-			sourceTree = "<group>";
-		};
-		EBD663EE1546AF44009C94F6 /* CocosDenshion */ = {
-			isa = PBXGroup;
-			children = (
-				EBD663EF1546AF44009C94F6 /* CDAudioManager.h */,
-				EBD663F01546AF44009C94F6 /* CDAudioManager.m */,
-				EBD663F11546AF44009C94F6 /* CDConfig.h */,
-				EBD663F21546AF44009C94F6 /* CDOpenALSupport.h */,
-				EBD663F31546AF44009C94F6 /* CDOpenALSupport.m */,
-				EBD663F41546AF44009C94F6 /* CocosDenshion.h */,
-				EBD663F51546AF44009C94F6 /* CocosDenshion.m */,
-				EBD663F61546AF44009C94F6 /* SimpleAudioEngine.h */,
-				EBD663F71546AF44009C94F6 /* SimpleAudioEngine.m */,
-			);
-			path = CocosDenshion;
-			sourceTree = "<group>";
-		};
-		EBD663F81546AF44009C94F6 /* FontLabel */ = {
-			isa = PBXGroup;
-			children = (
-				EBD663F91546AF44009C94F6 /* FontLabel.h */,
-				EBD663FA1546AF44009C94F6 /* FontLabel.m */,
-				EBD663FB1546AF44009C94F6 /* FontLabelStringDrawing.h */,
-				EBD663FC1546AF44009C94F6 /* FontLabelStringDrawing.m */,
-				EBD663FD1546AF44009C94F6 /* FontManager.h */,
-				EBD663FE1546AF44009C94F6 /* FontManager.m */,
-				EBD663FF1546AF44009C94F6 /* ZAttributedString.h */,
-				EBD664001546AF44009C94F6 /* ZAttributedString.m */,
-				EBD664011546AF44009C94F6 /* ZAttributedStringPrivate.h */,
-				EBD664021546AF44009C94F6 /* ZFont.h */,
-				EBD664031546AF44009C94F6 /* ZFont.m */,
-			);
-			path = FontLabel;
-			sourceTree = "<group>";
-		};
-		EBD6640D1546AF44009C94F6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				EBD6640E1546AF44009C94F6 /* POP字体mix-w5.TTF */,
-				EBD6640F1546AF44009C94F6 /* 全新硬笔隶书简.ttf */,
-				EBD664101546AF44009C94F6 /* 国祥手写体.ttf */,
-				EBD664111546AF44009C94F6 /* 字体图片.png */,
-				EBD664121546AF44009C94F6 /* 方正卡通简体.ttf */,
-				EBD664131546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF */,
-				EBD664141546AF44009C94F6 /* 韩绍杰邯郸体.ttf */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		EBD664151546AF44009C94F6 /* TouchJSON */ = {
-			isa = PBXGroup;
-			children = (
-				EBD664161546AF44009C94F6 /* CDataScanner.h */,
-				EBD664171546AF44009C94F6 /* CDataScanner.m */,
-				EBD664181546AF44009C94F6 /* Extensions */,
-				EBD6641D1546AF44009C94F6 /* JSON */,
-			);
-			path = TouchJSON;
-			sourceTree = "<group>";
-		};
-		EBD664181546AF44009C94F6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EBD664191546AF44009C94F6 /* CDataScanner_Extensions.h */,
-				EBD6641A1546AF44009C94F6 /* CDataScanner_Extensions.m */,
-				EBD6641B1546AF44009C94F6 /* NSDictionary_JSONExtensions.h */,
-				EBD6641C1546AF44009C94F6 /* NSDictionary_JSONExtensions.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EBD6641D1546AF44009C94F6 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				EBD6641E1546AF44009C94F6 /* CJSONDeserializer.h */,
-				EBD6641F1546AF44009C94F6 /* CJSONDeserializer.m */,
-				EBD664201546AF44009C94F6 /* CJSONScanner.h */,
-				EBD664211546AF44009C94F6 /* CJSONScanner.m */,
-				EBD664221546AF44009C94F6 /* CJSONSerializer.h */,
-				EBD664231546AF44009C94F6 /* CJSONSerializer.m */,
-				EBD664241546AF44009C94F6 /* JSONRepresentation.h */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		EBF7659A1547ED50007DD255 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				EBF7659B1547ED50007DD255 /* JSON.h */,
-				EBF7659C1547ED50007DD255 /* NSObject+SBJSON.h */,
-				EBF7659D1547ED50007DD255 /* NSObject+SBJSON.m */,
-				EBF7659E1547ED50007DD255 /* NSString+SBJSON.h */,
-				EBF7659F1547ED50007DD255 /* NSString+SBJSON.m */,
-				EBF765A01547ED50007DD255 /* SBJsonBase.h */,
-				EBF765A11547ED50007DD255 /* SBJsonBase.m */,
-				EBF765A21547ED50007DD255 /* SBJsonParser.h */,
-				EBF765A31547ED50007DD255 /* SBJsonParser.m */,
-				EBF765A41547ED50007DD255 /* SBJsonWriter.h */,
-				EBF765A51547ED50007DD255 /* SBJsonWriter.m */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -880,13 +1058,6 @@
 				EB9710BA15456C1E000EBF5E /* menu_normal@2x.png in Resources */,
 				EB9710BE15456C1E000EBF5E /* menu_highlighted@2x.png in Resources */,
 				EB9710C115456CE6000EBF5E /* menu_highlighted.png in Resources */,
-				EBD6643F1546AF44009C94F6 /* POP字体mix-w5.TTF in Resources */,
-				EBD664411546AF44009C94F6 /* 全新硬笔隶书简.ttf in Resources */,
-				EBD664431546AF44009C94F6 /* 国祥手写体.ttf in Resources */,
-				EBD664451546AF44009C94F6 /* 字体图片.png in Resources */,
-				EBD664471546AF44009C94F6 /* 方正卡通简体.ttf in Resources */,
-				EBD664491546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF in Resources */,
-				EBD6644B1546AF44009C94F6 /* 韩绍杰邯郸体.ttf in Resources */,
 				EBD6647A1546D725009C94F6 /* play_red.png in Resources */,
 				EBD6647B1546D725009C94F6 /* play_red@2x.png in Resources */,
 				EBD6647C1546D725009C94F6 /* play_white.png in Resources */,
@@ -903,6 +1074,54 @@
 				EB179A31154AA2C400E32807 /* star3@2x.png in Resources */,
 				EB179A35154AA61C00E32807 /* levelbg.png in Resources */,
 				EB179A37154AA61C00E32807 /* levelbg@2x.png in Resources */,
+				213B0A2F15524EFA0056D938 /* POP字体mix-w5.TTF in Resources */,
+				213B0A3115524EFA0056D938 /* 全新硬笔隶书简.ttf in Resources */,
+				213B0A3315524EFA0056D938 /* 国祥手写体.ttf in Resources */,
+				213B0A3515524EFA0056D938 /* 字体图片.png in Resources */,
+				213B0A3715524EFA0056D938 /* 方正卡通简体.ttf in Resources */,
+				213B0A3915524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF in Resources */,
+				213B0A3B15524EFA0056D938 /* 韩绍杰邯郸体.ttf in Resources */,
+				213B0A52155254970056D938 /* locked.png in Resources */,
+				213B0AFF1552682C0056D938 /* white_0.png in Resources */,
+				213B0B011552682C0056D938 /* white_0@2x.png in Resources */,
+				213B0B031552682C0056D938 /* white_1.png in Resources */,
+				213B0B051552682C0056D938 /* white_1@2x.png in Resources */,
+				213B0B071552682C0056D938 /* white_2.png in Resources */,
+				213B0B091552682C0056D938 /* white_2@2x.png in Resources */,
+				213B0B0B1552682C0056D938 /* white_3.png in Resources */,
+				213B0B0D1552682C0056D938 /* white_3@2x.png in Resources */,
+				213B0B0F1552682C0056D938 /* white_4.png in Resources */,
+				213B0B111552682C0056D938 /* white_4@2x.png in Resources */,
+				213B0B131552682C0056D938 /* white_5.png in Resources */,
+				213B0B151552682C0056D938 /* white_5@2x.png in Resources */,
+				213B0B171552682C0056D938 /* white_6.png in Resources */,
+				213B0B191552682C0056D938 /* white_6@2x.png in Resources */,
+				213B0B1B1552682C0056D938 /* white_7.png in Resources */,
+				213B0B1D1552682C0056D938 /* white_7@2x.png in Resources */,
+				213B0B1F1552682C0056D938 /* white_8.png in Resources */,
+				213B0B211552682C0056D938 /* white_8@2x.png in Resources */,
+				213B0B231552682C0056D938 /* white_9.png in Resources */,
+				213B0B251552682C0056D938 /* white_9@2x.png in Resources */,
+				213B0B271552682C0056D938 /* yellow_0.png in Resources */,
+				213B0B291552682C0056D938 /* yellow_0@2x.png in Resources */,
+				213B0B2B1552682C0056D938 /* yellow_1.png in Resources */,
+				213B0B2D1552682C0056D938 /* yellow_1@2x.png in Resources */,
+				213B0B2F1552682C0056D938 /* yellow_2.png in Resources */,
+				213B0B311552682C0056D938 /* yellow_2@2x.png in Resources */,
+				213B0B331552682C0056D938 /* yellow_3.png in Resources */,
+				213B0B351552682C0056D938 /* yellow_3@2x.png in Resources */,
+				213B0B371552682C0056D938 /* yellow_4.png in Resources */,
+				213B0B391552682C0056D938 /* yellow_4@2x.png in Resources */,
+				213B0B3B1552682C0056D938 /* yellow_5.png in Resources */,
+				213B0B3D1552682C0056D938 /* yellow_5@2x.png in Resources */,
+				213B0B3F1552682C0056D938 /* yellow_6.png in Resources */,
+				213B0B411552682C0056D938 /* yellow_6@2x.png in Resources */,
+				213B0B431552682C0056D938 /* yellow_7.png in Resources */,
+				213B0B451552682C0056D938 /* yellow_7@2x.png in Resources */,
+				213B0B471552682C0056D938 /* yellow_8.png in Resources */,
+				213B0B491552682C0056D938 /* yellow_8@2x.png in Resources */,
+				213B0B4B1552682C0056D938 /* yellow_9.png in Resources */,
+				213B0B4D1552682C0056D938 /* yellow_9@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,13 +1147,6 @@
 				EBD6632D15464E66009C94F6 /* Icon.png in Resources */,
 				EBD6632E15464E68009C94F6 /* Icon@2x.png in Resources */,
 				EBD6632F15464E6B009C94F6 /* iTunesArtwork in Resources */,
-				EBD664401546AF44009C94F6 /* POP字体mix-w5.TTF in Resources */,
-				EBD664421546AF44009C94F6 /* 全新硬笔隶书简.ttf in Resources */,
-				EBD664441546AF44009C94F6 /* 国祥手写体.ttf in Resources */,
-				EBD664461546AF44009C94F6 /* 字体图片.png in Resources */,
-				EBD664481546AF44009C94F6 /* 方正卡通简体.ttf in Resources */,
-				EBD6644A1546AF44009C94F6 /* 钟齐王庆华毛笔简体.TTF in Resources */,
-				EBD6644C1546AF44009C94F6 /* 韩绍杰邯郸体.ttf in Resources */,
 				EBA01B451549644C00ECD185 /* alert_bg.png in Resources */,
 				EBA01B471549644C00ECD185 /* alert_bg@2x.png in Resources */,
 				EBA01B4B1549692F00ECD185 /* alert_continue.png in Resources */,
@@ -947,6 +1159,54 @@
 				EB179A32154AA2C400E32807 /* star3@2x.png in Resources */,
 				EB179A36154AA61C00E32807 /* levelbg.png in Resources */,
 				EB179A38154AA61C00E32807 /* levelbg@2x.png in Resources */,
+				213B0A3015524EFA0056D938 /* POP字体mix-w5.TTF in Resources */,
+				213B0A3215524EFA0056D938 /* 全新硬笔隶书简.ttf in Resources */,
+				213B0A3415524EFA0056D938 /* 国祥手写体.ttf in Resources */,
+				213B0A3615524EFA0056D938 /* 字体图片.png in Resources */,
+				213B0A3815524EFA0056D938 /* 方正卡通简体.ttf in Resources */,
+				213B0A3A15524EFA0056D938 /* 钟齐王庆华毛笔简体.TTF in Resources */,
+				213B0A3C15524EFA0056D938 /* 韩绍杰邯郸体.ttf in Resources */,
+				213B0A53155254970056D938 /* locked.png in Resources */,
+				213B0B001552682C0056D938 /* white_0.png in Resources */,
+				213B0B021552682C0056D938 /* white_0@2x.png in Resources */,
+				213B0B041552682C0056D938 /* white_1.png in Resources */,
+				213B0B061552682C0056D938 /* white_1@2x.png in Resources */,
+				213B0B081552682C0056D938 /* white_2.png in Resources */,
+				213B0B0A1552682C0056D938 /* white_2@2x.png in Resources */,
+				213B0B0C1552682C0056D938 /* white_3.png in Resources */,
+				213B0B0E1552682C0056D938 /* white_3@2x.png in Resources */,
+				213B0B101552682C0056D938 /* white_4.png in Resources */,
+				213B0B121552682C0056D938 /* white_4@2x.png in Resources */,
+				213B0B141552682C0056D938 /* white_5.png in Resources */,
+				213B0B161552682C0056D938 /* white_5@2x.png in Resources */,
+				213B0B181552682C0056D938 /* white_6.png in Resources */,
+				213B0B1A1552682C0056D938 /* white_6@2x.png in Resources */,
+				213B0B1C1552682C0056D938 /* white_7.png in Resources */,
+				213B0B1E1552682C0056D938 /* white_7@2x.png in Resources */,
+				213B0B201552682C0056D938 /* white_8.png in Resources */,
+				213B0B221552682C0056D938 /* white_8@2x.png in Resources */,
+				213B0B241552682C0056D938 /* white_9.png in Resources */,
+				213B0B261552682C0056D938 /* white_9@2x.png in Resources */,
+				213B0B281552682C0056D938 /* yellow_0.png in Resources */,
+				213B0B2A1552682C0056D938 /* yellow_0@2x.png in Resources */,
+				213B0B2C1552682C0056D938 /* yellow_1.png in Resources */,
+				213B0B2E1552682C0056D938 /* yellow_1@2x.png in Resources */,
+				213B0B301552682C0056D938 /* yellow_2.png in Resources */,
+				213B0B321552682C0056D938 /* yellow_2@2x.png in Resources */,
+				213B0B341552682C0056D938 /* yellow_3.png in Resources */,
+				213B0B361552682C0056D938 /* yellow_3@2x.png in Resources */,
+				213B0B381552682C0056D938 /* yellow_4.png in Resources */,
+				213B0B3A1552682C0056D938 /* yellow_4@2x.png in Resources */,
+				213B0B3C1552682C0056D938 /* yellow_5.png in Resources */,
+				213B0B3E1552682C0056D938 /* yellow_5@2x.png in Resources */,
+				213B0B401552682C0056D938 /* yellow_6.png in Resources */,
+				213B0B421552682C0056D938 /* yellow_6@2x.png in Resources */,
+				213B0B441552682C0056D938 /* yellow_7.png in Resources */,
+				213B0B461552682C0056D938 /* yellow_7@2x.png in Resources */,
+				213B0B481552682C0056D938 /* yellow_8.png in Resources */,
+				213B0B4A1552682C0056D938 /* yellow_8@2x.png in Resources */,
+				213B0B4C1552682C0056D938 /* yellow_9.png in Resources */,
+				213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,32 +1228,8 @@
 				EB2144B51544252C00F6D171 /* MCChooseLevelViewController.m in Sources */,
 				EB2144B91544293E00F6D171 /* MCViewController.m in Sources */,
 				EB2144D11544354F00F6D171 /* MCTutorialViewController.m in Sources */,
-				EBD664251546AF44009C94F6 /* CDAudioManager.m in Sources */,
-				EBD664271546AF44009C94F6 /* CDOpenALSupport.m in Sources */,
-				EBD664291546AF44009C94F6 /* CocosDenshion.m in Sources */,
-				EBD6642B1546AF44009C94F6 /* SimpleAudioEngine.m in Sources */,
-				EBD6642D1546AF44009C94F6 /* FontLabel.m in Sources */,
-				EBD6642F1546AF44009C94F6 /* FontLabelStringDrawing.m in Sources */,
-				EBD664311546AF44009C94F6 /* FontManager.m in Sources */,
-				EBD664331546AF44009C94F6 /* ZAttributedString.m in Sources */,
-				EBD664351546AF44009C94F6 /* ZFont.m in Sources */,
-				EBD664371546AF44009C94F6 /* GGFoundation.m in Sources */,
-				EBD664391546AF44009C94F6 /* GGPath.m in Sources */,
-				EBD6643B1546AF44009C94F6 /* GGSoundManager.m in Sources */,
-				EBD6643D1546AF44009C94F6 /* GGUtil.m in Sources */,
-				EBD6644D1546AF44009C94F6 /* CDataScanner.m in Sources */,
-				EBD6644F1546AF44009C94F6 /* CDataScanner_Extensions.m in Sources */,
-				EBD664511546AF44009C94F6 /* NSDictionary_JSONExtensions.m in Sources */,
-				EBD664531546AF44009C94F6 /* CJSONDeserializer.m in Sources */,
-				EBD664551546AF44009C94F6 /* CJSONScanner.m in Sources */,
-				EBD664571546AF44009C94F6 /* CJSONSerializer.m in Sources */,
 				EBAF952B1547BA5A00C2CBDF /* MCSettings.m in Sources */,
 				EBF765971547DBC3007DD255 /* MCRectFrame.m in Sources */,
-				EBF765A61547ED50007DD255 /* NSObject+SBJSON.m in Sources */,
-				EBF765A81547ED50007DD255 /* NSString+SBJSON.m in Sources */,
-				EBF765AA1547ED50007DD255 /* SBJsonBase.m in Sources */,
-				EBF765AC1547ED50007DD255 /* SBJsonParser.m in Sources */,
-				EBF765AE1547ED50007DD255 /* SBJsonWriter.m in Sources */,
 				EBF765B21547EF39007DD255 /* MCBlock.m in Sources */,
 				EBD1474615492ADA0087EBD7 /* MCStep.m in Sources */,
 				EBD1474B15492E360087EBD7 /* MCGameState.m in Sources */,
@@ -1003,6 +1239,31 @@
 				EB179A0B154A3D0200E32807 /* MCButton.m in Sources */,
 				EB179A10154A7E1B00E32807 /* MCSelectLevelButton.m in Sources */,
 				EB179A18154A959800E32807 /* MCButtonBase.m in Sources */,
+				213B0A0B15524EFA0056D938 /* CDAudioManager.m in Sources */,
+				213B0A0D15524EFA0056D938 /* CDOpenALSupport.m in Sources */,
+				213B0A0F15524EFA0056D938 /* CocosDenshion.m in Sources */,
+				213B0A1115524EFA0056D938 /* SimpleAudioEngine.m in Sources */,
+				213B0A1315524EFA0056D938 /* FontLabel.m in Sources */,
+				213B0A1515524EFA0056D938 /* FontLabelStringDrawing.m in Sources */,
+				213B0A1715524EFA0056D938 /* FontManager.m in Sources */,
+				213B0A1915524EFA0056D938 /* ZAttributedString.m in Sources */,
+				213B0A1B15524EFA0056D938 /* ZFont.m in Sources */,
+				213B0A1D15524EFA0056D938 /* GGFoundation.m in Sources */,
+				213B0A1F15524EFA0056D938 /* GGPath.m in Sources */,
+				213B0A2115524EFA0056D938 /* GGSoundManager.m in Sources */,
+				213B0A2315524EFA0056D938 /* GGUtil.m in Sources */,
+				213B0A2515524EFA0056D938 /* NSObject+SBJSON.m in Sources */,
+				213B0A2715524EFA0056D938 /* NSString+SBJSON.m in Sources */,
+				213B0A2915524EFA0056D938 /* SBJsonBase.m in Sources */,
+				213B0A2B15524EFA0056D938 /* SBJsonParser.m in Sources */,
+				213B0A2D15524EFA0056D938 /* SBJsonWriter.m in Sources */,
+				213B0A3D15524EFA0056D938 /* CDataScanner.m in Sources */,
+				213B0A3F15524EFA0056D938 /* CDataScanner_Extensions.m in Sources */,
+				213B0A4115524EFA0056D938 /* NSDictionary_JSONExtensions.m in Sources */,
+				213B0A4315524EFA0056D938 /* CJSONDeserializer.m in Sources */,
+				213B0A4515524EFA0056D938 /* CJSONScanner.m in Sources */,
+				213B0A4715524EFA0056D938 /* CJSONSerializer.m in Sources */,
+				213B0A56155257FF0056D938 /* MCNumberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,32 +1282,8 @@
 				EB2144B61544252C00F6D171 /* MCChooseLevelViewController.m in Sources */,
 				EB2144BA1544293E00F6D171 /* MCViewController.m in Sources */,
 				EB2144D21544354F00F6D171 /* MCTutorialViewController.m in Sources */,
-				EBD664261546AF44009C94F6 /* CDAudioManager.m in Sources */,
-				EBD664281546AF44009C94F6 /* CDOpenALSupport.m in Sources */,
-				EBD6642A1546AF44009C94F6 /* CocosDenshion.m in Sources */,
-				EBD6642C1546AF44009C94F6 /* SimpleAudioEngine.m in Sources */,
-				EBD6642E1546AF44009C94F6 /* FontLabel.m in Sources */,
-				EBD664301546AF44009C94F6 /* FontLabelStringDrawing.m in Sources */,
-				EBD664321546AF44009C94F6 /* FontManager.m in Sources */,
-				EBD664341546AF44009C94F6 /* ZAttributedString.m in Sources */,
-				EBD664361546AF44009C94F6 /* ZFont.m in Sources */,
-				EBD664381546AF44009C94F6 /* GGFoundation.m in Sources */,
-				EBD6643A1546AF44009C94F6 /* GGPath.m in Sources */,
-				EBD6643C1546AF44009C94F6 /* GGSoundManager.m in Sources */,
-				EBD6643E1546AF44009C94F6 /* GGUtil.m in Sources */,
-				EBD6644E1546AF44009C94F6 /* CDataScanner.m in Sources */,
-				EBD664501546AF44009C94F6 /* CDataScanner_Extensions.m in Sources */,
-				EBD664521546AF44009C94F6 /* NSDictionary_JSONExtensions.m in Sources */,
-				EBD664541546AF44009C94F6 /* CJSONDeserializer.m in Sources */,
-				EBD664561546AF44009C94F6 /* CJSONScanner.m in Sources */,
-				EBD664581546AF44009C94F6 /* CJSONSerializer.m in Sources */,
 				EBAF952C1547BA5A00C2CBDF /* MCSettings.m in Sources */,
 				EBF765981547DBC3007DD255 /* MCRectFrame.m in Sources */,
-				EBF765A71547ED50007DD255 /* NSObject+SBJSON.m in Sources */,
-				EBF765A91547ED50007DD255 /* NSString+SBJSON.m in Sources */,
-				EBF765AB1547ED50007DD255 /* SBJsonBase.m in Sources */,
-				EBF765AD1547ED50007DD255 /* SBJsonParser.m in Sources */,
-				EBF765AF1547ED50007DD255 /* SBJsonWriter.m in Sources */,
 				EBF765B31547EF39007DD255 /* MCBlock.m in Sources */,
 				EBD1474715492ADA0087EBD7 /* MCStep.m in Sources */,
 				EBD1474C15492E360087EBD7 /* MCGameState.m in Sources */,
@@ -1056,6 +1293,31 @@
 				EB179A0D154A3D0D00E32807 /* MCButton.m in Sources */,
 				EB179A11154A7E1B00E32807 /* MCSelectLevelButton.m in Sources */,
 				EB179A19154A959800E32807 /* MCButtonBase.m in Sources */,
+				213B0A0C15524EFA0056D938 /* CDAudioManager.m in Sources */,
+				213B0A0E15524EFA0056D938 /* CDOpenALSupport.m in Sources */,
+				213B0A1015524EFA0056D938 /* CocosDenshion.m in Sources */,
+				213B0A1215524EFA0056D938 /* SimpleAudioEngine.m in Sources */,
+				213B0A1415524EFA0056D938 /* FontLabel.m in Sources */,
+				213B0A1615524EFA0056D938 /* FontLabelStringDrawing.m in Sources */,
+				213B0A1815524EFA0056D938 /* FontManager.m in Sources */,
+				213B0A1A15524EFA0056D938 /* ZAttributedString.m in Sources */,
+				213B0A1C15524EFA0056D938 /* ZFont.m in Sources */,
+				213B0A1E15524EFA0056D938 /* GGFoundation.m in Sources */,
+				213B0A2015524EFA0056D938 /* GGPath.m in Sources */,
+				213B0A2215524EFA0056D938 /* GGSoundManager.m in Sources */,
+				213B0A2415524EFA0056D938 /* GGUtil.m in Sources */,
+				213B0A2615524EFA0056D938 /* NSObject+SBJSON.m in Sources */,
+				213B0A2815524EFA0056D938 /* NSString+SBJSON.m in Sources */,
+				213B0A2A15524EFA0056D938 /* SBJsonBase.m in Sources */,
+				213B0A2C15524EFA0056D938 /* SBJsonParser.m in Sources */,
+				213B0A2E15524EFA0056D938 /* SBJsonWriter.m in Sources */,
+				213B0A3E15524EFA0056D938 /* CDataScanner.m in Sources */,
+				213B0A4015524EFA0056D938 /* CDataScanner_Extensions.m in Sources */,
+				213B0A4215524EFA0056D938 /* NSDictionary_JSONExtensions.m in Sources */,
+				213B0A4415524EFA0056D938 /* CJSONDeserializer.m in Sources */,
+				213B0A4615524EFA0056D938 /* CJSONScanner.m in Sources */,
+				213B0A4815524EFA0056D938 /* CJSONSerializer.m in Sources */,
+				213B0A57155257FF0056D938 /* MCNumberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1147,7 +1409,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "904A4063-D29C-4264-9E7F-6CD8918221BD";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "904A4063-D29C-4264-9E7F-6CD8918221BD";
@@ -1168,7 +1430,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "904A4063-D29C-4264-9E7F-6CD8918221BD";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "904A4063-D29C-4264-9E7F-6CD8918221BD";

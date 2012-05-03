@@ -16,5 +16,10 @@
 
 + (UIWindow *)window;
 
+/**
+ * 清除View的所有子View
+ */
++ (void) clearAllSubViewsWith:(UIView *)view;
+
 
 @end

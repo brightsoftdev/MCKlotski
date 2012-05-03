@@ -54,10 +54,21 @@
 {
     self.gate = gate;
     [self resetView];
+    self.gate.isLocked = YES;
     
     self.backgroundView.image = [UIImage imageNamed:@"levelbg.png"];
+    if (self.gate.isLocked) {
+        UIImage *lockImage = [UIImage imageNamed:@"locked.png"];
+        self.flagView.image = lockImage;
+        //self.flagView.frame = CGRectMake(0, 0, lockImage.size.width, lockImage.size.height);
+        self.lblNumber.text = [self getID:gate.gateID];
+        self.enabled = NO;
+        return;
+    }
     
-    
+    if (self.gate.passMoveCount != 0) {
+        // TODO::选关界面
+    }
     
 }
 
