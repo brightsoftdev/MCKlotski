@@ -28,4 +28,18 @@
     }
 }
 
++ (void) saveLocaData:(NSString *)fileName data:(NSString *)str
+{
+    NSArray *arrDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [arrDir objectAtIndex:0];
+    NSString *finalPath = [path stringByAppendingPathComponent:fileName];
+    NSLog(@"Svae Local File Path : %@", finalPath);
+    NSError *error;
+    if (![str writeToFile:finalPath atomically:NO encoding:NSUTF8StringEncoding error:&error]) {
+        NSLog(@"Save Local Data Error : %@", error);
+    }else {
+        NSLog(@"Save Local File Successfully!!!");
+    }
+}
+
 @end

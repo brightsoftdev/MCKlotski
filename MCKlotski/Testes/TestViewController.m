@@ -11,6 +11,9 @@
 #import "GGFoundation.h"
 #import "MCSelectLevelButton.h"
 #import "MCGate.h"
+#import "MCNumberView.h"
+#import "MCBlockView.h"
+#import "MCBlock.h"
 
 @implementation TestViewController
 
@@ -48,7 +51,24 @@
     MCSelectLevelButton *but = [[MCSelectLevelButton alloc] initWithFrame:CGRectMake(200, 100, 122, 200)];
     MCGate *gate = [[MCGate alloc] init];
     [but refreshWithGate:gate];
+    [but addTarget:self action:@selector(test:)];
     [self.view addSubview:but];
+    
+    
+    MCNumberView *numberView = [[MCNumberView alloc] initWithFrame:CGRectMake(200, 150, 50, 20)];
+    numberView.value = 150;
+    numberView.numberType = NumberRGBYellow;
+    [self.view addSubview:numberView];
+    
+    
+    MCBlock *block = [[MCBlock alloc] init];
+    block.blockID = 1;
+    block.blockType = BLOCK_TYPE_LARGE;
+    block.positionX = 12;
+    block.positionY = 12;
+    MCBlockView * blockView = [[MCBlockView alloc] initWithBlock:block];
+    [self.view addSubview:blockView];
+    
     
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -57,6 +77,11 @@
 - (void)ahhh:(id)sender
 {
     NSLog(@"------------");
+}
+
+- (void)test:(id)sender
+{
+    NSLog(@"======");
 }
 
 - (void) alertView:(MCAlertView *)view andButton:(UIButton *)button

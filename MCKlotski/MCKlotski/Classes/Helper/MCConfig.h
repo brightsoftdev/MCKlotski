@@ -20,6 +20,10 @@
 
 #define MCRelease(__object) if(__object){[__object release];__object=nil;}
 
+// 布局文件
+#define LAYOUT_DATA_FILE @"KlotskiLayout.json"
+#define LOCAL_DATA_FILE @"local_user_noname.json"
+
 #pragma mark - keys
 // Setting
 #define KeySettingSoundEnable @"sound"

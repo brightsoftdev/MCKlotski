@@ -40,6 +40,7 @@
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         self.backgroundColor = [UIColor clearColor];
         self.numberImages = nil;
+        self.numberType = NumberRGBWhite;
         _digit = 0;
         self.value = 0;
     }
@@ -111,7 +112,34 @@
 
 - (void) refreshImages
 {
-    
+    int theValue = self.value;
+    int index = 10;
+    for (int i = 0; i < _digit; i++) {
+        int num = theValue % index;
+        UIImageView *imageView = [self.numberImages objectAtIndex:i ];
+        switch (self.numberType) {
+            case NumberRGBRed:
+                imageView.image = [self redNumberImageWithNumber:num];
+                break;
+            
+            case NumberRGBWhite:
+                imageView.image = [self whiteNumberImageWithNumber:num];
+                break;
+                
+            case NumberRGBGray:
+                imageView.image = [self grayNumberImageWithNumber:num];
+                break;
+                
+            case NumberRGBYellow:
+                imageView.image = [self yellowNumberImageWithNumber:num];
+                break;
+                
+            default:
+                NSAssert(NumberRGBInvalid, @"Number type is invalid!!!!");
+                break;
+        }
+        theValue /= 10;
+    }
 }
 
 - (UIImage *) redNumberImageWithNumber:(int)num

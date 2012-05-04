@@ -21,5 +21,10 @@
  */
 + (void) clearAllSubViewsWith:(UIView *)view;
 
+/**
+ * 保存本地数据
+ */
++ (void) saveLocaData:(NSString *)fileName data:(NSString *)str;
+
 
 @end

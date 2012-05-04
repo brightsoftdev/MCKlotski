@@ -54,7 +54,6 @@
 {
     self.gate = gate;
     [self resetView];
-    self.gate.isLocked = YES;
     
     self.backgroundView.image = [UIImage imageNamed:@"levelbg.png"];
     if (self.gate.isLocked) {
@@ -65,9 +64,30 @@
         self.enabled = NO;
         return;
     }
-    
+    //TODO::
+    self.gate.passMoveCount = 1;
     if (self.gate.passMoveCount != 0) {
-        // TODO::选关界面
+        if (self.gate.passMoveCount > self.gate.passMin) {
+            self.flagView.image = [UIImage imageNamed:@"star1.png"];
+            
+        }else if (self.gate.passMoveCount == self.gate.passMin) {
+            self.flagView.image = [UIImage imageNamed:@"star2.png"];
+        }
+        
+        self.lblNumber.text = [self getID:gate.gateID];
+        self.enabled = YES;
+        return;
+    }
+    
+    // 如果程序运行到此，说明出现了无效的数据
+    self.flagView.image = nil;
+    if ([self.gate isInvalidGate]) {
+        self.enabled = NO;
+        self.lblNumber.alpha = 0.0;
+        
+    } else {
+        self.lblNumber.text = [self getID:gate.gateID];
+        self.enabled = YES;
     }
     
 }
@@ -103,7 +123,7 @@
 
 - (void) resetView
 {
-    self.enabled = YES;
+    self.enabled = NO;
     self.backgroundView.image = nil;
     self.flagView.image = nil;
     

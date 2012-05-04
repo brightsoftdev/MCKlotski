@@ -153,6 +153,12 @@
 		213B0B4C1552682C0056D938 /* yellow_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFD1552682C0056D938 /* yellow_9.png */; };
 		213B0B4D1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
 		213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
+		2185C5DD1553FB8E0092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
+		2185C5E11553FBDF0092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
+		2185C5E9155401470092B250 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E8155401470092B250 /* MCBlockView.m */; };
+		2185C5EA155401470092B250 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E8155401470092B250 /* MCBlockView.m */; };
+		2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
+		2185C5F2155412930092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -385,6 +391,12 @@
 		213B0AFC1552682C0056D938 /* yellow_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_8@2x.png"; sourceTree = "<group>"; };
 		213B0AFD1552682C0056D938 /* yellow_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_9.png; sourceTree = "<group>"; };
 		213B0AFE1552682C0056D938 /* yellow_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_9@2x.png"; sourceTree = "<group>"; };
+		2185C5DB1553FB8E0092B250 /* MCGateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGateViewController.h; sourceTree = "<group>"; };
+		2185C5DC1553FB8E0092B250 /* MCGateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGateViewController.m; sourceTree = "<group>"; };
+		2185C5DF1553FBDF0092B250 /* MCCustomGateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCustomGateViewController.h; sourceTree = "<group>"; };
+		2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCustomGateViewController.m; sourceTree = "<group>"; };
+		2185C5E7155401470092B250 /* MCBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBlockView.h; sourceTree = "<group>"; };
+		2185C5E8155401470092B250 /* MCBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBlockView.m; sourceTree = "<group>"; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -768,14 +780,18 @@
 		EB0AE8101542DB16008497E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB2144B71544292F00F6D171 /* MCViewController.h */,
+				EB2144B81544293200F6D171 /* MCViewController.m */,
 				EB2144A91544101700F6D171 /* MCRootViewController.h */,
 				EB2144AA1544101700F6D171 /* MCRootViewController.m */,
 				EB2144B31544252A00F6D171 /* MCChooseLevelViewController.h */,
 				EB2144B41544252B00F6D171 /* MCChooseLevelViewController.m */,
-				EB2144B71544292F00F6D171 /* MCViewController.h */,
-				EB2144B81544293200F6D171 /* MCViewController.m */,
 				EB2144CF1544352300F6D171 /* MCTutorialViewController.h */,
 				EB2144D01544352600F6D171 /* MCTutorialViewController.m */,
+				2185C5DB1553FB8E0092B250 /* MCGateViewController.h */,
+				2185C5DC1553FB8E0092B250 /* MCGateViewController.m */,
+				2185C5DF1553FBDF0092B250 /* MCCustomGateViewController.h */,
+				2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -921,6 +937,8 @@
 				EB179A0F154A7E1B00E32807 /* MCSelectLevelButton.m */,
 				213B0A54155257FF0056D938 /* MCNumberView.h */,
 				213B0A55155257FF0056D938 /* MCNumberView.m */,
+				2185C5E7155401470092B250 /* MCBlockView.h */,
+				2185C5E8155401470092B250 /* MCBlockView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1264,6 +1282,9 @@
 				213B0A4515524EFA0056D938 /* CJSONScanner.m in Sources */,
 				213B0A4715524EFA0056D938 /* CJSONSerializer.m in Sources */,
 				213B0A56155257FF0056D938 /* MCNumberView.m in Sources */,
+				2185C5DD1553FB8E0092B250 /* MCGateViewController.m in Sources */,
+				2185C5E11553FBDF0092B250 /* MCCustomGateViewController.m in Sources */,
+				2185C5E9155401470092B250 /* MCBlockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,6 +1339,9 @@
 				213B0A4615524EFA0056D938 /* CJSONScanner.m in Sources */,
 				213B0A4815524EFA0056D938 /* CJSONSerializer.m in Sources */,
 				213B0A57155257FF0056D938 /* MCNumberView.m in Sources */,
+				2185C5EA155401470092B250 /* MCBlockView.m in Sources */,
+				2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */,
+				2185C5F2155412930092B250 /* MCGateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

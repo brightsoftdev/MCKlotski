@@ -70,12 +70,14 @@
             image = [UIImage imageNamed:[NSString stringWithFormat:@"block1%d.png", index]];
             break;
         case BLOCK_TYPE_LARGE:
-            image = [UIImage imageNamed:[NSString stringWithFormat:@"block2%d.png",index]];
+           image = [UIImage imageNamed:@"Default.png"];
+            //image = [UIImage imageNamed:[NSString stringWithFormat:@"block2%d.png",index]];
             break;
         default:
             NSAssert(false, @"block's type is invalid!!!");
             break;
     }
+    
     return image;
 }
 

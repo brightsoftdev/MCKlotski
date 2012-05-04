@@ -22,7 +22,7 @@
 }
 
 @property (nonatomic, retain) MCGate *gate;
-@property (nonatomic, assign) int index;
+@property (nonatomic, assign) int index; // 按钮顺序
 @property (nonatomic, retain) UIView *highlightView;
 @property (nonatomic, retain) UIImageView *backgroundView;
 @property (nonatomic, retain) UIImageView *flagView;
