@@ -10,7 +10,7 @@
 
 
 @interface MCButton : MCButtonBase{
-    
+  @private
     UIImageView *_normalView;
     UIImageView *_hightlightView;
     UILabel *_normalLabel;
@@ -19,10 +19,10 @@
     UIImageView *_highlightBackgroundView;
 }
 
-- (void) setImage:(UIImage *)image forState:(MCBUTTON_STATE)state;
+- (void)setImage:(UIImage *)image forState:(kButtonState)state;
 
-- (void) setLabel:(UILabel *)label forState:(MCBUTTON_STATE)state;
+- (void)setLabel:(UILabel *)label forState:(kButtonState)state;
 
-- (void) setBackgroundImage:(UIImage *)image forState:(MCBUTTON_STATE)state;
+- (void)setBackgroundImage:(UIImage *)image forState:(kButtonState)state;
 
 @end

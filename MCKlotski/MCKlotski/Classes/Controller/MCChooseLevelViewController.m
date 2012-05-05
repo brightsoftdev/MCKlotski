@@ -18,11 +18,11 @@
 
 @interface MCChooseLevelViewController (Privates)
 
-- (void) createSubViews;
-- (void) removeSubViews;
+- (void)createSubViews;
+- (void)removeSubViews;
 
-- (void) createGateButtons;
-- (void) scrollAndPageConfig;
+- (void)createGateButtons;
+- (void)scrollAndPageConfig;
 
 // 设置Scroll的背景
 - (void)loadScrollBackground;
@@ -33,10 +33,10 @@
 - (void)loadScrollTitle;
 
 // 改变页的事件
-- (void) changePage:(id)sender;
+- (void)changePage:(id)sender;
 
 // 点击选关按钮的事件
-- (void) selectGateAction:(id)sender;
+- (void)selectGateAction:(id)sender;
 
 
 @end
@@ -73,7 +73,7 @@
 }
 
 #pragma mark - View lifecycle
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     [self createSubViews];
@@ -84,7 +84,7 @@
     [self loadScrollTitle];
 }
 
-- (void) viewDidUnload
+- (void)viewDidUnload
 {
     [self removeSubViews];
     [super viewDidUnload];
@@ -92,7 +92,7 @@
 
 #pragma mark - UIScrollViewDelegate
 
-- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     float pageWidth = self.scorllView.frame.size.width; 
     int page = floorf((self.scorllView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
@@ -102,7 +102,7 @@
 }
 
 #pragma mark - Private method
-- (void) createSubViews
+- (void)createSubViews
 {
     // create UIScrollView
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(10, 70, 300, 300)];
@@ -130,7 +130,7 @@
     self.pageControl = nil;
 }
 
-- (void) createGateButtons
+- (void)createGateButtons
 {
     NSMutableArray *gates_ = [NSMutableArray array];
     for (int i = 0 ; i < 150; ++i) {
@@ -153,7 +153,7 @@
     }
 }
 
-- (void) scrollAndPageConfig
+- (void)scrollAndPageConfig
 {
     int btnCount = [self.gateButtons count];
     int pageNum = btnCount / (ROW_SUM * COLUMN_SUM);
@@ -165,7 +165,7 @@
     self.pageControl.numberOfPages = pageNum;
 }
 
-- (void) loadScrollBackground
+- (void)loadScrollBackground
 {
     //TODO:: loadScrollBackground
 }
@@ -192,12 +192,12 @@
     }
 }
 
-- (void) loadScrollTitle
+- (void)loadScrollTitle
 {
     //TODO:: loadScrollTitle
 }
 
-- (void) changePage:(id)sender
+- (void)changePage:(id)sender
 {
     int page = self.pageControl.currentPage;
     CGRect theFrame = self.scorllView.frame;
@@ -206,7 +206,7 @@
     [self.scorllView scrollRectToVisible:theFrame animated:YES]; // 仅仅显示指定区域的内容
 }
 
-- (void) selectGateAction:(id)sender
+- (void)selectGateAction:(id)sender
 {
     [super ButtonAction:sender];
     MCSelectLevelButton *selectButton = (MCSelectLevelButton *)sender;

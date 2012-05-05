@@ -14,7 +14,7 @@
 
 @interface MCButton (Private)
 
-- (void) removeViews; // 移除一些view
+- (void)removeViews; // 移除一些view
 
 @end
 
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     [_normalView release];
     [_normalLabel release];
@@ -43,15 +43,15 @@
 
 #pragma mark - public method
 
-- (void) setImage:(UIImage *)image forState:(MCBUTTON_STATE)state
+- (void)setImage:(UIImage *)image forState:(kButtonState)state
 {
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     switch (state) {
-        case MCBUTTON_STATE_NORMAL:
+        case kButtonStateNormal:
             _normalView = [imageView retain];   
             break;
             
-        case MCBUTTON_STATE_HIGHLIGHT:
+        case kButtonStateHighLight:
             _hightlightView = [imageView retain];
             break;
             
@@ -63,14 +63,14 @@
     [self createNormalView];
 }
 
-- (void) setLabel:(UILabel *)label forState:(MCBUTTON_STATE)state
+- (void)setLabel:(UILabel *)label forState:(kButtonState)state
 {
     switch (state) {
-        case MCBUTTON_STATE_NORMAL:
+        case kButtonStateNormal:
             _normalLabel = [label retain];
             break;
             
-        case MCBUTTON_STATE_HIGHLIGHT:
+        case kButtonStateHighLight:
             _highlightLabel = [label retain];
             break;
             
@@ -81,15 +81,15 @@
     [self createNormalView];
 }
 
-- (void) setBackgroundImage:(UIImage *)image forState:(MCBUTTON_STATE)state
+- (void)setBackgroundImage:(UIImage *)image forState:(kButtonState)state
 {
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     switch (state) {
-        case MCBUTTON_STATE_NORMAL:
+        case kButtonStateNormal:
             _normalBackgroundView = [imageView retain];
             break;
             
-        case MCBUTTON_STATE_HIGHLIGHT:
+        case kButtonStateHighLight:
             _highlightBackgroundView = [imageView retain];
             break;
             
@@ -103,7 +103,7 @@
 
 #pragma mark - private method
 
-- (void) initVariable
+- (void)initVariable
 {
     if (!_hightlightView && _normalView) {
         _hightlightView = [_normalView retain];
@@ -116,7 +116,7 @@
     }
 }
 
-- (void) removeViews
+- (void)removeViews
 {
     if (_normalView && _normalView.superview) {
         [_normalView removeFromSuperview];
@@ -139,7 +139,7 @@
     }
 }
 
-- (void) createNormalView
+- (void)createNormalView
 {
     [self removeViews];
     // 添加背景
@@ -156,7 +156,7 @@
     }
 }
 
-- (void) createHighLightView
+- (void)createHighLightView
 {
     [self removeViews];
     if (_highlightBackgroundView && !_highlightBackgroundView.superview) {

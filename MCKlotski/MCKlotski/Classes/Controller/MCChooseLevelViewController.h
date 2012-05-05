@@ -8,8 +8,10 @@
 
 #import "MCViewController.h"
 
-@interface MCChooseLevelViewController : MCViewController
-<UIScrollViewDelegate, UIAlertViewDelegate>{
+@interface MCChooseLevelViewController : MCViewController<
+  UIScrollViewDelegate, 
+  UIAlertViewDelegate
+> {
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
     

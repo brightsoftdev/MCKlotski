@@ -10,7 +10,7 @@
 
 @interface MCViewController : UIViewController
 
-- (void) refreshView;
+- (void)refreshView;
 
 /**
  * button event, control sound

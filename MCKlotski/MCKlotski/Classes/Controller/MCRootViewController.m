@@ -13,9 +13,9 @@
 
 @interface MCRootViewController (Privates)
 
-- (void) createSubViews;
+- (void)createSubViews;
 
-- (UIButton *) addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector;
+- (UIButton *)addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector;
 
 
 @end
@@ -31,19 +31,19 @@
     return self;
 }
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     [self createSubViews];
 }
 
-- (void) viewDidUnload
+- (void)viewDidUnload
 {
     _btnPlay = nil;
     [super viewDidUnload];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     MCRelease(_btnPlay);
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -52,7 +52,7 @@
 
 
 #pragma mark - Private Method
-- (void) createSubViews
+- (void)createSubViews
 {
     UIImage *image = [UIImage imageNamed:@"menu_normal.png"];
     float width = image.size.width;
@@ -71,7 +71,7 @@
     [self.view addSubview:[self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(levelsAction:)]];
 }
 
-- (UIButton *) addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector  
+- (UIButton *)addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector  
 {
     UIButton *button = [[UIButton alloc] initWithFrame:rect];
     UIImage *image = nil;
@@ -86,13 +86,13 @@
 }
 
 #pragma mark - action
-- (void) playAction:(id)sender
+- (void)playAction:(id)sender
 {
     [super ButtonAction:sender];
     NSLog(@"fasd");
 }
 
-- (void) levelsAction:(id)sender
+- (void)levelsAction:(id)sender
 {
     [super ButtonAction:sender];
     MCChooseLevelViewController *levelViewController = [[MCChooseLevelViewController alloc] init];

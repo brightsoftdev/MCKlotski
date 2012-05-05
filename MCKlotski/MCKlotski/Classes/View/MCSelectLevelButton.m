@@ -11,13 +11,13 @@
 
 @interface MCSelectLevelButton (Private)
 
-- (void) createSubViews;
+- (void)createSubViews;
 
-- (NSString *) getID:(int) theID;
+- (NSString *)getID:(int) theID;
 
-- (void) customView;
+- (void)customView;
 
-- (void) resetView;
+- (void)resetView;
 
 @end
 
@@ -30,7 +30,7 @@
 @synthesize flagView = _flagView;
 @synthesize lblNumber = _lblNumber;
 
-- (id) initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame])) {
          NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -39,7 +39,7 @@
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     MCRelease(_gate);
     MCRelease(_lblNumber);
@@ -50,7 +50,7 @@
     [super dealloc];
 }
 #pragma mark - public method
-- (void) refreshWithGate:(MCGate *)gate
+- (void)refreshWithGate:(MCGate *)gate
 {
     self.gate = gate;
     [self resetView];
@@ -93,7 +93,7 @@
 }
 
 #pragma mark - private method
-- (void) createSubViews
+- (void)createSubViews
 {
     UIImageView *bgimg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     bgimg.backgroundColor = [UIColor clearColor];
@@ -121,7 +121,7 @@
     [numLabel release];
 }
 
-- (void) resetView
+- (void)resetView
 {
     self.enabled = NO;
     self.backgroundView.image = nil;
@@ -132,7 +132,7 @@
    // self.lblNumber.center = CGPointMake(35, 42);
 }
 
-- (void) customView
+- (void)customView
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     view.userInteractionEnabled = NO;
@@ -156,7 +156,7 @@
 }
 
 #pragma mark - overwrite
-- (void) createNormalView
+- (void)createNormalView
 {
     if (!self.highlightView) {
         [self customView];

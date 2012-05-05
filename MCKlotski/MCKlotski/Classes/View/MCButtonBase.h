@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    MCBUTTON_STATE_NORMAL = 0, 
-    MCBUTTON_STATE_HIGHLIGHT,
-}MCBUTTON_STATE;
+    kButtonStateNormal = 0, 
+    kButtonStateHighLight,
+}kButtonState;
 
 @interface MCButtonBase : UIView{
     id _target;
@@ -23,9 +23,9 @@ typedef enum {
 @property (nonatomic, assign) id target;
 @property (nonatomic, assign) BOOL enabled;
 
-- (void) addTarget:(id)target action:(SEL)selector;
+- (void)addTarget:(id)target action:(SEL)selector;
 
-- (void) createNormalView;
-- (void) createHighLightView;
+- (void)createNormalView;
+- (void)createHighLightView;
 
 @end

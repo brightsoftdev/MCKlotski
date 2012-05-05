@@ -8,7 +8,7 @@
 
 #import "MCGate.h"
 
-#define InvalidGateID -1
+#define kInvalidGateID -1
 
 @implementation MCGate
 
@@ -18,12 +18,12 @@
 @synthesize isLocked = _isLocked;
 @synthesize layout = _layout;
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     if ((self = [self initWithDictionary:dict])) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         int gateid = [[dict objectForKey:KeyGateID] intValue];
-        if (InvalidGateID != gateid) {
+        if (kInvalidGateID != gateid) {
             self.gateID = gateid;
         }
         self.passMin = [[dict objectForKey:KeyPassMin] intValue];
@@ -34,7 +34,7 @@
     return self;
 }
 
-- (id) initWithCoder:(NSCoder *)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super initWithCoder:coder];
@@ -48,14 +48,14 @@
 
 - (void)initAttributes
 {
-    self.gateID = InvalidGateID;
+    self.gateID = kInvalidGateID;
     self.passMin = 0;
     self.passMoveCount = 0;
     self.isLocked = YES;
     self.layout = nil;
 }
 
-- (void) encodeWithCoder:(NSCoder *)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
     [coder encodeInt:self.gateID forKey:KeyGateID];
@@ -65,7 +65,7 @@
     [coder encodeObject:self.layout forKey:KeyLayout];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     self.layout = nil;
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -96,7 +96,7 @@
     return gate;
 }
 
-- (BOOL) isInvalidGate
+- (BOOL)isInvalidGate
 {
     if (self.gateID < 0) {
         return YES;

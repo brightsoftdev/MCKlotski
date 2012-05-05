@@ -159,6 +159,10 @@
 		2185C5EA155401470092B250 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E8155401470092B250 /* MCBlockView.m */; };
 		2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
 		2185C5F2155412930092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
+		21A6E4E11554B75100006893 /* TestBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E01554B75100006893 /* TestBlockViewController.m */; };
+		21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E31554B83800006893 /* TestRootViewController.m */; };
+		21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A6E4E41554B83800006893 /* TestRootViewController.xib */; };
+		21A6E4E91554BA6C00006893 /* TestDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E81554BA6C00006893 /* TestDisplayViewController.m */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -180,8 +184,6 @@
 		EB0AE8431542F005008497E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE8411542F005008497E7 /* InfoPlist.strings */; };
 		EB0AE8451542F005008497E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE8441542F005008497E7 /* main.m */; };
 		EB0AE8491542F005008497E7 /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE8481542F005008497E7 /* TestAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EB0AE84C1542F005008497E7 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0AE84B1542F005008497E7 /* TestViewController.m */; };
-		EB0AE84F1542F005008497E7 /* MCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0AE84D1542F005008497E7 /* MCViewController.xib */; };
 		EB179A0B154A3D0200E32807 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB179A0A154A3D0200E32807 /* MCButton.m */; };
 		EB179A0D154A3D0D00E32807 /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB179A0A154A3D0200E32807 /* MCButton.m */; };
 		EB179A10154A7E1B00E32807 /* MCSelectLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB179A0F154A7E1B00E32807 /* MCSelectLevelButton.m */; };
@@ -397,6 +399,13 @@
 		2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCustomGateViewController.m; sourceTree = "<group>"; };
 		2185C5E7155401470092B250 /* MCBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBlockView.h; sourceTree = "<group>"; };
 		2185C5E8155401470092B250 /* MCBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBlockView.m; sourceTree = "<group>"; };
+		21A6E4DF1554B75100006893 /* TestBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBlockViewController.h; sourceTree = "<group>"; };
+		21A6E4E01554B75100006893 /* TestBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBlockViewController.m; sourceTree = "<group>"; };
+		21A6E4E21554B83800006893 /* TestRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRootViewController.h; sourceTree = "<group>"; };
+		21A6E4E31554B83800006893 /* TestRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRootViewController.m; sourceTree = "<group>"; };
+		21A6E4E41554B83800006893 /* TestRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestRootViewController.xib; sourceTree = "<group>"; };
+		21A6E4E71554BA6C00006893 /* TestDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDisplayViewController.h; sourceTree = "<group>"; };
+		21A6E4E81554BA6C00006893 /* TestDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDisplayViewController.m; sourceTree = "<group>"; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -423,9 +432,6 @@
 		EB0AE8461542F005008497E7 /* Testes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Testes-Prefix.pch"; sourceTree = "<group>"; };
 		EB0AE8471542F005008497E7 /* TestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAppDelegate.h; sourceTree = "<group>"; };
 		EB0AE8481542F005008497E7 /* TestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppDelegate.m; sourceTree = "<group>"; };
-		EB0AE84A1542F005008497E7 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		EB0AE84B1542F005008497E7 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		EB0AE84E1542F005008497E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCViewController.xib; sourceTree = "<group>"; };
 		EB179A09154A3D0200E32807 /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCButton.h; sourceTree = "<group>"; };
 		EB179A0A154A3D0200E32807 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
 		EB179A0E154A7E1B00E32807 /* MCSelectLevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSelectLevelButton.h; sourceTree = "<group>"; };
@@ -911,7 +917,6 @@
 		EB21445F1543F0DB00F6D171 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB0AE84D1542F005008497E7 /* MCViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -919,8 +924,13 @@
 		EB2144681543F33A00F6D171 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EB0AE84A1542F005008497E7 /* TestViewController.h */,
-				EB0AE84B1542F005008497E7 /* TestViewController.m */,
+				21A6E4DF1554B75100006893 /* TestBlockViewController.h */,
+				21A6E4E01554B75100006893 /* TestBlockViewController.m */,
+				21A6E4E21554B83800006893 /* TestRootViewController.h */,
+				21A6E4E31554B83800006893 /* TestRootViewController.m */,
+				21A6E4E41554B83800006893 /* TestRootViewController.xib */,
+				21A6E4E71554BA6C00006893 /* TestDisplayViewController.h */,
+				21A6E4E81554BA6C00006893 /* TestDisplayViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1148,7 +1158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0AE8431542F005008497E7 /* InfoPlist.strings in Resources */,
-				EB0AE84F1542F005008497E7 /* MCViewController.xib in Resources */,
 				EB21449215440A3700F6D171 /* KlotskiLayout.json in Resources */,
 				EB2144B015441F9F00F6D171 /* Default.png in Resources */,
 				EB2144B215441F9F00F6D171 /* Default@2x.png in Resources */,
@@ -1225,6 +1234,7 @@
 				213B0B4A1552682C0056D938 /* yellow_8@2x.png in Resources */,
 				213B0B4C1552682C0056D938 /* yellow_9.png in Resources */,
 				213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */,
+				21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,7 +1304,6 @@
 			files = (
 				EB0AE8451542F005008497E7 /* main.m in Sources */,
 				EB0AE8491542F005008497E7 /* TestAppDelegate.m in Sources */,
-				EB0AE84C1542F005008497E7 /* TestViewController.m in Sources */,
 				EB21449615440C3B00F6D171 /* MCModel.m in Sources */,
 				EB21449A15440C6D00F6D171 /* MCGate.m in Sources */,
 				EB2144A415440E8600F6D171 /* MCUtil.m in Sources */,
@@ -1342,6 +1351,9 @@
 				2185C5EA155401470092B250 /* MCBlockView.m in Sources */,
 				2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */,
 				2185C5F2155412930092B250 /* MCGateViewController.m in Sources */,
+				21A6E4E11554B75100006893 /* TestBlockViewController.m in Sources */,
+				21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */,
+				21A6E4E91554BA6C00006893 /* TestDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1362,14 +1374,6 @@
 				EB0AE8421542F005008497E7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		EB0AE84D1542F005008497E7 /* MCViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB0AE84E1542F005008497E7 /* en */,
-			);
-			name = MCViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

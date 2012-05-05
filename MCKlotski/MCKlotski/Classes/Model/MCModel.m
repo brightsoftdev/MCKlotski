@@ -19,7 +19,7 @@
     return self;
 }
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];
     if (self) {
@@ -28,13 +28,13 @@
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
 
-- (void) refreshWithModel:(MCModel *)model
+- (void)refreshWithModel:(MCModel *)model
 {
     
 }
@@ -58,7 +58,7 @@
 }
 
 #pragma mark - Private method
-- (void) initAttributes
+- (void)initAttributes
 {}
 
 @end

@@ -15,6 +15,6 @@
 
 - (void)initAttributes;
 
-- (void) refreshWithModel:(MCModel *)model;
+- (void)refreshWithModel:(MCModel *)model;
 
 @end

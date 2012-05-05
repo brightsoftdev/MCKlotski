@@ -100,7 +100,7 @@
     [[GGSoundManager sharedGGSoundManager] playEffect:@"Click.wav"];
 }
 #define SHAnimationDuration 0.3
-- (void) showWindow
+- (void)showWindow
 {
     UIWindow *theWindow = [MCUtil window];
     theWindow.alpha = 0.4;
@@ -112,12 +112,12 @@
     [UIWindow commitAnimations];
 }
 
-- (void) windowDidShow
+- (void)windowDidShow
 {
     
 }
 
-- (void) hideWindow
+- (void)hideWindow
 {
     UIWindow *theWindow = [MCUtil window];
     theWindow.alpha = 0.7;
@@ -129,7 +129,7 @@
     [UIWindow commitAnimations];
 }
 
-- (void) windowDidHide
+- (void)windowDidHide
 {
     
 }

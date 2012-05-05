@@ -38,8 +38,8 @@ typedef enum DM_DATA_E{
 DECLARE_SINGLETON(MCDataManager);
 
 // observer
-- (void) addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
-- (void) removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
+- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
+- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
 
 /**
  * 载入本地数据

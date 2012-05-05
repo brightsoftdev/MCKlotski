@@ -10,7 +10,7 @@
 #import "MCUtil.h"
 #import "GGFoundation.h"
 
-#define KTransitionDuration 0.22
+#define kTransitionDuration 0.22
 
 @interface MCAlertView (Private)
 
@@ -56,7 +56,7 @@
 }
 
 #pragma mark - public method
-- (void) showAlertView
+- (void)showAlertView
 {
     if (self.isShowing) {
         // 已经显示了
@@ -67,7 +67,7 @@
 }
 
 #pragma mark - Private method
-- (void) hideAlertView
+- (void)hideAlertView
 {
     if (!self.isShowing) {
         return;
@@ -78,11 +78,11 @@
 - (void)updateAlertFrame
 {}
 
-- (void) showAnimation
+- (void)showAnimation
 {
     self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.65, 0.65);
     [UIView beginAnimations:@"AlertShowAnimation" context:nil];
-    [UIView setAnimationDuration:KTransitionDuration/1.5];
+    [UIView setAnimationDuration:kTransitionDuration/1.5];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationDidStopSelector:@selector(showAnimationStep1)];
     self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.15, 1.15);
@@ -90,7 +90,7 @@
 }
 - (void)showAnimationStep1 {
 	[UIView beginAnimations:@"GOAlertShowAnimation" context:nil];
-	[UIView setAnimationDuration:KTransitionDuration/2.5];
+	[UIView setAnimationDuration:kTransitionDuration/2.5];
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(showAnimationStep2)];
 	self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.85, 0.85);
@@ -98,7 +98,7 @@
 }
 - (void)showAnimationStep2 {
 	[UIView beginAnimations:@"GOAlertShowAnimation" context:nil];
-	[UIView setAnimationDuration:KTransitionDuration/2.5];
+	[UIView setAnimationDuration:kTransitionDuration/2.5];
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(showAnimationStep3)];
 	self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.05, 1.05);
@@ -106,7 +106,7 @@
 }
 - (void)showAnimationStep3 {
 	[UIView beginAnimations:@"GOAlertShowAnimation" context:nil];
-	[UIView setAnimationDuration:KTransitionDuration/2.5];
+	[UIView setAnimationDuration:kTransitionDuration/2.5];
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(showAnimationDidStop)];
 	self.transform = CGAffineTransformIdentity;
@@ -122,7 +122,7 @@
     [UIView beginAnimations:@"HideAlertAnimation" context:nil];
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(hideAnimationDidStop)];
-	[UIView setAnimationDuration:KTransitionDuration/1.5];
+	[UIView setAnimationDuration:kTransitionDuration/1.5];
 	self.alpha = 0.0;
 	[UIView commitAnimations];
 }

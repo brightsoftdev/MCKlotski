@@ -18,17 +18,17 @@
  * 触摸 块的手势
  */
 typedef enum TOUCH_BLOCK_GESTURE{
-    GESTURE_INVALID = 0,
-    GESTURE_TO_LEFT,
-    GESTURE_TO_RIGHT,
-    GESTURE_TO_UP,
-    GESTURE_TO_DOWN,
-}BLOCK_GESTURE;
+    kGestureInvalid = 0,
+    kGestureToLeft,
+    kGestureToRight,
+    kGestureToUp,
+    kGestureToDown,
+}kBlockGesture;
 
 
 @interface MCBlockView : UIView{
     id<BlockGestureDelegate> _delegate;
-    BLOCK_GESTURE _currentGesture;
+    kBlockGesture _currentGesture;
     MCBlock *_block;
     CGRect _oldFrame;
     
@@ -38,7 +38,7 @@ typedef enum TOUCH_BLOCK_GESTURE{
 }
 
 @property (nonatomic, assign)id<BlockGestureDelegate> delegate;
-@property (nonatomic, assign)BLOCK_GESTURE currentGesture;
+@property (nonatomic, assign)kBlockGesture currentGesture;
 // 被触摸的blockView的MCBlock实例
 @property (nonatomic, retain)MCBlock *block;
 // 为移动之前块的frame
@@ -49,7 +49,7 @@ typedef enum TOUCH_BLOCK_GESTURE{
 /**
  * 初始化方法
  */
-- (id) initWithBlock:(MCBlock *)block;
+- (id)initWithBlock:(MCBlock *)block;
 
 @end
 
@@ -61,13 +61,13 @@ typedef enum TOUCH_BLOCK_GESTURE{
 @protocol BlockGestureDelegate
 
 @required
-// 将要移动
-- (void)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(BLOCK_GESTURE)blockGesture;
+// 将要移动,是否准备好
+- (BOOL)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 // 移动开始
-- (void)blockBeganMoveWith:(MCBlockView *)blockView andGesture:(BLOCK_GESTURE)blockGesture;
+- (void)blockBeganMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 // 移动结束
-- (void)blockEndMoveWith:(MCBlockView *)blockView andGesture:(BLOCK_GESTURE)blockGesture;
+- (void)blockEndMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 // 块的Frame改变
-- (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(BLOCK_GESTURE)blockGesture;
+- (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 
 @end

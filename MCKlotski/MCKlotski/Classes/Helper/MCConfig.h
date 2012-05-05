@@ -9,7 +9,7 @@
 #ifndef MCKlotski_MCConfig_h
 #define MCKlotski_MCConfig_h
 
-#define InvaluableBlockID -1
+#define kInvaluableBlockID -1
 
 #define MENU_FONT @"FZKATJW--GB1-0" // 方正卡通简体
 //#define MENU_FONT @"-GXSX" // 国祥手写体

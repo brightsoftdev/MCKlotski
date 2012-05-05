@@ -11,9 +11,8 @@
 #import "MCConfig.h"
 
 @interface MCDataManager (Privates)
-
 // observer
-- (void) notifyObserverForState:(DM_DATA)dmData;
+- (void)notifyObserverForState:(DM_DATA)dmData;
 
 @end
 
@@ -24,7 +23,7 @@
 
 SYNTHESIZE_SINGLETON(MCDataManager);
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     if ((self = [self initWithDictionary:dict])) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -32,7 +31,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     return self;
 }
 
-- (id) init
+- (id)init
 {
     if ((self = [super init])) {
         NSMutableArray *observers = [NSMutableArray arrayWithCapacity:DATA_STATE_COUNT];
@@ -44,7 +43,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     [_gates release];
     _gates = nil;
@@ -55,7 +54,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 }
 
 #pragma mark - set method
-- (void) setGates:(NSArray *)gates
+- (void)setGates:(NSArray *)gates
 {
     if (self.gates != gates) {
         [_gates release];
@@ -75,20 +74,20 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     }
 }
 
-- (void) addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
+- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
 {
     NSMutableSet *set = [self.theObservers objectAtIndex:dmData];
     [set addObject:observer];
 }
 
-- (void) removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
+- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
 {
     NSMutableSet *set = [self.theObservers objectAtIndex:dmData];
     [set removeObject:observer];
 }
 
 #pragma mark - data opertor
-- (void) loadLocalData
+- (void)loadLocalData
 {
     NSString *userData = nil;
     BOOL isFirstPlayUser = [GGPath isFileExist:LOCAL_DATA_FILE];
@@ -99,7 +98,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     }
 }
 
-- (void) saveDataToLocal
+- (void)saveDataToLocal
 {
     
 }

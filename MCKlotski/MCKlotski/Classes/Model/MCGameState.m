@@ -16,7 +16,7 @@
 @synthesize steps = _steps;
 @synthesize isFirstStep = _isFirstSetp;
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     if ((self = [self initWithDictionary:dict])) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id) initWithCoder:(NSCoder *)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super initWithCoder:coder];
@@ -45,12 +45,12 @@
     self.isFirstStep = YES;
 }
 
-- (void) encodeWithCoder:(NSCoder *)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     MCRelease(_frames);
     MCRelease(_steps);
@@ -68,7 +68,7 @@
     }
 }
 
-- (BOOL) isResumeWithGateID:(int)gateID
+- (BOOL)isResumeWithGateID:(int)gateID
 {
     if (self.currentGateID != gateID) {
         return NO; // 出现了错误

@@ -14,12 +14,12 @@
 @synthesize frameOld = _frameOld;
 @synthesize isNewActiving = _isNewActiving;
 
-- (id) initWithDictionary:(NSDictionary *)dict
+- (id)initWithDictionary:(NSDictionary *)dict
 {
     if ((self = [self initWithDictionary:dict])) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         int blockID = [[dict objectForKey:KeyBlockID] intValue];
-        if (InvaluableBlockID != blockID) {
+        if (kInvaluableBlockID != blockID) {
             self.blockID = blockID;
         }
         self.frameOld = CGRectFromString([dict objectForKey:KeyFrameOld]);
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (id) initWithCoder:(NSCoder *)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super initWithCoder:coder];
@@ -41,12 +41,12 @@
 
 - (void)initAttributes
 {
-    self.blockID =  InvaluableBlockID;
+    self.blockID = kInvaluableBlockID;
     self.frameOld = CGRectZero;
     self.isNewActiving = NO;
 }
 
-- (void) encodeWithCoder:(NSCoder *)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
     [coder encodeInt:self.blockID forKey:KeyBlockID];
@@ -54,7 +54,7 @@
     [coder encodeBool:self.isNewActiving forKey:KeyIsNewActiving];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];

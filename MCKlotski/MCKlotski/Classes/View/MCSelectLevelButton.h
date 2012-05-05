@@ -28,6 +28,6 @@
 @property (nonatomic, retain) UIImageView *flagView;
 @property (nonatomic, retain) UILabel *lblNumber;
 
-- (void) refreshWithGate:(MCGate *)gate;
+- (void)refreshWithGate:(MCGate *)gate;
 
 @end

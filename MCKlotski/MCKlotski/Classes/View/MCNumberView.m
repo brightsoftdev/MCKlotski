@@ -13,7 +13,7 @@
 
 @interface MCNumberView(Privates)
 
-- (NSArray *) createNumberImages;
+- (NSArray *)createNumberImages;
 
 // 计算数字的位数
 - (int) digit;
@@ -47,7 +47,7 @@
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     MCRelease(_numberImages);
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
@@ -55,7 +55,7 @@
 }
 
 #pragma mark - set and refresh
-- (void) setValue:(int)value
+- (void)setValue:(int)value
 {
     _value = value;
     int theDigit = [self digit];
@@ -68,14 +68,14 @@
     [self refreshImages];
 }
 
-- (void) setNumberType:(NumberRBGType)numberType
+- (void)setNumberType:(NumberRBGType)numberType
 {
     _numberType = numberType;
     [self refreshImages];
 }
 
 #pragma mark - Privates method
-- (NSArray *) createNumberImages
+- (NSArray *)createNumberImages
 {
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:10];
     float x = 0.0;
@@ -95,7 +95,7 @@
     return images;
 }
 
-- (int) digit
+- (int)digit
 {
     // 判断value是几位数
     int num = 0;
@@ -110,7 +110,7 @@
     return num;
 }
 
-- (void) refreshImages
+- (void)refreshImages
 {
     int theValue = self.value;
     int index = 10;
@@ -142,25 +142,25 @@
     }
 }
 
-- (UIImage *) redNumberImageWithNumber:(int)num
+- (UIImage *)redNumberImageWithNumber:(int)num
 {
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"red_%d", num]];
     return image;
 }
 
-- (UIImage *) whiteNumberImageWithNumber:(int)num
+- (UIImage *)whiteNumberImageWithNumber:(int)num
 {
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"white_%d", num]];
     return image;
 }
 
-- (UIImage *) grayNumberImageWithNumber:(int)num
+- (UIImage *)grayNumberImageWithNumber:(int)num
 {
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"gray_%d", num]];
     return image;
 }
 
-- (UIImage *) yellowNumberImageWithNumber:(int)num
+- (UIImage *)yellowNumberImageWithNumber:(int)num
 {
     UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"yellow_%d", num]];
     return image;

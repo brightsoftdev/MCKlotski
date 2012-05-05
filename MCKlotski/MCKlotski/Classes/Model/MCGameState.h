@@ -23,6 +23,6 @@
 @property (nonatomic, retain) NSArray *frames;
 @property (nonatomic, assign) BOOL isFirstStep; // 是否第一步
 
-- (BOOL) isResumeWithGateID:(int)gateID;
+- (BOOL)isResumeWithGateID:(int)gateID;
 
 @end

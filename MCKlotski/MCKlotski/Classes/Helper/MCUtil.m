@@ -21,14 +21,14 @@
     return [MCUtil appDelegate].window;
 }
 
-+ (void) clearAllSubViewsWith:(UIView *)view
++ (void)clearAllSubViewsWith:(UIView *)view
 {
     for (UIView *subView in view.subviews) {
         [subView removeFromSuperview];
     }
 }
 
-+ (void) saveLocaData:(NSString *)fileName data:(NSString *)str
++ (void)saveLocaData:(NSString *)fileName data:(NSString *)str
 {
     NSArray *arrDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [arrDir objectAtIndex:0];

@@ -10,13 +10,13 @@
 
 @interface MCButtonBase (Private)
 
-- (void) buttonTapDown;
-- (void) buttonTapUp;
+- (void)buttonTapDown;
+- (void)buttonTapUp;
 
-- (void) refreshButtonViewWith:(MCBUTTON_STATE)state;
-- (void) initVariable;
+- (void)refreshButtonViewWith:(kButtonState)state;
+- (void)initVariable;
 
-- (void) performAction;
+- (void)performAction;
 
 @end
 
@@ -35,13 +35,13 @@
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
 
-- (void) setEnabled:(BOOL)enabled
+- (void)setEnabled:(BOOL)enabled
 {
     _enabled = enabled;
     self.userInteractionEnabled = _enabled;
@@ -73,32 +73,32 @@
 }
 
 #pragma mark - public method
-- (void) addTarget:(id)target action:(SEL)selector
+- (void)addTarget:(id)target action:(SEL)selector
 {
     self.target = target;
     _selector = selector;
 }
 
 #pragma mark - private method
-- (void) buttonTapDown
+- (void)buttonTapDown
 {
     [self initVariable];
-    [self refreshButtonViewWith:MCBUTTON_STATE_HIGHLIGHT];
+    [self refreshButtonViewWith:kButtonStateHighLight];
 }
 
-- (void) buttonTapUp
+- (void)buttonTapUp
 {
-    [self refreshButtonViewWith:MCBUTTON_STATE_NORMAL];
+    [self refreshButtonViewWith:kButtonStateNormal];
 }
 
-- (void) refreshButtonViewWith:(MCBUTTON_STATE)state
+- (void)refreshButtonViewWith:(kButtonState)state
 {
     switch (state) {
-        case MCBUTTON_STATE_NORMAL:
+        case kButtonStateNormal:
             [self createNormalView];
             break;
             
-        case MCBUTTON_STATE_HIGHLIGHT:
+        case kButtonStateHighLight:
             [self createHighLightView];
             break;
             
@@ -123,7 +123,7 @@
     
 }
 
-- (void) performAction
+- (void)performAction
 {
     if (!self.target) {
         return;

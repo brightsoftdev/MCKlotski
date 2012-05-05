@@ -8,7 +8,7 @@
 
 #import "TestAppDelegate.h"
 
-#import "TestViewController.h"
+#import "TestRootViewController.h"
 
 @implementation TestAppDelegate
 
@@ -27,7 +27,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[TestViewController alloc] initWithNibName:@"MCViewController" bundle:nil] autorelease];
+    self.viewController = [[[TestRootViewController alloc] initWithNibName:@"TestRootViewController" bundle:nil] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.viewController] autorelease];
     [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];

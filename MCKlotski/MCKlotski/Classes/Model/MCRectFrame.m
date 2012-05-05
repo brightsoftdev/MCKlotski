@@ -30,7 +30,7 @@
     return self;
 }
 
-- (id) initWithCoder:(NSCoder *)coder
+- (id)initWithCoder:(NSCoder *)coder
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super initWithCoder:coder];
@@ -47,7 +47,7 @@
 	self.frameRect = CGRectZero;
 }
 
-- (void) encodeWithCoder:(NSCoder *)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
     [coder encodeFloat:self.frameX forKey:KeyFrameX];
@@ -57,7 +57,7 @@
     [coder encodeObject:NSStringFromCGRect(self.frameRect) forKey:KeyFrameRect];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];

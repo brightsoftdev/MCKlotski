@@ -19,12 +19,11 @@
 /**
  * 清除View的所有子View
  */
-+ (void) clearAllSubViewsWith:(UIView *)view;
++ (void)clearAllSubViewsWith:(UIView *)view;
 
 /**
  * 保存本地数据
  */
-+ (void) saveLocaData:(NSString *)fileName data:(NSString *)str;
-
++ (void)saveLocaData:(NSString *)fileName data:(NSString *)str;
 
 @end
