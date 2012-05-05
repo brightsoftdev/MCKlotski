@@ -25,6 +25,7 @@ typedef enum DM_DATA_E{
 
 @interface MCDataManager : NSObject{
     NSArray *_gates;
+    NSArray *_blockViews; // 存放所有的blockView
     
     NSMutableArray *_theObservers;
 }
@@ -33,6 +34,7 @@ typedef enum DM_DATA_E{
  * 存放所有的关
  */
 @property (nonatomic, retain) NSArray *gates;
+@property (nonatomic, retain) NSArray *blockViews;
 @property (nonatomic, retain) NSMutableArray *theObservers;
 
 DECLARE_SINGLETON(MCDataManager);

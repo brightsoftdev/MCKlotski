@@ -8,6 +8,7 @@
 
 #import "MCBlockView.h"
 #import "MCBlock.h"
+#import "MCDataManager.h"
 
 @interface MCBlockView (Privates)
 
@@ -21,6 +22,12 @@
 - (void)moveBlockView;
 // 在touchend时校正blockView的Frame
 - (void)reviseBlockViewFrame;
+// 校正动画
+- (void)reviseAnimationBeginWithFrame:(CGRect)frame;
+// 移动动画
+- (void)moveAnimationWithFrame:(CGRect)frame;
+// 设置BlockView的Frame, 防止超出边界
+- (void)resetBlockViewFrameWithFrame:(CGRect)frame;
 
 // 通过touchBeganPoint和touchMovePoint判定手势类型
 - (kBlockGesture)gestureWithBegin:(CGPoint)beginPoint andEnd:(CGPoint)endPoint;
@@ -40,7 +47,13 @@
 - (void)moveBlockViewWithDistance:(float)distance;
 
 // 重新设置BlockView的Frame
-- (void)resetBlockViewFrameWithFrame:(CGRect)frame;
+- (void)resetBlockViewFrameWithFrame:(CGRect)frame firstObstract:(MCBlockView *)firstObstract;
+
+// 返回当前触摸的BlockView可达到的区域（frame）
+- (CGRect)frameShouldMoveBlockView;
+
+// 取到直接阻挡blockView移动的BlockView
+- (MCBlockView *)firstBlockVergeOnGesture:(kBlockGesture)gesture;
 
 @end
 
@@ -78,9 +91,9 @@
         // 初始化块精灵背景
         UIImageView *bgImageView= [[UIImageView alloc] initWithFrame:
                                    CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        bgImageView.backgroundColor = [UIColor clearColor];
+        bgImageView.backgroundColor = [UIColor blueColor];
         
-        bgImageView.image = [self.block blockImage];
+        //bgImageView.image = [self.block blockImage];
         NSLog(@"%@", bgImageView.image);
         [self addSubview:bgImageView];
         [bgImageView release];
@@ -145,6 +158,83 @@
     [super touchesCancelled:touches withEvent:event];
 }
 
+#pragma mark - public method
+- (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y
+{
+    float tempX = 0.0f;
+    float tempY = 0.0f;
+    float tempW = 0.0f;
+    float tempH = 0.0f;
+    
+    tempX = BLOCKVIEWWIDTH * x;
+    tempY = BLOCKVIEWWIDTH * y;
+    
+    switch (blockType) {
+        case kBlockTypeSmall:
+            tempH = tempW = BLOCKVIEWWIDTH;
+            break;
+            
+        case kBlockTypeNormalH:
+            tempW = BLOCKVIEWWIDTH * 2;
+            tempH = BLOCKVIEWWIDTH;
+            break;
+            
+        case kBlockTypeNormalV:
+            tempW = BLOCKVIEWWIDTH;
+            tempH = BLOCKVIEWWIDTH * 2;
+            break;
+            
+        case kBlockTypeLager:
+            tempH = tempW  = BLOCKVIEWWIDTH * 2;
+            break;
+            
+        default:
+            NSAssert(kBlockTypeInvalid, @"invalid block type!!!");
+            break;
+    }
+    return CGRectMake(tempX, tempY, tempW, tempH);
+}
+
+- (void)moveBlockViewWithFrame:(CGRect)newFrame
+{
+    [self notifyDelegateBeganMove];
+    self.currentGesture = [self gestureWithBegin:self.frame.origin andEnd:newFrame.origin];
+    self.oldFrame = self.frame;
+    [self moveAnimationWithFrame:newFrame];
+}
+
+- (BOOL)isVergeBoundary
+{
+    switch (self.currentGesture) {
+        case kGestureToUp:
+            if (self.frame.origin.y > kBoxY) {
+                return NO;
+            }
+            break;
+            
+        case kGestureToDown:
+            if (self.frame.origin.y + self.frame.size.height < kBoxHeight) {
+                return NO;
+            }
+            break;
+            
+        case kGestureToLeft:
+            if (self.frame.origin.x > kBoxX) {
+                return NO;
+            }
+            break;
+            
+        case kGestureToRight:
+            if (self.frame.origin.x + self.frame.size.width < kBoxWidth) {
+                return NO;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    return YES;
+}
 
 #pragma mark - private method
 - (void)initAttributes
@@ -159,35 +249,10 @@
 
 - (CGRect)frameWithBlock:(MCBlock *)block
 {
-    float x = BLOCKVIEWWIDTH * block.positionX;
-    float y = BLOCKVIEWWIDTH * block.positionY;
-    float width = 0.0;
-    float height = 0.0;
-    
-    switch (block.blockType) {
-        case kBlockTypeSmall:
-            width = height = BLOCKVIEWWIDTH;
-            break;
-            
-        case kBlockTypeNormalH:
-            width = BLOCKVIEWWIDTH * 2;
-            height = BLOCKVIEWWIDTH;
-            break;
-        
-        case kBlockTypeNormalV:
-            width = BLOCKVIEWWIDTH;
-            height = BLOCKVIEWWIDTH * 2;
-            break;
-            
-        case kBlockTypeLager:
-            width = height = BLOCKVIEWWIDTH * 2;
-            break;
-            
-        default:
-            NSAssert(kBlockTypeInvalid, @"invalid block type!!!");
-            break;
-    }
-    return CGRectMake(x, y, width, height);
+    int blockType = block.blockType;
+    int x = block.positionX;
+    int y = block.positionY;
+    return [self frameWithBlockType:blockType positionX:x positionY:y];
 }
 
 - (void)moveBlockView
@@ -213,12 +278,97 @@
     [self moveBlockViewWithDistance:distane];
 }
 
-// 校正frame
+// 校正frame， 保证每次移动的距离都是BLOCKVIEWWIDTH的整数倍
 - (void)reviseBlockViewFrame
 {
+    CGRect revisedFrame = self.frame;
+    float mdistance = 0.0f;
+    switch (self.currentGesture) {
+        case kGestureToUp:
+            mdistance = fabsf(self.oldFrame.origin.y - self.frame.origin.y);
+            break;
+            
+        case kGestureToDown:
+            mdistance = fabsf(self.oldFrame.origin.y - self.frame.origin.y);
+            break;
+            
+        case kGestureToLeft:
+            mdistance = fabsf(self.oldFrame.origin.x - self.frame.origin.x);
+            break;
+            
+        case kGestureToRight:
+            mdistance = fabsf(self.oldFrame.origin.x - self.frame.origin.x);
+            break;
+        default:
+            break;
+    }
     
+    // 转换为棋盘坐标
+    float quo = mdistance / BLOCKVIEWWIDTH;
+    int intQuo = (int)quo;
+    
+    // 移动超过（BLOCKVIEWWIDTH / 2） 时按一格算, 否则按0计算
+    float res = mdistance - intQuo * BLOCKVIEWWIDTH;
+    res = res > BLOCKVIEWWIDTH / 2.0 ? BLOCKVIEWWIDTH : 0.0;
+    mdistance = intQuo * BLOCKVIEWWIDTH + res;
+    
+    switch (self.currentGesture) {
+        case kGestureToUp:
+            revisedFrame.origin.y = self.oldFrame.origin.y - mdistance;
+            break;
+            
+        case kGestureToDown:
+            revisedFrame.origin.y = self.oldFrame.origin.y + mdistance;
+            break;
+            
+        case kGestureToLeft:
+            revisedFrame.origin.x = self.oldFrame.origin.x - mdistance;
+            break;
+            
+        case kGestureToRight:
+            revisedFrame.origin.x = self.oldFrame.origin.x + mdistance;
+            break;
+        default:
+            break;
+    }
+    if (CGRectEqualToRect(self.frame, revisedFrame)) {
+        [self notifyDelegateEndedMove];
+        return;
+    }
+    
+    [self reviseAnimationBeginWithFrame:revisedFrame];
 }
 
+- (void) reviseAnimationBeginWithFrame:(CGRect)frame
+{
+    [UIView beginAnimations:@"reviseAnimation" context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationDidStopSelector:@selector(reviseAnimationEnd:)];
+    [self resetBlockViewFrameWithFrame:frame];
+    [UIView commitAnimations];
+}
+
+- (void)reviseAnimationEnd:(id)sender
+{
+    [self notifyDelegateEndedMove];
+}
+
+- (void)moveAnimationWithFrame:(CGRect)frame
+{
+    [UIView beginAnimations:@"moveAnimation" context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.1];
+    [UIView setAnimationDidStopSelector:@selector(moveAnimationEnd:)];
+    [self resetBlockViewFrameWithFrame:frame];
+}
+
+- (void)moveAnimationEnd:(id)sender
+{
+    [self notifyDelegateEndedMove];
+}
+
+// 判定手势方向
 - (kBlockGesture)gestureWithBegin:(CGPoint)beginPoint andEnd:(CGPoint)endPoint
 {
     float deltaX = endPoint.x - beginPoint.x;
@@ -233,7 +383,7 @@
         
     }else {
         // 在y方向
-        if (deltaY > 0) {
+        if (deltaY < 0) {
             return kGestureToUp;
         }
         return kGestureToDown;
@@ -259,12 +409,19 @@
 
 - (void)notifyDelegateEndedMove
 {
-    
+    if (self.delegate) {
+        [self.delegate blockEndMoveWith:self andGesture:self.currentGesture];
+    }
+    [self notifyDelegateFrameDidChange];
 }
 
 - (void)notifyDelegateFrameDidChange
 {
-    
+    if (self.delegate) {
+        if (!CGRectEqualToRect(self.oldFrame, self.frame)) {
+            [self.delegate blockFrameDidChangeWith:self andGesture:self.currentGesture];
+        }
+    }
 }
 
 // 手势是否改变
@@ -281,19 +438,19 @@
     float distance = 0.0f;
     switch (self.currentGesture) {
         case kGestureToDown:
-            distance = fabsf(_touchBeganPoint.y - _touchEndPoint.y);
+            distance = fabsf(_touchBeganPoint.y - _touchMovePoint.y);
             break;
         
         case kGestureToLeft:
-            distance = fabsf(_touchBeganPoint.x - _touchEndPoint.x);
+            distance = fabsf(_touchBeganPoint.x - _touchMovePoint.x);
             break;
             
         case kGestureToRight:
-            distance = fabsf(_touchBeganPoint.x - _touchEndPoint.x);
+            distance = fabsf(_touchBeganPoint.x - _touchMovePoint.x);
             break;
             
         case kGestureToUp:
-            distance = fabsf(_touchBeganPoint.y - _touchEndPoint.y);
+            distance = fabsf(_touchBeganPoint.y - _touchMovePoint.y);
             break;
             
         default:
@@ -328,7 +485,183 @@
             break;
     }
     
-    //TODO::
+    MCBlockView *obstract = [self firstBlockVergeOnGesture:self.currentGesture];
+    NSLog(@"obstract : %@", obstract);
+    // 重置BlockView的Frame
+    [self resetBlockViewFrameWithFrame:tempFrame firstObstract:obstract];
+    
+}
+
+// 返回当前触摸的BlockView可达到的区域（frame）
+- (CGRect)frameShouldMoveBlockView
+{
+    CGRect valuableFrame=CGRectZero;
+    switch (self.currentGesture) {
+        case kGestureToUp:
+            valuableFrame = CGRectMake(self.frame.origin.x,
+                                       kBoxY,
+                                       self.frame.size.width,
+                                       self.frame.origin.y - kBoxY);
+            break;
+            
+        case kGestureToDown:
+            valuableFrame = CGRectMake(self.frame.origin.x, 
+                                       self.frame.origin.y + self.frame.size.height, 
+                                       self.frame.size.width, 
+                                       kBoxHeight - (self.frame.size.height + self.frame.origin.y));
+            break;
+            
+        case kGestureToLeft:
+            valuableFrame = CGRectMake(kBoxX, 
+                                       self.frame.origin.y, 
+                                       self.frame.origin.x - kBoxX, 
+                                       self.frame.size.height);
+            break;
+            
+        case kGestureToRight:
+            valuableFrame = CGRectMake(self.frame.origin.x + self.frame.size.width,
+                                       self.frame.origin.y,
+                                       kBoxWidth - (self.frame.origin.x + self.frame.size.width),
+                                       self.frame.size.height);
+            break;
+            
+        default:
+            break;
+    }
+    return valuableFrame;
+}
+
+// 取到直接阻挡blockView移动的BlockView
+- (MCBlockView *)firstBlockVergeOnGesture:(kBlockGesture)gesture
+{
+    MCBlockView *firstBlockView = nil;
+    
+    CGRect valuableFrame = CGRectZero;
+    valuableFrame = [self frameShouldMoveBlockView];
+    
+    // 存储移动过程中挡路的blockView
+    NSMutableArray *obstracts = [NSMutableArray array];
+    for (MCBlockView *blockView in [MCDataManager sharedMCDataManager].blockViews) {
+        if (blockView == self) {
+            // 如果是self， 跳过此次循环
+            continue;
+        }
+        if (CGRectIntersectsRect(valuableFrame, blockView.frame)) {
+            [obstracts addObject:blockView];
+        }
+    }
+    
+    float minDistance = (_currentGesture == kGestureToLeft || _currentGesture == kGestureToRight) ? 
+                        kBoxWidth : kBoxHeight;
+    float currentDistance = 0.0f;
+    for (MCBlockView *blockView in obstracts) {
+        switch (self.currentGesture) {
+            case kGestureToUp:
+                currentDistance = fabsf(self.frame.origin.y - blockView.center.y);
+                break;
+                
+            case kGestureToDown:
+                currentDistance = fabsf(self.frame.origin.y - blockView.center.y);
+                break;
+                
+            case kGestureToLeft:
+                currentDistance = fabsf(self.frame.origin.x - blockView.center.x);
+                break;
+                
+            case kGestureToRight:
+                currentDistance = fabsf(self.frame.origin.x - blockView.center.x);
+                break;
+                
+            default:
+                break;
+        }
+        if (currentDistance < minDistance) {
+            minDistance = currentDistance;
+            firstBlockView = blockView;
+        }
+    }
+    
+    return firstBlockView;
+}
+
+- (void)resetBlockViewFrameWithFrame:(CGRect)frame
+{
+    if (frame.origin.x < kBoxX + BLOCKVIEWWIDTH / 2.0) {
+        frame.origin.x = kBoxX;
+    }
+    if (frame.origin.x > kBoxWidth - self.frame.size.width) {
+        frame.origin.x = kBoxWidth - self.frame.size.width;
+    }
+    if (frame.origin.y < kBoxY + BLOCKVIEWWIDTH / 2.0) {
+        frame.origin.y = kBoxY;
+    }
+    if (frame.origin.y > kBoxHeight - self.frame.size.height) {
+        frame.origin.y = kBoxHeight - self.frame.size.height;
+    }
+    
+    self.frame = frame;
+}
+
+- (void)resetBlockViewFrameWithFrame:(CGRect)frame firstObstract:(MCBlockView *)firstObstract
+{
+    CGRect tempFrame = frame;
+    if (firstObstract) {
+        switch (self.currentGesture) {
+            case kGestureToUp:
+                if (tempFrame.origin.y < 
+                    (firstObstract.frame.origin.y + firstObstract.frame.size.height)) 
+                    tempFrame.origin.y = firstObstract.frame.origin.y + firstObstract.frame.size.height;
+                break;
+                
+            case kGestureToDown:
+                if (tempFrame.origin.y > firstObstract.frame.origin.y - self.frame.size.height) {
+                    tempFrame.origin.y = firstObstract.frame.origin.y - self.frame.size.height;
+                }
+                break;
+                
+            case kGestureToLeft:
+                if (tempFrame.origin.x <
+                    (firstObstract.frame.origin.x + firstObstract.frame.size.width)) {
+                    tempFrame.origin.x = firstObstract.frame.origin.x + firstObstract.frame.size.width;
+                }
+                break;
+                
+            case kGestureToRight:
+                if (tempFrame.origin.x > firstObstract.frame.origin.x - self.frame.size.width) {
+                    tempFrame.origin.x = firstObstract.frame.origin.x - self.frame.size.width;
+                }
+                break;
+            default:
+                NSAssert(kGestureInvalid, @"gesture is invalid!!!");
+                break;
+        }
+    }else {
+        switch (self.currentGesture) {
+            case kGestureToUp:
+                tempFrame.origin.y = tempFrame.origin.y < kBoxY ? kBoxY : tempFrame.origin.y;
+                break;
+                
+            case kGestureToDown:
+                tempFrame.origin.y = 
+                    tempFrame.origin.y > (kBoxHeight - self.frame.size.height) ? 
+                        (kBoxHeight - self.frame.size.height) : tempFrame.origin.y;
+                break;
+                
+            case kGestureToLeft:
+                tempFrame.origin.x = tempFrame.origin.x < kBoxX ? kBoxX : tempFrame.origin.x;
+                break;
+                
+            case kGestureToRight:
+                tempFrame.origin.x = 
+                    tempFrame.origin.x > (kBoxWidth - self.frame.size.width)?
+                        kBoxWidth - self.frame.size.width : tempFrame.origin.x;
+                break;
+            default:
+                NSAssert(kGestureInvalid, @"gesture is invalid!!!");
+                break;
+        }
+    }
+    self.frame = tempFrame;
 }
 
 /*

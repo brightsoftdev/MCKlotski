@@ -10,6 +10,10 @@
 
 // 定义每一格的宽度
 #define BLOCKVIEWWIDTH 65
+#define kBoxWidth (4 * BLOCKVIEWWIDTH)
+#define kBoxHeight (5 * BLOCKVIEWWIDTH)
+#define kBoxX 0.0
+#define kBoxY 0.0
 
 @class MCBlock;
 @protocol BlockGestureDelegate;
@@ -51,6 +55,17 @@ typedef enum TOUCH_BLOCK_GESTURE{
  */
 - (id)initWithBlock:(MCBlock *)block;
 
+/**
+ * 获取blockView的frame
+ */
+- (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y;
+
+// 通过frame移动块
+- (void)moveBlockViewWithFrame:(CGRect)newFrame;
+
+// 判断是否在边界
+- (BOOL)isVergeBoundary;
+
 @end
 
 
@@ -60,7 +75,7 @@ typedef enum TOUCH_BLOCK_GESTURE{
  */
 @protocol BlockGestureDelegate
 
-@required
+  @required
 // 将要移动,是否准备好
 - (BOOL)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 // 移动开始

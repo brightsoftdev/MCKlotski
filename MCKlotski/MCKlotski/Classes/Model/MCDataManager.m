@@ -19,6 +19,7 @@
 @implementation MCDataManager
 
 @synthesize gates = _gates;
+@synthesize blockViews = _blockViews;
 @synthesize theObservers = _theObservers;
 
 SYNTHESIZE_SINGLETON(MCDataManager);
@@ -45,10 +46,9 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 
 - (void)dealloc
 {
-    [_gates release];
-    _gates = nil;
-    [_theObservers release];
-    _theObservers = nil;
+    MCRelease(_gates);
+    MCRelease(_blockViews);
+    MCRelease(_theObservers);
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
