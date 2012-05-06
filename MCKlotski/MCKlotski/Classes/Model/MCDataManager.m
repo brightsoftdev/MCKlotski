@@ -93,7 +93,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     BOOL isFirstPlayUser = [GGPath isFileExist:LOCAL_DATA_FILE];
     if (isFirstPlayUser) {
         userData = [GGPath documentPathWithFileName:LOCAL_DATA_FILE];
-        SBJsonParser *jsonParseUser = [[SBJsonParser alloc] init];
+      //  SBJsonParser *jsonParseUser = [[SBJsonParser alloc] init];
         
     }
 }

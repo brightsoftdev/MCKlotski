@@ -39,8 +39,8 @@
 
 - (void)viewDidUnload
 {
-    _btnPlay = nil;
     [super viewDidUnload];
+    _btnPlay = nil;
 }
 
 - (void)dealloc

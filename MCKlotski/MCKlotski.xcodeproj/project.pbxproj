@@ -163,6 +163,14 @@
 		21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E31554B83800006893 /* TestRootViewController.m */; };
 		21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A6E4E41554B83800006893 /* TestRootViewController.xib */; };
 		21A6E4E91554BA6C00006893 /* TestDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E81554BA6C00006893 /* TestDisplayViewController.m */; };
+		21A810F215565BE70040CA5D /* gateFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A810F015565BE70040CA5D /* gateFrame.png */; };
+		21A810F315565BE70040CA5D /* gateFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A810F015565BE70040CA5D /* gateFrame.png */; };
+		21A810F415565BE70040CA5D /* gateFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A810F115565BE70040CA5D /* gateFrame@2x.png */; };
+		21A810F515565BE70040CA5D /* gateFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A810F115565BE70040CA5D /* gateFrame@2x.png */; };
+		21A8112A15566F9C0040CA5D /* MCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8112915566F9C0040CA5D /* MCView.m */; };
+		21A8112B15566F9C0040CA5D /* MCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8112915566F9C0040CA5D /* MCView.m */; };
+		21A8112E15566FCA0040CA5D /* MCGameSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8112D15566FCA0040CA5D /* MCGameSceneView.m */; };
+		21A8112F15566FCA0040CA5D /* MCGameSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8112D15566FCA0040CA5D /* MCGameSceneView.m */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -406,6 +414,12 @@
 		21A6E4E41554B83800006893 /* TestRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestRootViewController.xib; sourceTree = "<group>"; };
 		21A6E4E71554BA6C00006893 /* TestDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDisplayViewController.h; sourceTree = "<group>"; };
 		21A6E4E81554BA6C00006893 /* TestDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDisplayViewController.m; sourceTree = "<group>"; };
+		21A810F015565BE70040CA5D /* gateFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gateFrame.png; sourceTree = "<group>"; };
+		21A810F115565BE70040CA5D /* gateFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gateFrame@2x.png"; sourceTree = "<group>"; };
+		21A8112815566F9C0040CA5D /* MCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCView.h; sourceTree = "<group>"; };
+		21A8112915566F9C0040CA5D /* MCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCView.m; sourceTree = "<group>"; };
+		21A8112C15566FCA0040CA5D /* MCGameSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameSceneView.h; sourceTree = "<group>"; };
+		21A8112D15566FCA0040CA5D /* MCGameSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameSceneView.m; sourceTree = "<group>"; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -711,6 +725,19 @@
 			path = Numbers;
 			sourceTree = "<group>";
 		};
+		21A810FA15565EE90040CA5D /* CustomButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				EB179A16154A959700E32807 /* MCButtonBase.h */,
+				EB179A17154A959700E32807 /* MCButtonBase.m */,
+				EB179A09154A3D0200E32807 /* MCButton.h */,
+				EB179A0A154A3D0200E32807 /* MCButton.m */,
+				EB179A0E154A7E1B00E32807 /* MCSelectLevelButton.h */,
+				EB179A0F154A7E1B00E32807 /* MCSelectLevelButton.m */,
+			);
+			name = CustomButtonView;
+			sourceTree = "<group>";
+		};
 		EB0AE77C1542902C008497E7 = {
 			isa = PBXGroup;
 			children = (
@@ -938,17 +965,16 @@
 		EB21449C15440E1C00F6D171 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				21A8112815566F9C0040CA5D /* MCView.h */,
+				21A8112915566F9C0040CA5D /* MCView.m */,
+				21A810FA15565EE90040CA5D /* CustomButtonView */,
 				EBD14751154937AE0087EBD7 /* AlertView */,
-				EB179A16154A959700E32807 /* MCButtonBase.h */,
-				EB179A17154A959700E32807 /* MCButtonBase.m */,
-				EB179A09154A3D0200E32807 /* MCButton.h */,
-				EB179A0A154A3D0200E32807 /* MCButton.m */,
-				EB179A0E154A7E1B00E32807 /* MCSelectLevelButton.h */,
-				EB179A0F154A7E1B00E32807 /* MCSelectLevelButton.m */,
 				213B0A54155257FF0056D938 /* MCNumberView.h */,
 				213B0A55155257FF0056D938 /* MCNumberView.m */,
 				2185C5E7155401470092B250 /* MCBlockView.h */,
 				2185C5E8155401470092B250 /* MCBlockView.m */,
+				21A8112C15566FCA0040CA5D /* MCGameSceneView.h */,
+				21A8112D15566FCA0040CA5D /* MCGameSceneView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -956,6 +982,8 @@
 		EB2144BB15442AE500F6D171 /* background */ = {
 			isa = PBXGroup;
 			children = (
+				21A810F015565BE70040CA5D /* gateFrame.png */,
+				21A810F115565BE70040CA5D /* gateFrame@2x.png */,
 				EB179A33154AA61C00E32807 /* levelbg.png */,
 				EB179A34154AA61C00E32807 /* levelbg@2x.png */,
 				EBA01B421549644C00ECD185 /* alert_bg.png */,
@@ -1042,7 +1070,7 @@
 		EB0AE77E1542902C008497E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "TJUT-SCCE-SIPC";
 			};
 			buildConfigurationList = EB0AE7811542902C008497E7 /* Build configuration list for PBXProject "MCKlotski" */;
@@ -1150,6 +1178,8 @@
 				213B0B491552682C0056D938 /* yellow_8@2x.png in Resources */,
 				213B0B4B1552682C0056D938 /* yellow_9.png in Resources */,
 				213B0B4D1552682C0056D938 /* yellow_9@2x.png in Resources */,
+				21A810F215565BE70040CA5D /* gateFrame.png in Resources */,
+				21A810F415565BE70040CA5D /* gateFrame@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,6 +1265,8 @@
 				213B0B4C1552682C0056D938 /* yellow_9.png in Resources */,
 				213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */,
 				21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */,
+				21A810F315565BE70040CA5D /* gateFrame.png in Resources */,
+				21A810F515565BE70040CA5D /* gateFrame@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1295,6 +1327,8 @@
 				2185C5DD1553FB8E0092B250 /* MCGateViewController.m in Sources */,
 				2185C5E11553FBDF0092B250 /* MCCustomGateViewController.m in Sources */,
 				2185C5E9155401470092B250 /* MCBlockView.m in Sources */,
+				21A8112A15566F9C0040CA5D /* MCView.m in Sources */,
+				21A8112E15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1354,6 +1388,8 @@
 				21A6E4E11554B75100006893 /* TestBlockViewController.m in Sources */,
 				21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */,
 				21A6E4E91554BA6C00006893 /* TestDisplayViewController.m in Sources */,
+				21A8112B15566F9C0040CA5D /* MCView.m in Sources */,
+				21A8112F15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1436,6 +1472,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1457,6 +1494,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1478,6 +1516,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Testes/Testes-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Testes/Testes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1499,6 +1538,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Testes/Testes-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Testes/Testes-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

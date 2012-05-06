@@ -23,6 +23,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    NSArray *effects = [NSArray arrayWithObjects:@"Click.wav", nil];
+    [[GGSoundManager sharedGGSoundManager] unloadEffectsWith:effects];
+    [super dealloc];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -55,8 +62,8 @@
 
 - (void)viewDidUnload
 {
-    self.view.backgroundColor = [UIColor clearColor];
     [super viewDidUnload];
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -138,6 +145,7 @@
 - (void)backAction:(id)sender
 {
     [self ButtonAction:sender];
+    [self dismissModalViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

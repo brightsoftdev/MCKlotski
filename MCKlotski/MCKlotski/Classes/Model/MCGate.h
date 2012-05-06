@@ -13,12 +13,15 @@
     int _passMin; // 最优步数 
     int _passMoveCount; // 完成所用步数
     BOOL _isLocked; // 是否锁定
-    NSArray *_layout; // 布局
+    NSArray *_layout; 
 }
 @property (nonatomic, assign) int gateID;
 @property (nonatomic, assign) int passMin;
 @property (nonatomic, assign) int passMoveCount;
 @property (nonatomic, assign) BOOL isLocked;
+/**
+ * 游戏布局，类似“[4,2,0,3,0,1,3,0,2,3,2,2,3,0,3,1,2,3,1,3,3,1,0,4,1,1,4,1,2,4,1,3,4]”的数组
+ */
 @property (nonatomic, retain) NSArray *layout;
 
 /**

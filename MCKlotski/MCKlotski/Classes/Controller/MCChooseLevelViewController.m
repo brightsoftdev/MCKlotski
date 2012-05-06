@@ -86,8 +86,8 @@
 
 - (void)viewDidUnload
 {
-    [self removeSubViews];
     [super viewDidUnload];
+    [self removeSubViews];
 }
 
 #pragma mark - UIScrollViewDelegate

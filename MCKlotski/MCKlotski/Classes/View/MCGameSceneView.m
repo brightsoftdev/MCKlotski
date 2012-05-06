@@ -1,25 +1,21 @@
 //
-//  MCGateViewController.m
+//  MCGameSceneView.m
 //  MCKlotski
 //
-//  Created by gtts on 5/4/12.
+//  Created by gtts on 5/6/12.
 //  Copyright (c) 2012 TJUT-SCCE-SIPC. All rights reserved.
 //
 
-#import "MCGateViewController.h"
-#import "MCConfig.h"
-#import "GGFoundation.h"
+#import "MCGameSceneView.h"
+#import "MCBlockView.h"
+#import "MCDataManager.h"
+#import "MCUtil.h"
 #import "MCGate.h"
 #import "MCBlock.h"
-#import "MCBlockView.h"
-#import "MCUtil.h"
-#import "MCDataManager.h"
 
-
-@interface MCGateViewController (Privates)
+@interface MCGameSceneView ()
 
 - (void)createSubViews;
-- (void)removeSubViews;
 - (void)createBlockViews;
 
 - (void)clearBoxView;
@@ -27,64 +23,37 @@
 - (void)showBlockViews;
 - (void)showStar:(MCGate *)gate;
 
+
+
 @end
 
-@implementation MCGateViewController
-@synthesize theGateID = _theGateID;
+@implementation MCGameSceneView
+
 @synthesize blockViews = _blockViews;
 @synthesize theGate = _theGate;
 @synthesize starView = _starView;
 
-#pragma mark - init & dealloc
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithFrame:frame];
     if (self) {
-        // Custom initialization
+        // Initialization code
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
-    }
-    return self;
-}
-
-- (id)initWithGateID:(int)gateID
-{
-    self = [super init];
-    if (self) {
-        NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
-        self.theGateID = gateID;
-        _moveFlag = kBlockViewMoveNormal;
+        _blockViews = nil;
+        
     }
     return self;
 }
 
 - (void)dealloc
 {
-    MCRelease(_blockViews);
-    MCRelease(_theGate);
-    MCRelease(_starView);
+    [_blockViews release];
+    _blockViews = nil;
+    [_theBoxView release];   
+    [_theGate release];
+    [_starView release];
     NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
-}
-
-#pragma mark - lifecycle
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self createSubViews];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    [self removeSubViews];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - get & set
@@ -105,22 +74,8 @@
 }
 
 #pragma mark - Priate method
-
 - (void)createSubViews
 {
-    //    self.gameSceneView = [[[MCGameSceneView alloc] initWithFrame:CGRectMake(0, 0, 320, 390)] autorelease];
-    //    MCGate *gate =  [[MCGate alloc] init];
-    //    gate.passMin = 1;
-    //    gate.passMoveCount = 1;
-    //    gate.layout = [NSArray arrayWithObjects:@"4",@"2",@"0",@"3",@"0",@"1",@"3",@"0",@"2",@"3",@"2",@"2",@"3",@"0",@"3",@"1",@"2",@"3",@"1",@"3",@"3",@"1",@"0",@"4",@"1",@"1",@"4",@"1",@"2",@"4",@"1",@"3",@"4", nil];
-    //    self.gameSceneView.theGate = gate;
-    //    [gate release];
-    //    
-    //    [self.view addSubview:self.gameSceneView];
-    //    
-    //    self.gameSceneMenuView = [[[MCGameSceneMenuView alloc] init] autorelease];
-    //    [self.view addSubview:self.gameSceneMenuView];
-    
     // 添加游戏场景背景
     UIImage *gateFrameImage = [UIImage imageNamed:@"gateFrame.png"];
     UIImageView *gateFrameBgView = 
@@ -128,32 +83,12 @@
       CGRectMake(0, 0,  gateFrameImage.size.width, gateFrameImage.size.height)] autorelease];
     gateFrameBgView.backgroundColor = [UIColor clearColor];
     gateFrameBgView.image = gateFrameImage;
-    [self.view addSubview:gateFrameBgView];
+    [self addSubview:gateFrameBgView];
     
     _theBoxView = [[UIView alloc] initWithFrame:
-                   CGRectMake((self.view.frame.size.width - kBoxWidth) / 2, 90, kBoxWidth, kBoxHeight)];
+                   CGRectMake((self.frame.size.width - kBoxWidth) / 2, 90, kBoxWidth, kBoxHeight)];
     _theBoxView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:_theBoxView];
-    
-    UIButton *back = [[UIButton alloc] init];
-    UIImage *backImage = [UIImage imageNamed:@"back1.png"];
-    back.frame = CGRectMake(10, 450, backImage.size.width, backImage.size.height);
-    [back setBackgroundImage:backImage forState:UIControlStateNormal];
-    [back setBackgroundImage:[UIImage imageNamed:@"back2.png"] forState:UIControlStateHighlighted];
-    [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:back];
-    [back release]; 
-}
-
-- (void)removeSubViews
-{
-}
-
-- (void)backAction:(id)sender
-{
-    [super ButtonAction:sender];
-    [self dismissModalViewControllerAnimated:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self addSubview:_theBoxView];
 }
 
 - (void)clearBoxView
@@ -183,7 +118,7 @@
         // 还没有开始移动，即第一次移动
         _starView.image = [UIImage imageNamed:@"star3.png"];
     }
-    [self.view addSubview:_starView];
+    [self addSubview:_starView];
 }
 
 - (void)createBlockViews
@@ -211,6 +146,5 @@
     }
     self.blockViews = [NSArray arrayWithArray:tempBlockViews];
 }
-
 
 @end
