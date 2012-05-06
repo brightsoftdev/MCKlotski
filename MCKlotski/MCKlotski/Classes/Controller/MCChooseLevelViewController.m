@@ -208,7 +208,7 @@
 
 - (void)selectGateAction:(id)sender
 {
-    [super ButtonAction:sender];
+    [super buttonAction:sender];
     MCSelectLevelButton *selectButton = (MCSelectLevelButton *)sender;
     MCCustomGateViewController *customGateViewController = [[MCCustomGateViewController alloc] init];
     NSLog(@"------------");

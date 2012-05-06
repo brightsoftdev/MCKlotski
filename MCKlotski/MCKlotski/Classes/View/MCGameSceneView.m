@@ -7,7 +7,6 @@
 //
 
 #import "MCGameSceneView.h"
-#import "MCBlockView.h"
 #import "MCDataManager.h"
 #import "MCUtil.h"
 #import "MCGate.h"
@@ -40,7 +39,7 @@
         // Initialization code
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
         _blockViews = nil;
-        
+        [self createSubViews];
     }
     return self;
 }
@@ -73,6 +72,18 @@
     [self createBlockViews];
 }
 
+#pragma mark - public method
+- (MCBlockView *)blockViewWithBlockID:(int)blockID
+{
+    MCBlockView *tempBlcokView = nil;
+    for (MCBlockView *blockView in self.blockViews) {
+        if (blockID == blockView.blockID) {
+            tempBlcokView = [blockView retain];
+        }
+    }
+    return tempBlcokView;
+}
+
 #pragma mark - Priate method
 - (void)createSubViews
 {
@@ -87,7 +98,7 @@
     
     _theBoxView = [[UIView alloc] initWithFrame:
                    CGRectMake((self.frame.size.width - kBoxWidth) / 2, 90, kBoxWidth, kBoxHeight)];
-    _theBoxView.backgroundColor = [UIColor blueColor];
+    _theBoxView.backgroundColor = [UIColor clearColor];
     [self addSubview:_theBoxView];
 }
 
@@ -139,12 +150,35 @@
         block.blockType = blockType;
         block.positionX = positionX;
         block.positionY = positionY;
-        MCBlockView *tempBlockView = [[MCBlockView alloc] initWithBlock:block];
-        [tempBlockViews addObject:tempBlockView];
+        MCBlockView *blockView = [[MCBlockView alloc] initWithBlock:block];
+        blockView.delegate = self;
+        [tempBlockViews addObject:blockView];
         [block release];
-        [tempBlockView release];
+        [blockView release];
     }
     self.blockViews = [NSArray arrayWithArray:tempBlockViews];
+}
+
+#pragma mark - BlockGestureDelegate
+
+- (BOOL)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
+{
+    return YES;
+}
+
+- (void)blockBeganMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
+{
+    
+}
+
+- (void)blockEndMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
+{
+    
+}
+
+- (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
+{
+    
 }
 
 @end

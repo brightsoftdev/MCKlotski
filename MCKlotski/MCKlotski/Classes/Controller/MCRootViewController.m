@@ -88,13 +88,13 @@
 #pragma mark - action
 - (void)playAction:(id)sender
 {
-    [super ButtonAction:sender];
+    [super buttonAction:sender];
     NSLog(@"fasd");
 }
 
 - (void)levelsAction:(id)sender
 {
-    [super ButtonAction:sender];
+    [super buttonAction:sender];
     MCChooseLevelViewController *levelViewController = [[MCChooseLevelViewController alloc] init];
     [self.navigationController pushViewController:levelViewController animated:YES];
     [levelViewController release];

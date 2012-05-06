@@ -15,7 +15,7 @@
 /**
  * button event, control sound
  */
-- (void)ButtonAction:(id)sender;
+- (void)buttonAction:(id)sender;
 
 - (void)showWindow;
 - (void)windowDidShow;

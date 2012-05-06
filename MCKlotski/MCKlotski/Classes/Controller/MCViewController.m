@@ -102,7 +102,7 @@
     [back release];  
 }
 
-- (void)ButtonAction:(id)sender
+- (void)buttonAction:(id)sender
 {
     [[GGSoundManager sharedGGSoundManager] playEffect:@"Click.wav"];
 }
@@ -144,7 +144,7 @@
 #pragma mark - private Method
 - (void)backAction:(id)sender
 {
-    [self ButtonAction:sender];
+    [self buttonAction:sender];
     [self dismissModalViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }

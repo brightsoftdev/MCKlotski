@@ -7,9 +7,9 @@
 //
 
 #import "MCViewController.h"
-#import "MCBlockView.h"
+#import "MCGameSceneMenuView.h"
 
-@class MCGate;
+@class MCGameSceneView;
 
 typedef enum BlockViewMoveFlag{
     
@@ -20,7 +20,7 @@ typedef enum BlockViewMoveFlag{
 
 
 @interface MCGateViewController : MCViewController<
-  BlockGestureDelegate,
+  GameSceneMenuDelegate,
   UIAlertViewDelegate
 > {
   @protected
@@ -28,17 +28,15 @@ typedef enum BlockViewMoveFlag{
   
   @private
     int _theGateID;
-    UIView *_theBoxView;
-    NSArray *_blockViews;
-    MCGate *_theGate;
-    
-    UIImageView *_starView;
+    MCGameSceneView *_gameSceneView;
+    MCGameSceneMenuView *_gmaeSceneMenuView;
+    NSArray *_steps;
 }
 
 @property (nonatomic, assign) int theGateID;
-@property (nonatomic, retain) NSArray *blockViews;
-@property (nonatomic, retain) MCGate *theGate;
-@property (nonatomic, retain) UIImageView *starView;
+@property (nonatomic, retain) MCGameSceneView *gameSceneView;
+@property (nonatomic, retain) MCGameSceneMenuView *gameSceneMenuView;
+@property (nonatomic, retain) NSArray *steps;
 
 - (id)initWithGateID:(int)gateID;
 

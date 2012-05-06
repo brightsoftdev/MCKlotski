@@ -15,14 +15,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
+        NSLog(@"%@ : %@", NSStringFromSelector(_cmd), @"MCView");
     }
     return self;
 }
 
 - (void)dealloc
 {
-    NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
+    NSLog(@"%@ : %@", NSStringFromSelector(_cmd), @"MCView");
     [super dealloc];
 }
 
