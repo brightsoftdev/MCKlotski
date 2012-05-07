@@ -10,19 +10,15 @@
 #import "MCUtil.h"
 #import "GGFoundation.h"
 
-#define kTransitionDuration 0.22
+#define kTransitionDuration 0.3
 
 @interface MCAlertView (Private)
 
 - (void)updateAlertFrame;
 
-- (void)hideAlertView;
-
 - (void)showAnimation;
 
 - (void)hideAnimation;
-
-- (void)performAction:(id)sender;
 
 @end
 
@@ -133,13 +129,12 @@
 	self.alpha = 1.0;
 }
 
-- (void)performAction:(id)sender
+- (void)buttonAction:(id)sender
 {
-    UIButton *button  = (UIButton *)button;
+    UIButton *button  = (UIButton *)sender;
     if (self.delegate) {
         [[GGSoundManager sharedGGSoundManager] playEffect:@"Clcik.wav"];
         [self.delegate alertView:self andButton:button];
-        [self hideAlertView];
     }
 }
 

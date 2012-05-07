@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MCConfig.h"
 
+typedef enum Control_Tag{
+    kTagControlInvlid = 0,
+    kTagControlFirst,
+    kTagControlSecond,
+    kTagControlThird,
+    kTagControlCount,
+}kTagControl;
+
 @class MCAlertView;
 
 @protocol MCAlertDelegate
@@ -28,6 +36,10 @@
 @property (nonatomic, readonly) BOOL isShowing;
 
 - (void)showAlertView;
+
+- (void)hideAlertView;
+
+- (void)buttonAction:(id)sender;
 
 @end
 

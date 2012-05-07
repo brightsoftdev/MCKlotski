@@ -9,6 +9,7 @@
 #import "MCDataManager.h"
 #import "GGFoundation.h"
 #import "MCConfig.h"
+#import "MCGate.h"
 
 @interface MCDataManager (Privates)
 // observer
@@ -103,7 +104,17 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     
 }
 
-#pragma private method
-
+#pragma public method
+- (MCGate *)gateWithID:(int)gateID
+{
+    MCGate *tempGate = nil;
+    for (MCGate *gate in self.gates) {
+        if (gate.gateID == gateID) {
+            tempGate = [gate retain];
+            break;
+        }
+    }
+    return [tempGate autorelease];
+}
 
 @end

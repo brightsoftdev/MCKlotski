@@ -12,6 +12,7 @@
 #import "MCSelectLevelButton.h"
 #import "MCGate.h"
 #import "MCNumberView.h"
+#import "MCResetAlertView.h"
 
 @interface TestDisplayViewController ()
 
@@ -54,21 +55,26 @@
     [self.view addSubview:but];
     
     MCNumberView *numberView = [[MCNumberView alloc] initWithFrame:CGRectMake(200, 150, 50, 20)];
-    numberView.value = 150;
+    numberView.value = 200;
     numberView.numberType = NumberRGBYellow;
     [self.view addSubview:numberView];
 }
 
 - (void)customAction:(id)sender
 {
-    MCAlertPassLevelView *view = [[MCAlertPassLevelView alloc] init];
-    [view showAlertView];
-    view.delegate = self;
+//    MCAlertPassLevelView *view = [[MCAlertPassLevelView alloc] init];
+//    [view showAlertView];
+//    view.delegate = self;
+    MCResetAlertView *resetAlertView = [[MCResetAlertView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    [resetAlertView showAlertView];
+    resetAlertView.delegate = self;
 }
 
 - (void)alertView:(MCAlertView *)view andButton:(UIButton *)button
 {
-    
+//    MCResetAlertVlew *resetAlertView = [[MCResetAlertVlew alloc] init];
+//    [resetAlertView showAlertView];
+//    resetAlertView.delegate = self;
 }
 
 - (void)viewDidUnload

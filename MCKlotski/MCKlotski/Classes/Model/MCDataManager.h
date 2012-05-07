@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GGFoundation.h"
 
+@class MCGate;
+
 typedef enum DM_DATA_E{
     DATA_STATE_INVALID = 0,
     DATA_STATE_GATE_COMPETED,
@@ -52,6 +54,11 @@ DECLARE_SINGLETON(MCDataManager);
  * 保持数据到本地
  */
 - (void)saveDataToLocal;
+
+/**
+ *通过ID获取gate
+ */
+- (MCGate *)gateWithID:(int)gateID;
 
 
 @end

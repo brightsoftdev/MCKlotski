@@ -8,8 +8,10 @@
 
 #import "MCViewController.h"
 #import "MCGameSceneMenuView.h"
+#import "MCResetAlertView.h"
+#import "MCGameSceneView.h"
 
-@class MCGameSceneView;
+@class MCAlertPassLevelView;
 
 typedef enum BlockViewMoveFlag{
     
@@ -21,7 +23,8 @@ typedef enum BlockViewMoveFlag{
 
 @interface MCGateViewController : MCViewController<
   GameSceneMenuDelegate,
-  UIAlertViewDelegate
+  MCAlertDelegate,
+  GameSceneViewDelegate
 > {
   @protected
     kBlockViewMoveFlag _moveFlag;
@@ -31,14 +34,31 @@ typedef enum BlockViewMoveFlag{
     MCGameSceneView *_gameSceneView;
     MCGameSceneMenuView *_gmaeSceneMenuView;
     NSArray *_steps;
+    
+    MCAlertView *_currentAlertView;
+    // 点击重置按钮之后弹出的dialog
+    MCResetAlertView *_resetAlertView;
+    // 过关之后的Dialog
+    MCAlertPassLevelView *_passLevelAlertView;
+    
+    // 移动总数
+    int _moveCount;
+    
 }
 
 @property (nonatomic, assign) int theGateID;
 @property (nonatomic, retain) MCGameSceneView *gameSceneView;
 @property (nonatomic, retain) MCGameSceneMenuView *gameSceneMenuView;
 @property (nonatomic, retain) NSArray *steps;
+@property (nonatomic, retain) MCAlertView *currentAlertView;
+@property (nonatomic, assign) int moveCount;
 
 - (id)initWithGateID:(int)gateID;
 
+// 刷新按钮，设置按钮是否可点击
+- (void)refreshButtons;
+
+- (void)resumeGame;
+- (void)refreshSubViews;
 
 @end

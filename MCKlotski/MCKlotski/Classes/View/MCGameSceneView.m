@@ -11,6 +11,9 @@
 #import "MCUtil.h"
 #import "MCGate.h"
 #import "MCBlock.h"
+#import "GGFoundation.h"
+
+#define kBlockMoveEffect @"blockMove.wav"
 
 @interface MCGameSceneView ()
 
@@ -19,18 +22,17 @@
 
 - (void)clearBoxView;
 
+// 显示BlockViewS
 - (void)showBlockViews;
-- (void)showStar:(MCGate *)gate;
-
-
-
 @end
 
 @implementation MCGameSceneView
 
+@synthesize delegate = _delegate;
 @synthesize blockViews = _blockViews;
 @synthesize theGate = _theGate;
 @synthesize starView = _starView;
+@synthesize isMoveBlockView = _isMoveBlockView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -38,6 +40,9 @@
     if (self) {
         // Initialization code
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
+        // 加载场景需要的声音
+        NSArray *effects = [NSArray arrayWithObjects:kBlockMoveEffect, nil];
+        [[GGSoundManager sharedGGSoundManager] loadEffect:effects];
         _blockViews = nil;
         [self createSubViews];
     }
@@ -72,6 +77,12 @@
     [self createBlockViews];
 }
 
+- (void)setIsMoveBlockView:(BOOL)isMoveBlockView
+{
+    _isMoveBlockView = isMoveBlockView;
+    [self.delegate movingBlockView:!_isMoveBlockView];
+}
+
 #pragma mark - public method
 - (MCBlockView *)blockViewWithBlockID:(int)blockID
 {
@@ -81,7 +92,7 @@
             tempBlcokView = [blockView retain];
         }
     }
-    return tempBlcokView;
+    return [tempBlcokView autorelease];
 }
 
 #pragma mark - Priate method
@@ -168,16 +179,17 @@
 
 - (void)blockBeganMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
 {
-    
+    self.isMoveBlockView = YES;
 }
 
 - (void)blockEndMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
 {
-    
+    self.isMoveBlockView = NO;
 }
 
 - (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
 {
+    [[GGSoundManager sharedGGSoundManager] playEffect:kBlockMoveEffect];
     
 }
 

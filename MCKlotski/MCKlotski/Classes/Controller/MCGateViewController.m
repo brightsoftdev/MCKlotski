@@ -7,18 +7,28 @@
 //
 
 #import "MCGateViewController.h"
-#import "MCGameSceneView.h"
 #import "MCGameSceneMenuView.h"
 #import "MCConfig.h"
 #import "GGFoundation.h"
 #import "MCGate.h"
 #import "MCStep.h"
+#import "MCAlertPassLevelView.h"
+#import "MCDataManager.h"
+
+typedef enum AlertTagEnum{
+    kAlertTagInvalid = 0,
+    kAlertTagReset,
+    kAlertTagPassLevel,
+    kAlertTagCount,
+}kAlertTag;
 
 
 @interface MCGateViewController (Privates)
 
 - (void)createSubViews;
 - (void)removeSubViews;
+- (void)showResetAlertView;
+- (UIImage *)refreshLevelImage;
 
 @end
 
@@ -27,6 +37,8 @@
 @synthesize gameSceneView = _gameSceneView;
 @synthesize gameSceneMenuView = _gameSceneMenuView;
 @synthesize steps = _steps;
+@synthesize currentAlertView = _currentAlertView;
+@synthesize moveCount = _moveCount;
 
 #pragma mark - init & dealloc
 
@@ -56,6 +68,9 @@
     MCRelease(_gameSceneView);
     MCRelease(_gameSceneMenuView);
     MCRelease(_steps);
+    MCRelease(_currentAlertView);
+    MCRelease(_resetAlertView);
+    MCRelease(_passLevelAlertView);
     NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -66,6 +81,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self createSubViews];
+    [self refreshSubViews];
+    [self refreshButtons];
 }
 
 - (void)viewDidUnload
@@ -78,6 +95,46 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - get & set
+- (void)setSteps:(NSArray *)steps
+{
+    [_steps autorelease];
+    _steps = [steps retain];
+    
+    [self refreshButtons];
+}
+
+- (void)setTheGateID:(int)theGateID
+{
+    MCGate *tempGate = [[MCDataManager sharedMCDataManager] gateWithID:theGateID];
+    if (!tempGate) {
+        NSLog(@"invlid gate!!!!");
+        return;
+    }
+    self.gameSceneView.theGate = tempGate;
+    _theGateID = theGateID;
+    [self resumeGame];
+    [self refreshSubViews];
+}
+
+- (void)setMoveCount:(int)moveCount
+{
+    _moveCount = moveCount;
+    [self refreshSubViews];
+}
+
+#pragma mark - public method
+- (void)resumeGame
+{}
+
+- (void)refreshSubViews
+{
+    self.gameSceneMenuView.moveCountText = [NSString stringWithFormat:@"%d", self.moveCount];
+    self.gameSceneMenuView.minValueText = [NSString stringWithFormat:@"%d", self.gameSceneView.theGate.passMin];
+    self.gameSceneMenuView.levelValue = self.gameSceneView.theGate.gateID;
+    self.gameSceneMenuView.levelImage = [self refreshLevelImage]; 
 }
 
 #pragma mark - Priate method
@@ -105,6 +162,18 @@
     [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
     [back release]; 
+    
+    // 重置dialog
+    _resetAlertView = [[MCResetAlertView alloc] init];
+    _resetAlertView.delegate = self;
+    _resetAlertView.tag = kAlertTagReset;
+    
+    _passLevelAlertView = [[MCAlertPassLevelView alloc] init];
+    _passLevelAlertView.delegate = self;
+    _passLevelAlertView.tag = kAlertTagPassLevel;
+   
+    //TODO::
+    [self refreshSubViews]; 
 }
 
 - (void)backAction:(id)sender
@@ -118,6 +187,20 @@
 {
 }
 
+- (UIImage *)refreshLevelImage
+{
+    UIImage *image = [UIImage imageNamed:@"levelflag.png"];
+    MCGate *gate = self.gameSceneView.theGate;
+    if (gate) {
+        if (gate.passMoveCount > gate.passMin || gate.passMoveCount == -1) {
+            image = [UIImage imageNamed:@"levelflag.png"];
+        }else if(gate.passMoveCount == gate.passMin){
+            image = [UIImage imageNamed:@"levelflag.png"];
+        }
+    }
+    return image;
+}
+
 #pragma mark - GameSceneMenuDelegate
 - (void)undoAction:(id)sender
 {
@@ -126,13 +209,72 @@
         // 说明已经移动了block，能执行undo操作
         _moveFlag = kBlockViewMoveUndo;
         MCStep *step = [self.steps lastObject];
-        
+        MCBlockView *blockView = [self.gameSceneView blockViewWithBlockID:step.blockID];
+        [blockView moveBlockViewWithFrame:step.frameOld];
     }
+    [_passLevelAlertView showAlertView];
 }
 
 - (void)resetAction:(id)sender
 {
     [super buttonAction:sender];
+    [_resetAlertView showAlertView];
+}
+
+- (void)refreshButtons
+{
+    if (self.steps.count > 0) {
+        self.gameSceneMenuView.btnUndo.enabled = YES;
+        self.gameSceneMenuView.btnReset.enabled = YES;
+    }else {
+        self.gameSceneMenuView.btnUndo.enabled = NO;
+        self.gameSceneMenuView.btnReset.enabled = NO;
+    }
+}
+
+#pragma mark - MCAlertDelegate
+- (void)alertView:(MCAlertView *)view andButton:(UIButton *)button
+{
+    NSLog(@"MCAlertDelegate: %@",NSStringFromSelector(_cmd));
+    // 所有dialog都需要执行
+    self.currentAlertView = view;
+    [self hideWindow];
+    
+    
+    // 特殊的dialog的特殊代码
+    if (view.tag == kAlertTagReset) {
+        if (button.tag = kTagControlFirst) {
+            // 如果是重置按钮， 则重置游戏
+            
+        }
+    }
+}
+
+#pragma mark- GameSceneViewDelegate
+- (void)movingBlockView:(BOOL)isMove
+{
+    self.gameSceneMenuView.btnUndo.userInteractionEnabled = isMove;
+    self.gameSceneMenuView.btnReset.userInteractionEnabled = isMove;
+}
+
+#pragma mark - overWirte method
+- (void) windowDidShow
+{
+    [super windowDidShow];
+}
+
+- (void)windowDidHide
+{
+    [super windowDidHide];
+    if (self.currentAlertView == _resetAlertView) {
+        [self showWindow];
+        return;
+    }
+    
+    if (self.currentAlertView == _passLevelAlertView) {
+        [self showWindow];
+        return;
+    }
 }
 
 @end

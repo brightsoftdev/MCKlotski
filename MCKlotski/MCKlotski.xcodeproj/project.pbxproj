@@ -153,12 +153,19 @@
 		213B0B4C1552682C0056D938 /* yellow_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFD1552682C0056D938 /* yellow_9.png */; };
 		213B0B4D1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
 		213B0B4E1552682C0056D938 /* yellow_9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213B0AFE1552682C0056D938 /* yellow_9@2x.png */; };
+		217DAE2B155761C800E1DBC7 /* MCResetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A64E915575AA200E3CF05 /* MCResetAlertView.m */; };
+		217DAE341557C62C00E1DBC7 /* levelflag.png in Resources */ = {isa = PBXBuildFile; fileRef = 217DAE321557C62C00E1DBC7 /* levelflag.png */; };
+		217DAE351557C62C00E1DBC7 /* levelflag.png in Resources */ = {isa = PBXBuildFile; fileRef = 217DAE321557C62C00E1DBC7 /* levelflag.png */; };
+		217DAE361557C62C00E1DBC7 /* levelflag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217DAE331557C62C00E1DBC7 /* levelflag@2x.png */; };
+		217DAE371557C62C00E1DBC7 /* levelflag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217DAE331557C62C00E1DBC7 /* levelflag@2x.png */; };
+		217DAE3F1557D8A200E1DBC7 /* blockMove.wav in Resources */ = {isa = PBXBuildFile; fileRef = 217DAE3E1557D8A200E1DBC7 /* blockMove.wav */; };
 		2185C5DD1553FB8E0092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
 		2185C5E11553FBDF0092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
 		2185C5E9155401470092B250 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E8155401470092B250 /* MCBlockView.m */; };
 		2185C5EA155401470092B250 /* MCBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E8155401470092B250 /* MCBlockView.m */; };
 		2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
 		2185C5F2155412930092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
+		218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A64E915575AA200E3CF05 /* MCResetAlertView.m */; };
 		21A6E4E11554B75100006893 /* TestBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E01554B75100006893 /* TestBlockViewController.m */; };
 		21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E31554B83800006893 /* TestRootViewController.m */; };
 		21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A6E4E41554B83800006893 /* TestRootViewController.xib */; };
@@ -427,12 +434,17 @@
 		213B0AFC1552682C0056D938 /* yellow_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_8@2x.png"; sourceTree = "<group>"; };
 		213B0AFD1552682C0056D938 /* yellow_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_9.png; sourceTree = "<group>"; };
 		213B0AFE1552682C0056D938 /* yellow_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow_9@2x.png"; sourceTree = "<group>"; };
+		217DAE321557C62C00E1DBC7 /* levelflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelflag.png; sourceTree = "<group>"; };
+		217DAE331557C62C00E1DBC7 /* levelflag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelflag@2x.png"; sourceTree = "<group>"; };
+		217DAE3E1557D8A200E1DBC7 /* blockMove.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = blockMove.wav; sourceTree = "<group>"; };
 		2185C5DB1553FB8E0092B250 /* MCGateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGateViewController.h; sourceTree = "<group>"; };
 		2185C5DC1553FB8E0092B250 /* MCGateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGateViewController.m; sourceTree = "<group>"; };
 		2185C5DF1553FBDF0092B250 /* MCCustomGateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCustomGateViewController.h; sourceTree = "<group>"; };
 		2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCustomGateViewController.m; sourceTree = "<group>"; };
 		2185C5E7155401470092B250 /* MCBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBlockView.h; sourceTree = "<group>"; };
 		2185C5E8155401470092B250 /* MCBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBlockView.m; sourceTree = "<group>"; };
+		218A64E815575AA200E3CF05 /* MCResetAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCResetAlertView.h; sourceTree = "<group>"; };
+		218A64E915575AA200E3CF05 /* MCResetAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCResetAlertView.m; sourceTree = "<group>"; };
 		21A6E4DF1554B75100006893 /* TestBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBlockViewController.h; sourceTree = "<group>"; };
 		21A6E4E01554B75100006893 /* TestBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBlockViewController.m; sourceTree = "<group>"; };
 		21A6E4E21554B83800006893 /* TestRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRootViewController.h; sourceTree = "<group>"; };
@@ -920,6 +932,7 @@
 		EB0AE8161542DC30008497E7 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				217DAE3E1557D8A200E1DBC7 /* blockMove.wav */,
 				EB2144C015442D7600F6D171 /* Click.wav */,
 			);
 			path = Audios;
@@ -970,6 +983,8 @@
 		EB179A1F154AA28800E32807 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				217DAE321557C62C00E1DBC7 /* levelflag.png */,
+				217DAE331557C62C00E1DBC7 /* levelflag@2x.png */,
 				213B0A51155254970056D938 /* locked.png */,
 				EB179A21154AA2C400E32807 /* star1.png */,
 				EB179A22154AA2C400E32807 /* star1@2x.png */,
@@ -1077,6 +1092,8 @@
 				EBA01B37154962EB00ECD185 /* MCAlertPassSubLevelView.m */,
 				EBA01B3E1549633300ECD185 /* MCAlertPassLevelView.h */,
 				EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */,
+				218A64E815575AA200E3CF05 /* MCResetAlertView.h */,
+				218A64E915575AA200E3CF05 /* MCResetAlertView.m */,
 			);
 			name = AlertView;
 			sourceTree = "<group>";
@@ -1246,6 +1263,9 @@
 				21A811601556B17A0040CA5D /* undo_2@2x.png in Resources */,
 				21A811621556B17A0040CA5D /* undo.png in Resources */,
 				21A811641556B17A0040CA5D /* undo@2x.png in Resources */,
+				217DAE341557C62C00E1DBC7 /* levelflag.png in Resources */,
+				217DAE361557C62C00E1DBC7 /* levelflag@2x.png in Resources */,
+				217DAE3F1557D8A200E1DBC7 /* blockMove.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,6 +1365,8 @@
 				21A811611556B17A0040CA5D /* undo_2@2x.png in Resources */,
 				21A811631556B17A0040CA5D /* undo.png in Resources */,
 				21A811651556B17A0040CA5D /* undo@2x.png in Resources */,
+				217DAE351557C62C00E1DBC7 /* levelflag.png in Resources */,
+				217DAE371557C62C00E1DBC7 /* levelflag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1408,6 +1430,7 @@
 				21A8112A15566F9C0040CA5D /* MCView.m in Sources */,
 				21A8112E15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 				21A8113C1556A74C0040CA5D /* MCGameSceneMenuView.m in Sources */,
+				218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,6 +1493,7 @@
 				21A8112B15566F9C0040CA5D /* MCView.m in Sources */,
 				21A8112F15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 				21A8113D1556A74C0040CA5D /* MCGameSceneMenuView.m in Sources */,
+				217DAE2B155761C800E1DBC7 /* MCResetAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
