@@ -33,4 +33,7 @@
 + (BOOL)isCompleteAllGate:(MCGate *)gate;
 
 + (int)nextGateIDWith:(MCGate *)gate;
+
+/*！ 载入本地数据*/
++ (void)lauchLocalData;
 @end

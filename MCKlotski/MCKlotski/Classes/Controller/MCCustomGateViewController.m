@@ -47,4 +47,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma  mark - overwrite
+- (void)gotoNextLevel:(int)gateID
+{
+    [super gotoNextLevel:gateID];
+    [self resetNextGateWithGateID:gateID];
+}
+
 @end

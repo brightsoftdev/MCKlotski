@@ -54,4 +54,9 @@
      return [[MCDataManager sharedMCDataManager] nextGateIDWithGate:gate];
 }
 
++ (void)lauchLocalData
+{
+    [[MCDataManager sharedMCDataManager] loadLocalData];
+}
+
 @end

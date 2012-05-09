@@ -9,10 +9,13 @@
 #import "MCAppDelegate.h"
 #import "MCRootViewController.h"
 #import "GGFoundation.h"
+#import "MCUtil.h"
 
 @interface MCAppDelegate (Private)
 
 - (void)launchViewController;
+
+- (void)launchLocalData;
 
 @end
 
@@ -51,6 +54,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [self launchLocalData];
     [self addDefaultImage];
     [self launchViewController];
     return YES;
@@ -225,6 +229,11 @@
     [viewController release];
     [navigation release];
     [self.window addSubview:self.navigationController.view];
+}
+
+- (void)launchLocalData
+{
+    [MCUtil lauchLocalData];
 }
 
 @end

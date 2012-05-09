@@ -93,12 +93,16 @@ typedef enum AlertTagEnum{
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
         self.theGateID = gateID;
         _moveFlag = kBlockViewMoveNormal;
+        _effects = [[NSArray arrayWithObjects:@"solved.wav", @"lifeadd.mp3", nil] retain];
+        [[GGSoundManager sharedGGSoundManager] loadEffect:_effects];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [[GGSoundManager sharedGGSoundManager] unloadEffectsWith:_effects];
+    MCRelease(_effects);
     MCRelease(_gameSceneView);
     MCRelease(_gameSceneMenuView);
     MCRelease(_steps);
@@ -106,6 +110,7 @@ typedef enum AlertTagEnum{
     MCRelease(_resetAlertView);
     MCRelease(_passLevelAlertView);
     MCRelease(_passAllLevelAlertView);
+    MCRelease(_newBestMoveAlertView);
     NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -311,6 +316,11 @@ typedef enum AlertTagEnum{
 - (void)levleDidPass
 {
     BOOL isNewRMin = NO;
+    BOOL isPassAllLevel = NO;
+    
+    if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
+        isPassAllLevel = YES;
+    }
     
     MCGate *gate = self.gameSceneView.theGate;
     if (gate.passMoveCount != gate.passMin) {
@@ -323,8 +333,22 @@ typedef enum AlertTagEnum{
         self.gameSceneView.theGate.passMoveCount = self.moveCount;
     }
     
+    if (![[MCDataManager sharedMCDataManager] updateGateWithGate:self.gameSceneView.theGate]) {
+        NSLog(@"update gate state failed!!!");
+        return;
+    }
     
-    
+    if (isPassAllLevel) {
+        [self showPassAllLevelAlertView];
+        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
+    }
+    if (isNewRMin) {
+        [self showNewBestMoveAlertView];
+        [[GGSoundManager sharedGGSoundManager] playEffect:@"solved.wav"];
+    }else {
+        [self showPassLevelAlertView];
+        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
+    }
 }
 
 - (void)refreshGameGate
@@ -369,6 +393,26 @@ typedef enum AlertTagEnum{
 }
 
 - (void)gotoNextLevel:(int)gateID
+{
+    
+}
+
+- (void)showResetAlertView
+{
+    
+}
+
+- (void)showPassAllLevelAlertView
+{
+    
+}
+
+- (void)showNewBestMoveAlertView
+{
+    
+}
+
+- (void)showPassLevelAlertView
 {
     
 }
@@ -466,9 +510,16 @@ typedef enum AlertTagEnum{
     }
     
     if (self.currentAlertView == _passLevelAlertView) {
-        [self showWindow];
         [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
         [self.gameSceneView showStar:self.gameSceneView.theGate];
+        [self showWindow];
+        return;
+    }
+    
+    if (self.currentAlertView == _passAllLevelAlertView) {
+        [self gotoNextLevel:1];
+        [self.gameSceneView showStar:self.gameSceneView.theGate];
+        [self showWindow];
         return;
     }
 }

@@ -166,6 +166,12 @@
 		2185C5F0155412510092B250 /* MCCustomGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5E01553FBDF0092B250 /* MCCustomGateViewController.m */; };
 		2185C5F2155412930092B250 /* MCGateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185C5DC1553FB8E0092B250 /* MCGateViewController.m */; };
 		218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A64E915575AA200E3CF05 /* MCResetAlertView.m */; };
+		21A60864155A8C7E003E4BDD /* lifeadd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21A60863155A8C7E003E4BDD /* lifeadd.mp3 */; };
+		21A60865155A8C7E003E4BDD /* lifeadd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21A60863155A8C7E003E4BDD /* lifeadd.mp3 */; };
+		21A60868155A8C9E003E4BDD /* solved.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21A60867155A8C9E003E4BDD /* solved.wav */; };
+		21A60869155A8C9E003E4BDD /* solved.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21A60867155A8C9E003E4BDD /* solved.wav */; };
+		21A6086C155A9047003E4BDD /* MCNewBestMoveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6086B155A9047003E4BDD /* MCNewBestMoveAlertView.m */; };
+		21A6086D155A9047003E4BDD /* MCNewBestMoveAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6086B155A9047003E4BDD /* MCNewBestMoveAlertView.m */; };
 		21A6E4E11554B75100006893 /* TestBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E01554B75100006893 /* TestBlockViewController.m */; };
 		21A6E4E51554B83800006893 /* TestRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A6E4E31554B83800006893 /* TestRootViewController.m */; };
 		21A6E4E61554B83800006893 /* TestRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A6E4E41554B83800006893 /* TestRootViewController.xib */; };
@@ -445,6 +451,10 @@
 		2185C5E8155401470092B250 /* MCBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBlockView.m; sourceTree = "<group>"; };
 		218A64E815575AA200E3CF05 /* MCResetAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCResetAlertView.h; sourceTree = "<group>"; };
 		218A64E915575AA200E3CF05 /* MCResetAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCResetAlertView.m; sourceTree = "<group>"; };
+		21A60863155A8C7E003E4BDD /* lifeadd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lifeadd.mp3; sourceTree = "<group>"; };
+		21A60867155A8C9E003E4BDD /* solved.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = solved.wav; sourceTree = "<group>"; };
+		21A6086A155A9047003E4BDD /* MCNewBestMoveAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNewBestMoveAlertView.h; sourceTree = "<group>"; };
+		21A6086B155A9047003E4BDD /* MCNewBestMoveAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNewBestMoveAlertView.m; sourceTree = "<group>"; };
 		21A6E4DF1554B75100006893 /* TestBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBlockViewController.h; sourceTree = "<group>"; };
 		21A6E4E01554B75100006893 /* TestBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBlockViewController.m; sourceTree = "<group>"; };
 		21A6E4E21554B83800006893 /* TestRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRootViewController.h; sourceTree = "<group>"; };
@@ -932,6 +942,8 @@
 		EB0AE8161542DC30008497E7 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				21A60867155A8C9E003E4BDD /* solved.wav */,
+				21A60863155A8C7E003E4BDD /* lifeadd.mp3 */,
 				217DAE3E1557D8A200E1DBC7 /* blockMove.wav */,
 				EB2144C015442D7600F6D171 /* Click.wav */,
 			);
@@ -1094,6 +1106,8 @@
 				21C6FB17155A71610063612B /* MCPassAllLevelAlertView.m */,
 				21C6FB1B155A719D0063612B /* MCPassLevelAlertView.h */,
 				21C6FB1C155A719D0063612B /* MCPassLevelAlertView.m */,
+				21A6086A155A9047003E4BDD /* MCNewBestMoveAlertView.h */,
+				21A6086B155A9047003E4BDD /* MCNewBestMoveAlertView.m */,
 			);
 			name = AlertView;
 			sourceTree = "<group>";
@@ -1266,6 +1280,8 @@
 				217DAE341557C62C00E1DBC7 /* levelflag.png in Resources */,
 				217DAE361557C62C00E1DBC7 /* levelflag@2x.png in Resources */,
 				217DAE3F1557D8A200E1DBC7 /* blockMove.wav in Resources */,
+				21A60864155A8C7E003E4BDD /* lifeadd.mp3 in Resources */,
+				21A60868155A8C9E003E4BDD /* solved.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1383,8 @@
 				21A811651556B17A0040CA5D /* undo@2x.png in Resources */,
 				217DAE351557C62C00E1DBC7 /* levelflag.png in Resources */,
 				217DAE371557C62C00E1DBC7 /* levelflag@2x.png in Resources */,
+				21A60865155A8C7E003E4BDD /* lifeadd.mp3 in Resources */,
+				21A60869155A8C9E003E4BDD /* solved.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,6 +1449,7 @@
 				218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */,
 				21C6FB18155A71610063612B /* MCPassAllLevelAlertView.m in Sources */,
 				21C6FB1D155A719D0063612B /* MCPassLevelAlertView.m in Sources */,
+				21A6086C155A9047003E4BDD /* MCNewBestMoveAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,6 +1513,7 @@
 				217DAE2B155761C800E1DBC7 /* MCResetAlertView.m in Sources */,
 				21C6FB19155A71610063612B /* MCPassAllLevelAlertView.m in Sources */,
 				21C6FB1E155A719D0063612B /* MCPassLevelAlertView.m in Sources */,
+				21A6086D155A9047003E4BDD /* MCNewBestMoveAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 
 @class MCGate;
 @class MCGameState;
+@class MCSettings;
 
 typedef enum DM_DATA_E{
     DATA_STATE_INVALID = 0,
@@ -33,6 +34,7 @@ typedef enum DM_DATA_E{
     
     NSMutableArray *_theObservers;
     MCGameState *_gameState;
+    MCSettings *_settings;
     int _updatingGateID;
 }
 
@@ -43,6 +45,7 @@ typedef enum DM_DATA_E{
 @property (nonatomic, retain) NSArray *blockViews;
 @property (nonatomic, retain) NSMutableArray *theObservers;
 @property (nonatomic, retain) MCGameState *gameState;
+@property (nonatomic, retain) MCSettings *settings;
 @property (nonatomic, assign) int updatingGateID;
 
 DECLARE_SINGLETON(MCDataManager);

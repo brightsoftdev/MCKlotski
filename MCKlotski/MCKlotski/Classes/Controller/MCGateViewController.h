@@ -11,6 +11,7 @@
 #import "MCResetAlertView.h"
 #import "MCGameSceneView.h"
 #import "MCPassAllLevelAlertView.h"
+#import "MCNewBestMoveAlertView.h"
 
 @class MCPassLevelAlertView;
 
@@ -31,6 +32,7 @@ typedef enum BlockViewMoveFlag{
     kBlockViewMoveFlag _moveFlag;
   
   @private
+    NSArray *_effects; // 音效
     int _theGateID;
     MCGameSceneView *_gameSceneView;
     MCGameSceneMenuView *_gmaeSceneMenuView;
@@ -40,6 +42,7 @@ typedef enum BlockViewMoveFlag{
     MCResetAlertView *_resetAlertView; // 点击重置按钮之后弹出的dialog
     MCPassLevelAlertView *_passLevelAlertView; // 过关之后的Dialog
     MCPassAllLevelAlertView *_passAllLevelAlertView; // 通过所有关之后的dialog
+    MCNewBestMoveAlertView *_newBestMoveAlertView; // 当移动总数小于等于最小移动值时，显示的dialog
     
     // 移动总数
     int _moveCount;

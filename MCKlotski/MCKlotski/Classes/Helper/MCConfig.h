@@ -42,7 +42,7 @@
 // Gate
 #define KeyGateID @"gateID"
 #define KeyPassMin @"passMin"
-#define KeyPassMoveCount @"assMoveCount"
+#define KeyPassMoveCount @"passMoveCount"
 #define KeyLocked @"isLocked"
 #define KeyLayout @"layout"
 

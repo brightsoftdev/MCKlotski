@@ -11,6 +11,8 @@
 #import "MCConfig.h"
 #import "MCGate.h"
 #import "MCGameState.h"
+#import "MCSettings.h"
+#import "CJSONDeserializer.h"
 
 @interface MCDataManager (Privates)
 // observer
@@ -24,6 +26,7 @@
 @synthesize blockViews = _blockViews;
 @synthesize theObservers = _theObservers;
 @synthesize gameState = _gameState;
+@synthesize settings = _settings;
 @synthesize updatingGateID = _updatingGateID;
 
 SYNTHESIZE_SINGLETON(MCDataManager);
@@ -55,6 +58,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     MCRelease(_blockViews);
     MCRelease(_theObservers);
     MCRelease(_gameState);
+    MCRelease(_settings);
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -102,12 +106,75 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 #pragma mark - data opertor
 - (void)loadLocalData
 {
+    if (![GGPath isFileExistInBundle:LAYOUT_DATA_FILE]) {
+        // 布局文件不存在
+        return;
+    }
+    
+    NSString *gateData = nil;
     NSString *userData = nil;
+    NSDictionary *userDictionary = nil;
     BOOL isFirstPlayUser = [GGPath isFileExist:LOCAL_DATA_FILE];
     if (isFirstPlayUser) {
         userData = [GGPath documentPathWithFileName:LOCAL_DATA_FILE];
-      //  SBJsonParser *jsonParseUser = [[SBJsonParser alloc] init];
+        NSData *userJsonData = [userData dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+        userDictionary = [[CJSONDeserializer deserializer]
+                          deserializeAsDictionary:userJsonData error:nil];
+    }
+    NSLog(@"local_user_noname.json:%@", userDictionary);
+    
+    // 解析布局文件
+    gateData = [GGPath bundleFile:LAYOUT_DATA_FILE andFileType:@""]; // 由于json文件objc不识别，所以FileType应该为空
+    NSData *gateJsonData = [gateData dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+    NSDictionary *gateDictionary = [[CJSONDeserializer deserializer] 
+                                    deserializeAsDictionary:gateJsonData error:nil];
+    NSLog(@"KlotskiLayout.json : %@", gateDictionary);
+    
+    if ([gateDictionary objectForKey:@"gates"]) {
+        NSMutableArray *tempGates = [NSMutableArray arrayWithCapacity:LimitedGate];
+        NSArray *dics1 = (NSArray *)[gateDictionary objectForKey:@"gates"];
+        NSDictionary *dics2 = [userDictionary objectForKey:@"gates"];
         
+        NSArray *allKeysDics2 = [dics2 allKeys];
+        // allKeysDics2 类似下面格式
+        //        {
+        //            1 =     {
+        //                completedMoveCount = 3;
+        //                rmin = 3;
+        //            };
+        //            2 =     {
+        //                completedMoveCount = 8;
+        //                rmin = 7;
+        //            };
+        //        }
+        for (int i = 0; i < [dics1 count]; i++) {
+            NSMutableDictionary *goGateDict = [NSMutableDictionary dictionaryWithDictionary:
+                                               [dics1 objectAtIndex:i]];
+            if ([allKeysDics2 containsObject:[NSString stringWithFormat:@"%d", i+1]]) {
+                [goGateDict setValue:[[dics2 objectForKey:[NSString stringWithFormat:@"%d", i+1]] 
+                                      objectForKey:KeyPassMoveCount] 
+                              forKey:KeyPassMoveCount];
+            }else {
+                [goGateDict setValue:[NSNumber numberWithInt:0] forKey:KeyPassMoveCount];
+            }
+            MCGate *gate = [[[MCGate alloc] initWithDictionary:goGateDict] autorelease];
+            [tempGates addObject:gate];
+        }
+        self.gates = tempGates;
+    }
+    
+    if ([userDictionary objectForKey:@"game"]) {
+        NSDictionary *gdic = [userDictionary objectForKey:@"game"];
+        MCGameState *gstate = [[MCGameState alloc] initWithDictionary:gdic];
+        self.gameState = gstate;
+        [gstate release];
+    }
+    
+    if ([userDictionary objectForKey:@"settings"]) {
+        NSDictionary *sdic = [userDictionary objectForKey:@"settings"];
+        MCSettings *settings = [[MCSettings alloc] initWithDictionary:sdic];
+        self.settings = settings;
+        [settings release];
     }
 }
 

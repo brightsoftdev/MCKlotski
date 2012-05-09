@@ -20,7 +20,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict
 {
-    if ((self = [self initWithDictionary:dict])) {
+    if ((self = [super initWithDictionary:dict])) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         int gateid = [[dict objectForKey:KeyGateID] intValue];
         if (kInvalidGateID != gateid) {
