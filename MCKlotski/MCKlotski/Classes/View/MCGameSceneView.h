@@ -15,6 +15,8 @@
 
 - (void)movingBlockView:(BOOL)isMove;
 
+- (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
+
 @end
 
 @interface MCGameSceneView : MCView<BlockGestureDelegate> {
@@ -26,7 +28,10 @@
     
     UIImageView *_starView;
     
-    BOOL _isMoveBlockView;
+    BOOL _isMoveBlockView; // 是否在移动blockView
+    
+    NSArray *_effects; // 音效 
+    NSArray *_steps;
     
 }
 
@@ -35,6 +40,7 @@
 @property (nonatomic, retain) MCGate *theGate;
 @property (nonatomic, retain) UIImageView *starView;
 @property (nonatomic, assign) BOOL isMoveBlockView;
+@property (nonatomic, retain) NSArray *steps;
 
 /**
  * 通过blockID获取MCBlockView
@@ -43,5 +49,10 @@
 
 // 显示star
 - (void)showStar:(MCGate *)gate;
+
+// 显示BlockViewS
+- (void)showBlockViews;
+
+- (void)resetBlockViewFrameAnimation;
 
 @end

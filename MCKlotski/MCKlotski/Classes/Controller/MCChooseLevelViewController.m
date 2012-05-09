@@ -210,7 +210,7 @@
 {
     [super buttonAction:sender];
     MCSelectLevelButton *selectButton = (MCSelectLevelButton *)sender;
-    MCCustomGateViewController *customGateViewController = [[MCCustomGateViewController alloc] init];
+    MCCustomGateViewController *customGateViewController = [[MCCustomGateViewController alloc] initWithGateID:1];
     NSLog(@"------------");
     [self.navigationController pushViewController:customGateViewController animated:YES];
     [customGateViewController release];

@@ -159,7 +159,7 @@
 }
 
 #pragma mark - public method
-- (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y
++ (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y
 {
     float tempX = 0.0f;
     float tempY = 0.0f;
@@ -252,7 +252,7 @@
     int blockType = block.blockType;
     int x = block.positionX;
     int y = block.positionY;
-    return [self frameWithBlockType:blockType positionX:x positionY:y];
+    return [MCBlockView frameWithBlockType:blockType positionX:x positionY:y];
 }
 
 - (void)moveBlockView

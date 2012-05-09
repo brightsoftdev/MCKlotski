@@ -22,8 +22,6 @@
 
 - (void)clearBoxView;
 
-// 显示BlockViewS
-- (void)showBlockViews;
 @end
 
 @implementation MCGameSceneView
@@ -33,6 +31,7 @@
 @synthesize theGate = _theGate;
 @synthesize starView = _starView;
 @synthesize isMoveBlockView = _isMoveBlockView;
+@synthesize steps = _steps;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -41,8 +40,8 @@
         // Initialization code
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
         // 加载场景需要的声音
-        NSArray *effects = [NSArray arrayWithObjects:kBlockMoveEffect, nil];
-        [[GGSoundManager sharedGGSoundManager] loadEffect:effects];
+        _effects = [[NSArray arrayWithObjects:kBlockMoveEffect, nil] retain];
+        [[GGSoundManager sharedGGSoundManager] loadEffect:_effects];
         _blockViews = nil;
         [self createSubViews];
     }
@@ -51,11 +50,16 @@
 
 - (void)dealloc
 {
+    [[GGSoundManager sharedGGSoundManager] unloadEffectsWith:_effects];
+    [_effects release];
+    _effects = nil;
     [_blockViews release];
     _blockViews = nil;
     [_theBoxView release];   
     [_theGate release];
     [_starView release];
+    [_steps release];
+    _steps = nil;
     NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -93,6 +97,27 @@
         }
     }
     return [tempBlcokView autorelease];
+}
+
+- (void)resetBlockViewFrameAnimation
+{
+    for (MCBlockView *blockView in self.blockViews) {
+        self.isMoveBlockView = YES;
+        CGRect frame = [MCBlockView frameWithBlockType:blockView.block.blockType 
+                                             positionX:blockView.block.positionX 
+                                             positionY:blockView.block.positionY];
+        [MCBlockView beginAnimations:@"BlockViewResetAnimation" context:nil];
+        [MCBlockView setAnimationDuration:0.3];
+        [MCBlockView setAnimationDelegate:self];
+        [MCBlockView setAnimationDidStopSelector:@selector(resetBlockViewFrameAnimationEnd)];
+        blockView.frame = frame;
+        [MCBlockView commitAnimations];
+    }
+}
+
+- (void)resetBlockViewFrameAnimationEnd
+{
+    self.isMoveBlockView = NO;
 }
 
 #pragma mark - Priate method
@@ -190,7 +215,7 @@
 - (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
 {
     [[GGSoundManager sharedGGSoundManager] playEffect:kBlockMoveEffect];
-    
+    [self.delegate blockFrameDidChangeWith:blockView andGesture:blockGesture];
 }
 
 @end

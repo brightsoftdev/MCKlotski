@@ -10,10 +10,18 @@
 #import "MCGameSceneMenuView.h"
 #import "MCConfig.h"
 #import "GGFoundation.h"
+#import "MCUtil.h"
 #import "MCGate.h"
 #import "MCStep.h"
-#import "MCAlertPassLevelView.h"
+#import "MCBlock.h"
+#import "MCRectFrame.h"
+#import "MCPassLevelAlertView.h"
 #import "MCDataManager.h"
+#import "MCGameState.h"
+
+// 获胜区域
+#define CompletedCondition CGRectMake(BLOCKVIEWWIDTH, BLOCKVIEWWIDTH * 3, BLOCKVIEWWIDTH * 2, BLOCKVIEWWIDTH * 2)
+
 
 typedef enum AlertTagEnum{
     kAlertTagInvalid = 0,
@@ -27,8 +35,34 @@ typedef enum AlertTagEnum{
 
 - (void)createSubViews;
 - (void)removeSubViews;
+
+// 显示dialog
 - (void)showResetAlertView;
+- (void)showPassAllLevelAlertView;
+- (void)showPassLevelAlertView;
+- (void)showNewBestMoveAlertView;
+
 - (UIImage *)refreshLevelImage;
+
+// 移除steps最后一项
+- (void)removeLastStep;
+
+// 给steps添加一项
+- (void)addStepWithBlockView:(MCBlockView *)blockView;
+
+// 判断是否是新的一步， 在同一个方向移动同一个blockView按一步计算
+- (BOOL)isNewActivingWithBlockView:(MCBlockView *)blockView;
+
+- (void)completeGateWithBlockView:(MCBlockView *)blockView;
+
+// 判断大blockView是否在获胜区域
+- (BOOL)isGameCompleted:(MCBlockView *)blockView;
+
+// 在level完成的情况下执行
+- (void)levleDidPass;
+
+// 当移动blockView时，调用
+- (void)refreshGameGate;
 
 @end
 
@@ -71,6 +105,7 @@ typedef enum AlertTagEnum{
     MCRelease(_currentAlertView);
     MCRelease(_resetAlertView);
     MCRelease(_passLevelAlertView);
+    MCRelease(_passAllLevelAlertView);
     NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -137,10 +172,27 @@ typedef enum AlertTagEnum{
     self.gameSceneMenuView.levelImage = [self refreshLevelImage]; 
 }
 
+- (void)resetGateWithGateID:(int)gateID
+{
+    self.steps = nil;
+    self.moveCount = 0;
+    self.theGateID = gateID;
+    [self.gameSceneView resetBlockViewFrameAnimation];
+}
+
+- (void)resetNextGateWithGateID:(int)gateID
+{
+    self.steps = nil;
+    self.moveCount = 0;
+    self.theGateID = gateID;
+    [self.gameSceneView showBlockViews];
+}
+
 #pragma mark - Priate method
 - (void)createSubViews
 {
     self.gameSceneView = [[[MCGameSceneView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
+    self.gameSceneView.delegate = self;
     MCGate *gate =  [[MCGate alloc] init];
     gate.passMin = 1;
     gate.passMoveCount = 1;
@@ -168,7 +220,7 @@ typedef enum AlertTagEnum{
     _resetAlertView.delegate = self;
     _resetAlertView.tag = kAlertTagReset;
     
-    _passLevelAlertView = [[MCAlertPassLevelView alloc] init];
+    _passLevelAlertView = [[MCPassLevelAlertView alloc] init];
     _passLevelAlertView.delegate = self;
     _passLevelAlertView.tag = kAlertTagPassLevel;
    
@@ -199,6 +251,126 @@ typedef enum AlertTagEnum{
         }
     }
     return image;
+}
+
+- (void)removeLastStep
+{
+    if (self.steps.copy > 0) {
+        NSMutableArray *tempSteps = [NSMutableArray arrayWithArray:self.steps];
+        [tempSteps removeLastObject];
+        self.steps = [NSArray arrayWithArray:tempSteps];
+    }
+}
+
+- (void)addStepWithBlockView:(MCBlockView *)blockView
+{
+    MCStep *step = [[MCStep alloc] init];
+    step.blockID = blockView.blockID;
+    step.frameOld = blockView.oldFrame;
+    step.isNewActiving = [self isNewActivingWithBlockView:blockView];
+    NSMutableArray *tempSteps = [NSMutableArray array];
+    [tempSteps addObject:step];
+    self.steps = [NSArray arrayWithArray:tempSteps];
+}
+
+- (BOOL)isNewActivingWithBlockView:(MCBlockView *)blockView
+{
+    if (self.steps.count > 0) {
+        MCStep *lastStep = [self.steps lastObject];
+        if (lastStep.blockID != blockView.blockID) {
+            self.moveCount ++;
+            return YES;
+        }
+        return NO;
+    }
+    self.moveCount ++;
+    return YES;
+}
+
+- (void)completeGateWithBlockView:(MCBlockView *)blockView
+{
+    if (!blockView.block.isLargeBlock) {
+        // 移动不是大的blockView
+        return;
+    }else {
+        // 判断是否在指定的获胜区域
+        if ([self isGameCompleted:blockView]) {
+            [self levleDidPass];
+        }
+    }
+}
+
+- (BOOL)isGameCompleted:(MCBlockView *)blockView
+{
+    if (CGRectEqualToRect(blockView.frame, CompletedCondition)) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)levleDidPass
+{
+    BOOL isNewRMin = NO;
+    
+    MCGate *gate = self.gameSceneView.theGate;
+    if (gate.passMoveCount != gate.passMin) {
+        self.gameSceneView.theGate.passMoveCount = self.moveCount;
+    }
+    
+    if ([gate checkNewRecord:self.moveCount]) {
+        // 是否是新纪录
+        isNewRMin = YES;
+        self.gameSceneView.theGate.passMoveCount = self.moveCount;
+    }
+    
+    
+    
+}
+
+- (void)refreshGameGate
+{
+    if (self.theGateID <= 0) {
+        return;
+    }
+    
+    MCBlockView *keyBlockView = nil;
+    for (MCBlockView *blockView in self.gameSceneView.blockViews) {
+        if (blockView.block.isLargeBlock) {
+            // 如果是大blockView
+            keyBlockView = blockView;
+            break;
+        }
+    }
+    
+    MCGameState *gameState = [[MCGameState alloc] init];
+    if (keyBlockView) {
+        if ([self isGameCompleted:keyBlockView]) {
+            gameState.currentGateID = [MCUtil nextGateIDWith:self.gameSceneView.theGate];
+            [MCDataManager sharedMCDataManager].gameState = gameState;
+        }else {
+            if (self.steps.count > 0) {
+                gameState.currentGateID = self.gameSceneView.theGate.gateID;
+                gameState.moveCount = self.moveCount;
+                gameState.steps = self.steps;
+                NSMutableArray *mfs = [NSMutableArray array];
+                for (MCBlockView *blockView in self.gameSceneView.blockViews) {
+                    MCRectFrame *frame = [[MCRectFrame alloc] init];
+                    frame.frameRect = blockView.frame;
+                    [mfs addObject:frame];
+                }
+                gameState.frames = [NSArray arrayWithArray:mfs];
+                [MCDataManager sharedMCDataManager].gameState = gameState;
+            }else {
+                NSLog(@"not Move anything blockView!!!!");
+            }
+        }
+    }
+    [gameState release];
+}
+
+- (void)gotoNextLevel:(int)gateID
+{
+    
 }
 
 #pragma mark - GameSceneMenuDelegate
@@ -245,7 +417,7 @@ typedef enum AlertTagEnum{
     if (view.tag == kAlertTagReset) {
         if (button.tag = kTagControlFirst) {
             // 如果是重置按钮， 则重置游戏
-            
+            [self resetGateWithGateID:self.theGateID];
         }
     }
 }
@@ -257,7 +429,29 @@ typedef enum AlertTagEnum{
     self.gameSceneMenuView.btnReset.userInteractionEnabled = isMove;
 }
 
+- (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
+{
+    if (_moveFlag == kBlockViewMoveUndo ) {
+        // 如果是返回
+        MCStep *lastStep = [self.steps lastObject];
+        if (lastStep.isNewActiving) {
+            self.moveCount -= 1;
+        }
+        [self removeLastStep];
+        _moveFlag = kBlockViewMoveNormal;
+        return;
+    }
+    
+    // 如果是正常移动blockView
+    [self addStepWithBlockView:blockView];
+    [self completeGateWithBlockView:blockView];
+    [self refreshGameGate];
+}
+
 #pragma mark - overWirte method
+- (void)refreshView
+{}
+
 - (void) windowDidShow
 {
     [super windowDidShow];
@@ -273,6 +467,8 @@ typedef enum AlertTagEnum{
     
     if (self.currentAlertView == _passLevelAlertView) {
         [self showWindow];
+        [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        [self.gameSceneView showStar:self.gameSceneView.theGate];
         return;
     }
 }

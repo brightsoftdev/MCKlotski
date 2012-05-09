@@ -58,7 +58,7 @@ typedef enum TOUCH_BLOCK_GESTURE{
 /**
  * 获取blockView的frame
  */
-- (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y;
++ (CGRect)frameWithBlockType:(int)blockType positionX:(int)x positionY:(int)y;
 
 // 通过frame移动块
 - (void)moveBlockViewWithFrame:(CGRect)newFrame;

@@ -204,6 +204,10 @@
 		21A811631556B17A0040CA5D /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A811541556B17A0040CA5D /* undo.png */; };
 		21A811641556B17A0040CA5D /* undo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A811551556B17A0040CA5D /* undo@2x.png */; };
 		21A811651556B17A0040CA5D /* undo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A811551556B17A0040CA5D /* undo@2x.png */; };
+		21C6FB18155A71610063612B /* MCPassAllLevelAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C6FB17155A71610063612B /* MCPassAllLevelAlertView.m */; };
+		21C6FB19155A71610063612B /* MCPassAllLevelAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C6FB17155A71610063612B /* MCPassAllLevelAlertView.m */; };
+		21C6FB1D155A719D0063612B /* MCPassLevelAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C6FB1C155A719D0063612B /* MCPassLevelAlertView.m */; };
+		21C6FB1E155A719D0063612B /* MCPassLevelAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C6FB1C155A719D0063612B /* MCPassLevelAlertView.m */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -296,10 +300,6 @@
 		EB9710BF15456C1E000EBF5E /* menu_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9710B715456C1E000EBF5E /* menu_highlighted@2x.png */; };
 		EB9710C115456CE6000EBF5E /* menu_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9710C015456CE6000EBF5E /* menu_highlighted.png */; };
 		EB9710C215456CE6000EBF5E /* menu_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9710C015456CE6000EBF5E /* menu_highlighted.png */; };
-		EBA01B38154962EB00ECD185 /* MCAlertPassSubLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA01B37154962EB00ECD185 /* MCAlertPassSubLevelView.m */; };
-		EBA01B39154962EB00ECD185 /* MCAlertPassSubLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA01B37154962EB00ECD185 /* MCAlertPassSubLevelView.m */; };
-		EBA01B401549633300ECD185 /* MCAlertPassLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */; };
-		EBA01B411549633300ECD185 /* MCAlertPassLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */; };
 		EBA01B441549644C00ECD185 /* alert_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA01B421549644C00ECD185 /* alert_bg.png */; };
 		EBA01B451549644C00ECD185 /* alert_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA01B421549644C00ECD185 /* alert_bg.png */; };
 		EBA01B461549644C00ECD185 /* alert_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA01B431549644C00ECD185 /* alert_bg@2x.png */; };
@@ -472,6 +472,10 @@
 		21A811531556B17A0040CA5D /* undo_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo_2@2x.png"; sourceTree = "<group>"; };
 		21A811541556B17A0040CA5D /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
 		21A811551556B17A0040CA5D /* undo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo@2x.png"; sourceTree = "<group>"; };
+		21C6FB16155A71610063612B /* MCPassAllLevelAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPassAllLevelAlertView.h; sourceTree = "<group>"; };
+		21C6FB17155A71610063612B /* MCPassAllLevelAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPassAllLevelAlertView.m; sourceTree = "<group>"; };
+		21C6FB1B155A719D0063612B /* MCPassLevelAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPassLevelAlertView.h; sourceTree = "<group>"; };
+		21C6FB1C155A719D0063612B /* MCPassLevelAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPassLevelAlertView.m; sourceTree = "<group>"; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -544,10 +548,6 @@
 		EB9710B515456C1E000EBF5E /* menu_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_normal@2x.png"; sourceTree = "<group>"; };
 		EB9710B715456C1E000EBF5E /* menu_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_highlighted@2x.png"; sourceTree = "<group>"; };
 		EB9710C015456CE6000EBF5E /* menu_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_highlighted.png; sourceTree = "<group>"; };
-		EBA01B36154962EB00ECD185 /* MCAlertPassSubLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAlertPassSubLevelView.h; sourceTree = "<group>"; };
-		EBA01B37154962EB00ECD185 /* MCAlertPassSubLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAlertPassSubLevelView.m; sourceTree = "<group>"; };
-		EBA01B3E1549633300ECD185 /* MCAlertPassLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAlertPassLevelView.h; sourceTree = "<group>"; };
-		EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAlertPassLevelView.m; sourceTree = "<group>"; };
 		EBA01B421549644C00ECD185 /* alert_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_bg.png; sourceTree = "<group>"; };
 		EBA01B431549644C00ECD185 /* alert_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_bg@2x.png"; sourceTree = "<group>"; };
 		EBA01B481549692F00ECD185 /* alert_continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_continue.png; sourceTree = "<group>"; };
@@ -1088,12 +1088,12 @@
 			children = (
 				EBD1474D154935BC0087EBD7 /* MCAlertView.h */,
 				EBD1474E154935BC0087EBD7 /* MCAlertView.m */,
-				EBA01B36154962EB00ECD185 /* MCAlertPassSubLevelView.h */,
-				EBA01B37154962EB00ECD185 /* MCAlertPassSubLevelView.m */,
-				EBA01B3E1549633300ECD185 /* MCAlertPassLevelView.h */,
-				EBA01B3F1549633300ECD185 /* MCAlertPassLevelView.m */,
 				218A64E815575AA200E3CF05 /* MCResetAlertView.h */,
 				218A64E915575AA200E3CF05 /* MCResetAlertView.m */,
+				21C6FB16155A71610063612B /* MCPassAllLevelAlertView.h */,
+				21C6FB17155A71610063612B /* MCPassAllLevelAlertView.m */,
+				21C6FB1B155A719D0063612B /* MCPassLevelAlertView.h */,
+				21C6FB1C155A719D0063612B /* MCPassLevelAlertView.m */,
 			);
 			name = AlertView;
 			sourceTree = "<group>";
@@ -1394,8 +1394,6 @@
 				EBD1474615492ADA0087EBD7 /* MCStep.m in Sources */,
 				EBD1474B15492E360087EBD7 /* MCGameState.m in Sources */,
 				EBD1474F154935BC0087EBD7 /* MCAlertView.m in Sources */,
-				EBA01B38154962EB00ECD185 /* MCAlertPassSubLevelView.m in Sources */,
-				EBA01B401549633300ECD185 /* MCAlertPassLevelView.m in Sources */,
 				EB179A0B154A3D0200E32807 /* MCButton.m in Sources */,
 				EB179A10154A7E1B00E32807 /* MCSelectLevelButton.m in Sources */,
 				EB179A18154A959800E32807 /* MCButtonBase.m in Sources */,
@@ -1431,6 +1429,8 @@
 				21A8112E15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 				21A8113C1556A74C0040CA5D /* MCGameSceneMenuView.m in Sources */,
 				218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */,
+				21C6FB18155A71610063612B /* MCPassAllLevelAlertView.m in Sources */,
+				21C6FB1D155A719D0063612B /* MCPassLevelAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1454,8 +1454,6 @@
 				EBD1474715492ADA0087EBD7 /* MCStep.m in Sources */,
 				EBD1474C15492E360087EBD7 /* MCGameState.m in Sources */,
 				EBD14750154935BC0087EBD7 /* MCAlertView.m in Sources */,
-				EBA01B39154962EB00ECD185 /* MCAlertPassSubLevelView.m in Sources */,
-				EBA01B411549633300ECD185 /* MCAlertPassLevelView.m in Sources */,
 				EB179A0D154A3D0D00E32807 /* MCButton.m in Sources */,
 				EB179A11154A7E1B00E32807 /* MCSelectLevelButton.m in Sources */,
 				EB179A19154A959800E32807 /* MCButtonBase.m in Sources */,
@@ -1494,6 +1492,8 @@
 				21A8112F15566FCA0040CA5D /* MCGameSceneView.m in Sources */,
 				21A8113D1556A74C0040CA5D /* MCGameSceneMenuView.m in Sources */,
 				217DAE2B155761C800E1DBC7 /* MCResetAlertView.m in Sources */,
+				21C6FB19155A71610063612B /* MCPassAllLevelAlertView.m in Sources */,
+				21C6FB1E155A719D0063612B /* MCPassLevelAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

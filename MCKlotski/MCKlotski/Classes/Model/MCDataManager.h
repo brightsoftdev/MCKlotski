@@ -10,26 +10,30 @@
 #import "GGFoundation.h"
 
 @class MCGate;
+@class MCGameState;
 
 typedef enum DM_DATA_E{
     DATA_STATE_INVALID = 0,
-    DATA_STATE_GATE_COMPETED,
-    DATA_STATE_CHANGED,
+    kDataManageGameCompleted,
+    kDataManageStateChange,
     DATA_STATE_COUNT,
-}DM_DATA;
+}DataManageChange;
 
 
 @protocol DataManagerObserver
 
 @required
-- (void)updateDataWithState:(DM_DATA)dmData; // 通过数据的改变
+- (void)updateDataWithState:(DataManageChange)dmData; // 通过数据的改变
 @end
 
 @interface MCDataManager : NSObject{
+  @private
     NSArray *_gates;
     NSArray *_blockViews; // 存放所有的blockView
     
     NSMutableArray *_theObservers;
+    MCGameState *_gameState;
+    int _updatingGateID;
 }
 
 /**
@@ -38,12 +42,14 @@ typedef enum DM_DATA_E{
 @property (nonatomic, retain) NSArray *gates;
 @property (nonatomic, retain) NSArray *blockViews;
 @property (nonatomic, retain) NSMutableArray *theObservers;
+@property (nonatomic, retain) MCGameState *gameState;
+@property (nonatomic, assign) int updatingGateID;
 
 DECLARE_SINGLETON(MCDataManager);
 
 // observer
-- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
-- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData;
+- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DataManageChange)dmData;
+- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DataManageChange)dmData;
 
 /**
  * 载入本地数据
@@ -60,5 +66,18 @@ DECLARE_SINGLETON(MCDataManager);
  */
 - (MCGate *)gateWithID:(int)gateID;
 
+/**
+ * 是否完成了所有关
+ */
+- (BOOL)isCompleteAllGatesWithGate:(MCGate *)gate;
 
+/**
+ * 获取下一关的gateID
+ */
+- (int)nextGateIDWithGate:(MCGate *)gate;
+
+/**
+ * 更新Gate
+ */
+- (MCGate *)updateGateWithGate:(MCGate *)newGate;
 @end

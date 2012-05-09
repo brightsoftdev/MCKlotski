@@ -9,6 +9,9 @@
 #ifndef MCKlotski_MCConfig_h
 #define MCKlotski_MCConfig_h
 
+// 最大关数
+#define LimitedGate 120
+
 #define kInvaluableBlockID -1
 
 #define MENU_FONT @"FZKATJW--GB1-0" // 方正卡通简体

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class MCGate;
 @class MCAppDelegate;
 
 @interface MCUtil : NSObject
@@ -26,4 +27,10 @@
  */
 + (void)saveLocaData:(NSString *)fileName data:(NSString *)str;
 
+/**
+ * 判断是否完成所有关
+ */
++ (BOOL)isCompleteAllGate:(MCGate *)gate;
+
++ (int)nextGateIDWith:(MCGate *)gate;
 @end

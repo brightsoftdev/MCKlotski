@@ -10,10 +10,11 @@
 #import "GGFoundation.h"
 #import "MCConfig.h"
 #import "MCGate.h"
+#import "MCGameState.h"
 
 @interface MCDataManager (Privates)
 // observer
-- (void)notifyObserverForState:(DM_DATA)dmData;
+- (void)notifyObserverForState:(DataManageChange)dmData;
 
 @end
 
@@ -22,6 +23,8 @@
 @synthesize gates = _gates;
 @synthesize blockViews = _blockViews;
 @synthesize theObservers = _theObservers;
+@synthesize gameState = _gameState;
+@synthesize updatingGateID = _updatingGateID;
 
 SYNTHESIZE_SINGLETON(MCDataManager);
 
@@ -41,6 +44,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
             [observers addObject:[NSMutableSet set]];
         }
         self.theObservers = observers;
+        self.gameState = [[[MCGameState alloc] init] autorelease];
     }
     return self;
 }
@@ -50,6 +54,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     MCRelease(_gates);
     MCRelease(_blockViews);
     MCRelease(_theObservers);
+    MCRelease(_gameState);
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -62,12 +67,19 @@ SYNTHESIZE_SINGLETON(MCDataManager);
         _gates = gates;
         [_gates retain];
         
-        [self notifyObserverForState:DATA_STATE_GATE_COMPETED];
+        [self notifyObserverForState:kDataManageGameCompleted];
     }
 }
 
+- (void)setGameState:(MCGameState *)gameState
+{
+    [_gameState release];
+    _gameState = [gameState retain];
+    [self notifyObserverForState:kDataManageStateChange];
+}
+
 #pragma mark - oberser
-- (void)notifyObserverForState:(DM_DATA)dmData
+- (void)notifyObserverForState:(DataManageChange)dmData
 {
     NSMutableSet *set = [self.theObservers objectAtIndex:dmData];
     for (id observer in set) {
@@ -75,13 +87,13 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     }
 }
 
-- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
+- (void)addObserverWithTarget:(id<DataManagerObserver>)observer forState:(DataManageChange)dmData
 {
     NSMutableSet *set = [self.theObservers objectAtIndex:dmData];
     [set addObject:observer];
 }
 
-- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DM_DATA)dmData
+- (void)removeObserverWithTarget:(id<DataManagerObserver>)observer forState:(DataManageChange)dmData
 {
     NSMutableSet *set = [self.theObservers objectAtIndex:dmData];
     [set removeObject:observer];
@@ -104,7 +116,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     
 }
 
-#pragma public method
+#pragma mark - public method
 - (MCGate *)gateWithID:(int)gateID
 {
     MCGate *tempGate = nil;
@@ -115,6 +127,37 @@ SYNTHESIZE_SINGLETON(MCDataManager);
         }
     }
     return [tempGate autorelease];
+}
+
+- (BOOL)isCompleteAllGatesWithGate:(MCGate *)gate
+{
+    if (gate.passMoveCount == 0) {
+        return NO;
+    }
+    //TODO:: isCompleteAllGatesWithGate
+    return YES;
+}
+
+- (int)nextGateIDWithGate:(MCGate *)gate
+{
+    int nextID = 0;
+    nextID = gate.gateID + 1;
+    nextID = nextID > LimitedGate ? 1 : nextID;
+    return nextID;
+}
+
+- (MCGate *)updateGateWithGate:(MCGate *)newGate
+{
+    MCGate *updateGate = [self gateWithID:newGate.gateID];
+    if (updateGate) {
+        self.updatingGateID = updateGate.gateID;
+        int index = [self.gates indexOfObject:updateGate];
+        [updateGate refreshWithModel:newGate];
+        NSMutableArray *tempGates = [NSMutableArray arrayWithArray:self.gates];
+        [tempGates replaceObjectAtIndex:index withObject:updateGate];
+        self.gates = [NSArray arrayWithArray:tempGates];
+    }
+    return updateGate;
 }
 
 @end

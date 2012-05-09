@@ -10,8 +10,9 @@
 #import "MCGameSceneMenuView.h"
 #import "MCResetAlertView.h"
 #import "MCGameSceneView.h"
+#import "MCPassAllLevelAlertView.h"
 
-@class MCAlertPassLevelView;
+@class MCPassLevelAlertView;
 
 typedef enum BlockViewMoveFlag{
     
@@ -35,11 +36,10 @@ typedef enum BlockViewMoveFlag{
     MCGameSceneMenuView *_gmaeSceneMenuView;
     NSArray *_steps;
     
-    MCAlertView *_currentAlertView;
-    // 点击重置按钮之后弹出的dialog
-    MCResetAlertView *_resetAlertView;
-    // 过关之后的Dialog
-    MCAlertPassLevelView *_passLevelAlertView;
+    MCAlertView *_currentAlertView;  // 当前弹出dialog
+    MCResetAlertView *_resetAlertView; // 点击重置按钮之后弹出的dialog
+    MCPassLevelAlertView *_passLevelAlertView; // 过关之后的Dialog
+    MCPassAllLevelAlertView *_passAllLevelAlertView; // 通过所有关之后的dialog
     
     // 移动总数
     int _moveCount;
@@ -60,5 +60,11 @@ typedef enum BlockViewMoveFlag{
 
 - (void)resumeGame;
 - (void)refreshSubViews;
+
+- (void)gotoNextLevel:(int)gateID;
+
+// 重置关
+- (void)resetGateWithGateID:(int)gateID;
+- (void)resetNextGateWithGateID:(int)gateID;
 
 @end

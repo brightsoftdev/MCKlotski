@@ -1,14 +1,23 @@
 //
-//  MCAlertPassLevelView.m
+//  MCPassLevelAlertView.m
 //  MCKlotski
 //
-//  Created by lim edwon on 12-4-26.
-//  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
+//  Created by gtts on 5/9/12.
+//  Copyright (c) 2012 TJUT-SCCE-SIPC. All rights reserved.
 //
 
-#import "MCAlertPassLevelView.h"
+#import "MCPassLevelAlertView.h"
 
-@implementation MCAlertPassLevelView
+@implementation MCPassLevelAlertView
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
 
 - (void)updateAlertFrame
 {

@@ -8,6 +8,8 @@
 
 #import "MCUtil.h"
 #import "MCAppDelegate.h"
+#import "MCGate.h"
+#import "MCDataManager.h"
 
 @implementation MCUtil
 
@@ -40,6 +42,16 @@
     }else {
         NSLog(@"Save Local File Successfully!!!");
     }
+}
+
++ (BOOL)isCompleteAllGate:(MCGate *)gate
+{
+    return [[MCDataManager sharedMCDataManager] isCompleteAllGatesWithGate:gate];
+}
+
++ (int)nextGateIDWith:(MCGate *)gate
+{
+     return [[MCDataManager sharedMCDataManager] nextGateIDWithGate:gate];
 }
 
 @end
