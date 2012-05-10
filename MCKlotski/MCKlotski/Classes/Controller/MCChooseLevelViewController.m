@@ -7,7 +7,6 @@
 //
 
 #import "MCChooseLevelViewController.h"
-#import "MCDataManager.h"
 #import "MCSelectLevelButton.h"
 #import "MCCustomGateViewController.h"
 #import "MCGate.h"
@@ -38,6 +37,8 @@
 // 点击选关按钮的事件
 - (void)selectGateAction:(id)sender;
 
+- (void)refreshGateButtonWithGateID:(int)gateID;
+
 
 @end
 
@@ -56,12 +57,14 @@
          NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         _currentPage = 0;
         self.gateButtons = [NSMutableArray array];
+        [[MCDataManager sharedMCDataManager] addObserverWithTarget:self forState:kDataManageGameCompleted];
     }
     return self;
 }
 
 - (void)dealloc
 {
+    [[MCDataManager sharedMCDataManager] addObserverWithTarget:self forState:kDataManageGameCompleted];
     [_scrollView release];
     _scrollView = nil;
     [_pageControl release];
@@ -96,9 +99,17 @@
 {
     float pageWidth = self.scorllView.frame.size.width; 
     int page = floorf((self.scorllView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    NSLog(@"%f--", self.scorllView.contentOffset.x);
+    NSLog(@"self.scorllView.contentOffset.x:%f", self.scorllView.contentOffset.x);
     _currentPage = page;
     self.pageControl.currentPage = page;
+}
+
+#pragma mark - DataManagerObserver
+- (void)updateDataWithState:(DataManageChange)dmData
+{
+    if (dmData == kDataManageGameCompleted) {
+        [self refreshGateButtonWithGateID:[MCDataManager sharedMCDataManager].updatingGateID];
+    }
 }
 
 #pragma mark - Private method
@@ -132,14 +143,6 @@
 
 - (void)createGateButtons
 {
-    NSMutableArray *gates_ = [NSMutableArray array];
-    for (int i = 0 ; i < 150; ++i) {
-        MCGate *gate = [[MCGate  alloc] init];
-        gate.isLocked = NO;
-        [gates_ addObject:gate];        
-    }
-    [MCDataManager sharedMCDataManager].gates = gates_;
-    
     int gateCount = [MCDataManager sharedMCDataManager].gates.count;
     for (int i = 0; i < gateCount; i++) {
         MCSelectLevelButton *gateButton = [[MCSelectLevelButton alloc] initWithFrame:CGRectMake(0, 0, 53, 53)];
@@ -161,7 +164,8 @@
         pageNum ++;
     }
     
-    self.scorllView.contentSize = CGSizeMake(self.scorllView.frame.size.width * pageNum, self.scorllView.frame.size.height);
+    self.scorllView.contentSize = CGSizeMake(self.scorllView.frame.size.width * pageNum,
+                                             self.scorllView.frame.size.height);
     self.pageControl.numberOfPages = pageNum;
 }
 
@@ -210,10 +214,21 @@
 {
     [super buttonAction:sender];
     MCSelectLevelButton *selectButton = (MCSelectLevelButton *)sender;
-    MCCustomGateViewController *customGateViewController = [[MCCustomGateViewController alloc] initWithGateID:1];
-    NSLog(@"------------");
+    MCCustomGateViewController *customGateViewController = 
+        [[MCCustomGateViewController alloc] initWithGateID:selectButton.gate.gateID];
     [self.navigationController pushViewController:customGateViewController animated:YES];
     [customGateViewController release];
+}
+
+- (void)refreshGateButtonWithGateID:(int)gateID
+{
+    for (int i = 0; i < self.gateButtons.count; i++) {
+        MCGate *gate = [[MCDataManager sharedMCDataManager].gates objectAtIndex:i];
+        if (gateID == gate.gateID) {
+            MCSelectLevelButton *selectButton = [self.gateButtons objectAtIndex:i];
+            [selectButton refreshWithGate:gate];
+        }
+    }
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "MCGameState.h"
 #import "MCSettings.h"
 #import "CJSONDeserializer.h"
+#import "MCUtil.h"
 
 @interface MCDataManager (Privates)
 // observer
@@ -180,7 +181,20 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 
 - (void)saveDataToLocal
 {
+    NSString *jsonString = nil;
+    if (self.gates.count > 0) {
+        NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
+        for (MCGate *gate in self.gates) {
+            if (gate.passMoveCount != 0) {
+                //TODO::saveDataToLocal
+            }
+        }
+    }
     
+    if (!jsonString) {
+        return;
+    }
+    [MCUtil saveLocaData:LOCAL_DATA_FILE data:jsonString ];
 }
 
 #pragma mark - public method
@@ -201,8 +215,17 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     if (gate.passMoveCount == 0) {
         return NO;
     }
-    //TODO:: isCompleteAllGatesWithGate
-    return YES;
+    int alreadyFinished = 0;
+    for (MCGate *gate in self.gates) {
+        if (gate.passMoveCount != 0) {
+            alreadyFinished ++;
+        }
+    }
+    NSLog(@"already Finished gate:%d", alreadyFinished);
+    if (alreadyFinished == LimitedGate) {
+        return YES;
+    }
+    return NO;
 }
 
 - (int)nextGateIDWithGate:(MCGate *)gate

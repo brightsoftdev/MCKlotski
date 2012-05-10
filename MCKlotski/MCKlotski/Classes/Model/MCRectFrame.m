@@ -25,7 +25,6 @@
         self.frameY = [[dict objectForKey:KeyFrameY] floatValue];
         self.frameWidth = [[dict objectForKey:KeyFrameWidth] floatValue];
         self.frameHeight = [[dict objectForKey:KeyFrameHeight] floatValue];
-        self.frameRect = CGRectFromString([dict objectForKey:KeyFrameRect]);
     }
     return self;
 }
@@ -38,13 +37,12 @@
     self.frameY = [coder decodeFloatForKey:KeyFrameY];
     self.frameWidth = [coder decodeFloatForKey:KeyFrameWidth];
     self.frameHeight = [coder decodeFloatForKey:KeyFrameHeight];
-    self.frameRect = CGRectFromString([coder decodeObjectForKey:KeyFrameRect]);
     return self;
 }
 
 - (void)initAttributes
 {
-	self.frameRect = CGRectZero;
+	[self refreshWithRect:CGRectZero];
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder
@@ -64,18 +62,18 @@
 }
 
 #pragma mark - property
-- (void)setFrameRect:(CGRect)frameRect
-{
-    self.frameRect = frameRect;
-    self.frameX = frameRect.origin.x;
-    self.frameY = frameRect.origin.y;
-    self.frameWidth = frameRect.size.width;
-    self.frameHeight = frameRect.size.height;
-}
 
 - (CGRect)frameRect
 {
     return CGRectMake(self.frameX, self.frameY, self.frameWidth, self.frameHeight);
+}
+
+- (void)refreshWithRect:(CGRect)rect
+{
+    self.frameX = rect.origin.x;
+    self.frameY = rect.origin.y;
+    self.frameWidth = rect.size.width;
+    self.frameHeight = rect.size.height;
 }
 
 @end

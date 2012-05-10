@@ -27,6 +27,8 @@ typedef enum AlertTagEnum{
     kAlertTagInvalid = 0,
     kAlertTagReset,
     kAlertTagPassLevel,
+    kAlertTagNewBestMove,
+    kAlertTagPassAllLevel,
     kAlertTagCount,
 }kAlertTag;
 
@@ -198,12 +200,8 @@ typedef enum AlertTagEnum{
 {
     self.gameSceneView = [[[MCGameSceneView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
     self.gameSceneView.delegate = self;
-    MCGate *gate =  [[MCGate alloc] init];
-    gate.passMin = 1;
-    gate.passMoveCount = 1;
-    gate.layout = [NSArray arrayWithObjects:@"2",@"0",@"0",@"3",@"1",@"0",@"2",@"3",@"0",@"3",@"1",@"1",@"2",@"0",@"2",@"4",@"1",@"2",@"1",@"3",@"2",@"1",@"3",@"3",@"1",@"1",@"4",@"1",@"2",@"4", nil];
+    MCGate *gate = [[MCDataManager sharedMCDataManager] gateWithID:self.theGateID];
     self.gameSceneView.theGate = gate;
-    [gate release];
     
     [self.view addSubview:self.gameSceneView];
     
@@ -219,17 +217,7 @@ typedef enum AlertTagEnum{
     [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:back];
     [back release]; 
-    
-    // 重置dialog
-    _resetAlertView = [[MCResetAlertView alloc] init];
-    _resetAlertView.delegate = self;
-    _resetAlertView.tag = kAlertTagReset;
-    
-    _passLevelAlertView = [[MCPassLevelAlertView alloc] init];
-    _passLevelAlertView.delegate = self;
-    _passLevelAlertView.tag = kAlertTagPassLevel;
    
-    //TODO::
     [self refreshSubViews]; 
 }
 
@@ -242,6 +230,12 @@ typedef enum AlertTagEnum{
 
 - (void)removeSubViews
 {
+    self.gameSceneView = nil;
+    self.gameSceneMenuView = nil;
+    _passLevelAlertView = nil;
+    _passAllLevelAlertView = nil;
+    _resetAlertView = nil;
+    _newBestMoveAlertView = nil;
 }
 
 - (UIImage *)refreshLevelImage
@@ -273,8 +267,9 @@ typedef enum AlertTagEnum{
     step.blockID = blockView.blockID;
     step.frameOld = blockView.oldFrame;
     step.isNewActiving = [self isNewActivingWithBlockView:blockView];
-    NSMutableArray *tempSteps = [NSMutableArray array];
+    NSMutableArray *tempSteps = [NSMutableArray arrayWithArray:self.steps];
     [tempSteps addObject:step];
+    [step release];
     self.steps = [NSArray arrayWithArray:tempSteps];
 }
 
@@ -379,8 +374,9 @@ typedef enum AlertTagEnum{
                 NSMutableArray *mfs = [NSMutableArray array];
                 for (MCBlockView *blockView in self.gameSceneView.blockViews) {
                     MCRectFrame *frame = [[MCRectFrame alloc] init];
-                    frame.frameRect = blockView.frame;
+                    [frame refreshWithRect:blockView.frame];
                     [mfs addObject:frame];
+                    [frame release];
                 }
                 gameState.frames = [NSArray arrayWithArray:mfs];
                 [MCDataManager sharedMCDataManager].gameState = gameState;
@@ -399,22 +395,46 @@ typedef enum AlertTagEnum{
 
 - (void)showResetAlertView
 {
-    
+    NSLog(@"showResetAlertView");
+    if (!_resetAlertView) {
+        _resetAlertView = [[MCResetAlertView alloc] init];
+        _resetAlertView.delegate = self;
+        _resetAlertView.tag = kAlertTagReset;
+    }
+    [_resetAlertView showAlertView];
 }
 
 - (void)showPassAllLevelAlertView
 {
-    
+     NSLog(@"showPassAllLevelAlertView");
+    if (!_passAllLevelAlertView) {
+        _passAllLevelAlertView = [[[[MCPassAllLevelAlertView alloc] init] autorelease] retain];
+        _passAllLevelAlertView.delegate = self;
+        _passAllLevelAlertView.tag = kAlertTagPassAllLevel;
+    }
+    [_passAllLevelAlertView showAlertView];
 }
 
 - (void)showNewBestMoveAlertView
 {
-    
+     NSLog(@"showNewBestMoveAlertView");
+    if (!_newBestMoveAlertView) {
+        _newBestMoveAlertView = [[[[MCNewBestMoveAlertView alloc] init] autorelease] retain];
+        _newBestMoveAlertView.delegate = self;
+        _newBestMoveAlertView.tag = kAlertTagNewBestMove;
+    }
+    [_newBestMoveAlertView showAlertView];
 }
 
 - (void)showPassLevelAlertView
 {
-    
+     NSLog(@"showPassLevelAlertView");
+    if (!_passLevelAlertView) {
+        _passLevelAlertView = [[[[MCPassLevelAlertView alloc] init] autorelease] retain];
+        _passLevelAlertView.delegate = self;
+        _passLevelAlertView.tag = kAlertTagPassLevel;
+    }
+    [_passLevelAlertView showAlertView];
 }
 
 #pragma mark - GameSceneMenuDelegate
@@ -428,13 +448,12 @@ typedef enum AlertTagEnum{
         MCBlockView *blockView = [self.gameSceneView blockViewWithBlockID:step.blockID];
         [blockView moveBlockViewWithFrame:step.frameOld];
     }
-    [_passLevelAlertView showAlertView];
 }
 
 - (void)resetAction:(id)sender
 {
     [super buttonAction:sender];
-    [_resetAlertView showAlertView];
+    [self showResetAlertView];
 }
 
 - (void)refreshButtons
@@ -459,9 +478,12 @@ typedef enum AlertTagEnum{
     
     // 特殊的dialog的特殊代码
     if (view.tag == kAlertTagReset) {
-        if (button.tag = kTagControlFirst) {
+        if (kTagControlFirst == button.tag) {
             // 如果是重置按钮， 则重置游戏
             [self resetGateWithGateID:self.theGateID];
+        }
+        if (kTagControlSecond == button.tag) {
+            return;
         }
     }
 }
@@ -508,20 +530,10 @@ typedef enum AlertTagEnum{
         [self showWindow];
         return;
     }
-    
-    if (self.currentAlertView == _passLevelAlertView) {
-        [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
-        [self.gameSceneView showStar:self.gameSceneView.theGate];
-        [self showWindow];
-        return;
-    }
-    
-    if (self.currentAlertView == _passAllLevelAlertView) {
-        [self gotoNextLevel:1];
-        [self.gameSceneView showStar:self.gameSceneView.theGate];
-        [self showWindow];
-        return;
-    }
+    [self.gameSceneView showStar:self.gameSceneView.theGate];
+    [self showWindow];
+    [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+    return;
 }
 
 @end

@@ -7,11 +7,14 @@
 //
 
 #import "MCViewController.h"
+#import "MCDataManager.h"
 
 @interface MCChooseLevelViewController : MCViewController<
   UIScrollViewDelegate, 
-  UIAlertViewDelegate
+  UIAlertViewDelegate,
+  DataManagerObserver
 > {
+  @private
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
     

@@ -34,6 +34,9 @@
 
 + (int)nextGateIDWith:(MCGate *)gate;
 
-/*！ 载入本地数据*/
+/*！ 载入本地数据 */
 + (void)lauchLocalData;
+
+/*! 保存本地数据 */
++ (void)savaLocalData;
 @end

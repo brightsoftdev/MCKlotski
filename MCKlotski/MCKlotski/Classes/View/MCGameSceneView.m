@@ -77,6 +77,7 @@
 {
     [_theGate autorelease];
     _theGate = [theGate retain];
+    NSLog(@"theGate gateID:%d", _theGate.gateID);
     [self showStar:_theGate];
     [self createBlockViews];
 }
@@ -107,7 +108,7 @@
                                              positionX:blockView.block.positionX 
                                              positionY:blockView.block.positionY];
         [MCBlockView beginAnimations:@"BlockViewResetAnimation" context:nil];
-        [MCBlockView setAnimationDuration:0.3];
+        [MCBlockView setAnimationDuration:0.5];
         [MCBlockView setAnimationDelegate:self];
         [MCBlockView setAnimationDidStopSelector:@selector(resetBlockViewFrameAnimationEnd)];
         blockView.frame = frame;

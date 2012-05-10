@@ -18,6 +18,8 @@
 @property (nonatomic, assign) float frameY;
 @property (nonatomic, assign) float frameWidth;
 @property (nonatomic, assign) float frameHeight;
-@property (nonatomic, assign) CGRect frameRect;
+@property (nonatomic, readonly) CGRect frameRect;
+
+- (void)refreshWithRect:(CGRect)rect;
 
 @end

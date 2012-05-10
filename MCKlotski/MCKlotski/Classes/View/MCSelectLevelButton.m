@@ -64,8 +64,6 @@
         self.enabled = NO;
         return;
     }
-    //TODO::
-    self.gate.passMoveCount = 1;
     if (self.gate.passMoveCount != 0) {
         if (self.gate.passMoveCount > self.gate.passMin) {
             self.flagView.image = [UIImage imageNamed:@"star1.png"];

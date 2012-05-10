@@ -7,8 +7,17 @@
 //
 
 #import "MCGate.h"
+#import "CJSONDeserializer.h"
+#import "CJSONSerializer.h"
 
 #define kInvalidGateID -1
+
+@interface MCGate (Private)
+
+- (NSArray *)layoutFromJsonString:(NSString *)string;
+- (NSString *)jsonStringFromLayouts:(NSArray *)layouts;
+
+@end
 
 @implementation MCGate
 
@@ -29,7 +38,10 @@
         self.passMin = [[dict objectForKey:KeyPassMin] intValue];
         self.passMoveCount = [[dict objectForKey:KeyPassMoveCount] intValue];
         self.isLocked = [[dict objectForKey:KeyLocked] boolValue];
-        self.layout = [dict objectForKey:KeyLayout];
+        if ([dict objectForKey:KeyLayout]) {
+            NSString * strLayout = [dict objectForKey:KeyLayout];
+            self.layout = [self layoutFromJsonString:strLayout];
+        }
     }
     return self;
 }
@@ -111,6 +123,19 @@
         return YES;
     }
     return NO;
+}
+
+#pragma mark - private method
+- (NSArray *)layoutFromJsonString:(NSString *)string
+{
+    NSData *jsonData = [string dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+    NSArray *array = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:nil];
+    return array;
+}
+
+- (NSString *)jsonStringFromLayouts:(NSArray *)layouts
+{
+    
 }
 
 @end

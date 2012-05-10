@@ -10,7 +10,7 @@
 #define MCKlotski_MCConfig_h
 
 // 最大关数
-#define LimitedGate 120
+#define LimitedGate 3
 
 #define kInvaluableBlockID -1
 
@@ -25,7 +25,7 @@
 
 // 布局文件
 #define LAYOUT_DATA_FILE @"KlotskiLayout.json"
-#define LOCAL_DATA_FILE @"local_user_noname.json"
+#define LOCAL_DATA_FILE @"local_user_Data.json"
 
 #pragma mark - keys
 // Setting

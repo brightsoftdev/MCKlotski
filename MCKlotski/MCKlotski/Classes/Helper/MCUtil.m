@@ -59,4 +59,9 @@
     [[MCDataManager sharedMCDataManager] loadLocalData];
 }
 
++ (void)savaLocalData
+{
+    [[MCDataManager sharedMCDataManager] saveDataToLocal];
+}
+
 @end
