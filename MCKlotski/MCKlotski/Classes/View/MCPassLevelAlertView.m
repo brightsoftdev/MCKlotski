@@ -39,15 +39,9 @@
                                    buttonImage.size.width, 
                                    buttonImage.size.height)];
     [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(continueAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     [button release];
-}
-
-- (void)continueAction:(id)sender
-{
-    [super buttonAction:sender];
-    [super hideAlertView];
 }
 
 @end

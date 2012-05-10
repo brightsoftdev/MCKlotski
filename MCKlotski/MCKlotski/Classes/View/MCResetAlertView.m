@@ -38,29 +38,15 @@
     [button setTitle:@"重置2" forState:UIControlStateHighlighted];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"alert_continue.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(resetAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     
     UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, 100, 20)];
     button2.tag = kTagControlSecond;
     [button2 setTitle:@"取消" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button2 addTarget:self action:@selector(reset2Action:) forControlEvents:UIControlEventTouchUpInside];
+    [button2 addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button2];
-}
-
-- (void)resetAction:(id)sender
-{
-    [super buttonAction:sender];
-    NSLog(@"hahha");
-    [super hideAlertView];
-}
-
-- (void)reset2Action:(id)sender
-{
-    [super buttonAction:sender];
-    NSLog(@"hahfsdafha");
-    [super hideAlertView];
 }
 
 @end

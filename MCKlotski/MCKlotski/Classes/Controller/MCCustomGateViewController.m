@@ -47,8 +47,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
 #pragma  mark - overwrite
+- (void)windowDidShow
+{
+    [super windowDidShow];
+}
+
+- (void)windowDidHide
+{
+    [super windowDidHide];
+}
+
 - (void)gotoNextLevel:(int)gateID
 {
     [super gotoNextLevel:gateID];

@@ -37,10 +37,6 @@ typedef enum Control_Tag{
 
 - (void)showAlertView;
 
-- (void)hideAlertView;
-
-- (void)buttonAction:(id)sender;
-
 @end
 
 

@@ -181,20 +181,20 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 
 - (void)saveDataToLocal
 {
-    NSString *jsonString = nil;
-    if (self.gates.count > 0) {
-        NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
-        for (MCGate *gate in self.gates) {
-            if (gate.passMoveCount != 0) {
-                //TODO::saveDataToLocal
-            }
-        }
-    }
-    
-    if (!jsonString) {
-        return;
-    }
-    [MCUtil saveLocaData:LOCAL_DATA_FILE data:jsonString ];
+//    NSString *jsonString = nil;
+//    if (self.gates.count > 0) {
+//        NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
+//        for (MCGate *gate in self.gates) {
+//            if (gate.passMoveCount != 0) {
+//                //TODO::saveDataToLocal
+//            }
+//        }
+//    }
+//    
+//    if (!jsonString) {
+//        return;
+//    }
+    //[MCUtil saveLocaData:LOCAL_DATA_FILE data:jsonString ];
 }
 
 #pragma mark - public method
@@ -221,6 +221,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
             alreadyFinished ++;
         }
     }
+    NSLog(@"gtts:%@", self.gates);
     NSLog(@"already Finished gate:%d", alreadyFinished);
     if (alreadyFinished == LimitedGate) {
         return YES;

@@ -313,9 +313,9 @@ typedef enum AlertTagEnum{
     BOOL isNewRMin = NO;
     BOOL isPassAllLevel = NO;
     
-    if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
-        isPassAllLevel = YES;
-    }
+//    if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
+//        isPassAllLevel = YES;
+//    }
     
     MCGate *gate = self.gameSceneView.theGate;
     if (gate.passMoveCount != gate.passMin) {
@@ -336,8 +336,7 @@ typedef enum AlertTagEnum{
     if (isPassAllLevel) {
         [self showPassAllLevelAlertView];
         [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
-    }
-    if (isNewRMin) {
+    }else if(isNewRMin) {
         [self showNewBestMoveAlertView];
         [[GGSoundManager sharedGGSoundManager] playEffect:@"solved.wav"];
     }else {
@@ -475,7 +474,6 @@ typedef enum AlertTagEnum{
     self.currentAlertView = view;
     [self hideWindow];
     
-    
     // 特殊的dialog的特殊代码
     if (view.tag == kAlertTagReset) {
         if (kTagControlFirst == button.tag) {
@@ -530,10 +528,21 @@ typedef enum AlertTagEnum{
         [self showWindow];
         return;
     }
-    [self.gameSceneView showStar:self.gameSceneView.theGate];
-    [self showWindow];
-    [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
-    return;
+    if (self.currentAlertView == _passLevelAlertView) {
+        [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        [self.gameSceneView showStar:self.gameSceneView.theGate];
+        [self showWindow];
+    }
+    if (self.currentAlertView == _passAllLevelAlertView) {
+        [self gotoNextLevel:1];
+        [self.gameSceneView showStar:self.gameSceneView.theGate];
+        [self showWindow];
+    }
+    if (self.currentAlertView == _newBestMoveAlertView) {
+         [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        [self.gameSceneView showStar:self.gameSceneView.theGate];
+        [self showWindow];
+    }
 }
 
 @end

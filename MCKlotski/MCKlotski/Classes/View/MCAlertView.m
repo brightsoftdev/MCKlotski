@@ -18,6 +18,7 @@
 
 - (void)showAnimation;
 
+- (void)hideAlertView;
 - (void)hideAnimation;
 
 @end
@@ -129,12 +130,13 @@
 	self.alpha = 1.0;
 }
 
-- (void)buttonAction:(id)sender
+- (void)performAction:(id)sender
 {
     UIButton *button  = (UIButton *)sender;
     if (self.delegate) {
         [[GGSoundManager sharedGGSoundManager] playEffect:@"Clcik.wav"];
         [self.delegate alertView:self andButton:button];
+        [self hideAlertView];
     }
 }
 
