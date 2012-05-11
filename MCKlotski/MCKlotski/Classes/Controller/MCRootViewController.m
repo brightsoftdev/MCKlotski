@@ -54,11 +54,28 @@
 #pragma mark - Private Method
 - (void)createSubViews
 {
+    // 添加Logo
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    UIImageView *logoImageView = 
+        [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, logoImage.size.width, logoImage.size.height)];
+    logoImageView.image = logoImage;
+    [self.view addSubview:logoImageView];
+    [logoImageView release];
+    
+    // 添加tjutlogo
+    logoImage = [UIImage imageNamed:@"tjutlogo.png"];
+    CGRect tjutLogoRect = CGRectMake(5, 25, logoImage.size.width, logoImage.size.height);
+    UIImageView *tjutLogoImageView = [[UIImageView alloc] initWithFrame:tjutLogoRect];
+    tjutLogoImageView.image = logoImage;
+    [self.view addSubview:tjutLogoImageView];
+    [tjutLogoImageView release];
+    
+    
     UIImage *image = [UIImage imageNamed:@"menu_normal.png"];
     float width = image.size.width;
     float height = image.size.height;
     float left = ([GGUtil screenSize].width - width) * 0.5;
-    float top = 50;
+    float top = 220;
     float offset = 5;
     CGRect rect = CGRectMake(left, top, width, height);
     NSArray *imageNames = [NSArray arrayWithObjects:@"play_red.png", @"play_white.png", nil];
@@ -67,7 +84,7 @@
     
     // 添加选关按钮
     rect = CGRectMake(left , top + offset + height, width, height);
-    imageNames = [NSArray arrayWithObjects:@"play_red.png", @"play_white.png", nil];
+    imageNames = [NSArray arrayWithObjects:@"select_red.png", @"select_white.png", nil];
     [self.view addSubview:[self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(levelsAction:)]];
 }
 

@@ -91,9 +91,9 @@
         // 初始化块精灵背景
         UIImageView *bgImageView= [[UIImageView alloc] initWithFrame:
                                    CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        bgImageView.backgroundColor = [UIColor blueColor];
+        bgImageView.backgroundColor = [UIColor clearColor];
         
-        //bgImageView.image = [self.block blockImage];
+        bgImageView.image = [self.block blockImage];
         NSLog(@"%@", bgImageView.image);
         [self addSubview:bgImageView];
         [bgImageView release];

@@ -333,16 +333,18 @@ typedef enum AlertTagEnum{
         return;
     }
     
-    if (isPassAllLevel) {
-        [self showPassAllLevelAlertView];
-        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
-    }else if(isNewRMin) {
-        [self showNewBestMoveAlertView];
-        [[GGSoundManager sharedGGSoundManager] playEffect:@"solved.wav"];
-    }else {
-        [self showPassLevelAlertView];
-        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
-    }
+//    if (isPassAllLevel) {
+//        [self showPassAllLevelAlertView];
+//        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
+//    }else{
+        if(isNewRMin) {
+            [self showNewBestMoveAlertView];
+            [[GGSoundManager sharedGGSoundManager] playEffect:@"solved.wav"];
+        }else {
+            [self showPassLevelAlertView];
+            [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
+        }
+//    }
 }
 
 - (void)refreshGameGate

@@ -60,18 +60,29 @@
     switch (self.blockType) {
         case kBlockTypeSmall:
             image = [UIImage imageNamed:[NSString stringWithFormat:@"block4%d.png", index]];
+            if (!image) {
+                image = [UIImage imageNamed:@"block4.png"];
+            }
             break;
         case kBlockTypeNormalH:
             image = [UIImage imageNamed:[NSString stringWithFormat:@"block1%d.png",index]];
+            if (!image) {
+                image = [UIImage imageNamed:@"block1.png"];
+            }
             CGImageRef imageRef = [image CGImage];
             image = [UIImage imageWithCGImage:imageRef scale:1.0 orientation:UIImageOrientationLeft];
             break;
         case kBlockTypeNormalV:
             image = [UIImage imageNamed:[NSString stringWithFormat:@"block1%d.png", index]];
+            if (!image) {
+                image = [UIImage imageNamed:@"block1.png"];
+            }
             break;
         case kBlockTypeLager:
-           image = [UIImage imageNamed:@"Default.png"];
-            //image = [UIImage imageNamed:[NSString stringWithFormat:@"block2%d.png",index]];
+            image = [UIImage imageNamed:[NSString stringWithFormat:@"block2%d.png",index]];
+            if (!image) {
+                image = [UIImage imageNamed:@"block2.png"];
+            }
             break;
         default:
             NSAssert(false, @"block's type is invalid!!!");
