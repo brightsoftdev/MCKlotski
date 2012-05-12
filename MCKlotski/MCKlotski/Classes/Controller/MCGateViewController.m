@@ -480,6 +480,10 @@ typedef enum AlertTagEnum{
     if (view.tag == kAlertTagReset) {
         if (kTagControlFirst == button.tag) {
             // 如果是重置按钮， 则重置游戏
+            MCGameState *gameState = [[MCGameState alloc] init];
+            gameState.currentGateID = self.theGateID;
+            [MCDataManager sharedMCDataManager].gameState = gameState;
+            [gameState release];
             [self resetGateWithGateID:self.theGateID];
         }
         if (kTagControlSecond == button.tag) {

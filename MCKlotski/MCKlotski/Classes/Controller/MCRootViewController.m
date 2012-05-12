@@ -8,8 +8,14 @@
 
 #import "MCRootViewController.h"
 #import "MCChooseLevelViewController.h"
+#import "MCGameSettingViewController.h"
+#import "MCTutorialGateViewController.h"
+#import "MCNormalGateViewController.h"
 #import "MCConfig.h"
 #import "GGFoundation.h"
+#import "MCSettings.h"
+#import "MCDataManager.h"
+#import "MCGameState.h"
 
 @interface MCRootViewController (Privates)
 
@@ -17,6 +23,13 @@
 
 - (UIButton *)addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector;
 
+// 显示教程Controller
+- (void)showTutorialViewController;
+
+// 显示正常Controller
+- (void)showNormalViewController;
+
+- (void)refreshPlayButton;
 
 @end
 
@@ -31,10 +44,20 @@
     return self;
 }
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [[MCDataManager sharedMCDataManager] addObserverWithTarget:self forState:kDataManageStateChange];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self createSubViews];
+    [self refreshPlayButton];
 }
 
 - (void)viewDidUnload
@@ -46,6 +69,7 @@
 - (void)dealloc
 {
     MCRelease(_btnPlay);
+    [[MCDataManager sharedMCDataManager] removeObserverWithTarget:self forState:kDataManageStateChange];
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super dealloc];
 }
@@ -75,7 +99,7 @@
     float width = image.size.width;
     float height = image.size.height;
     float left = ([GGUtil screenSize].width - width) * 0.5;
-    float top = 220;
+    float top = 210;
     float offset = 5;
     CGRect rect = CGRectMake(left, top, width, height);
     NSArray *imageNames = [NSArray arrayWithObjects:@"play_red.png", @"play_white.png", nil];
@@ -83,9 +107,24 @@
     [self.view addSubview:_btnPlay];
     
     // 添加选关按钮
-    rect = CGRectMake(left , top + offset + height, width, height);
+    rect = CGRectMake(left , top + (offset + height) * 1, width, height);
     imageNames = [NSArray arrayWithObjects:@"select_red.png", @"select_white.png", nil];
-    [self.view addSubview:[self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(levelsAction:)]];
+    UIButton *btnSelectGate = [self addMenuWithRect:rect 
+                                      andImageNmaes:imageNames 
+                                             action:@selector(levelsAction:)];
+    [self.view addSubview:btnSelectGate];
+    
+    // 添加游戏帮助按钮
+    rect = CGRectMake(left, top + (offset + height) * 2, width, height);
+    imageNames = [NSArray arrayWithObjects:@"game_help_red.png", @"game_help_white.png", nil];
+    UIButton *btnHelp = [self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(helpAction:)];
+    [self.view addSubview:btnHelp];
+    
+    // 游戏设置按钮
+    rect = CGRectMake(left, top + (offset + height) * 3, width, height);
+    imageNames = [NSArray arrayWithObjects:@"gameSet_red.png", @"gameSet_white.png", nil];
+    UIButton *btnSet = [self addMenuWithRect:rect andImageNmaes:imageNames action:@selector(setAction:)];
+    [self.view addSubview:btnSet];
 }
 
 - (UIButton *)addMenuWithRect:(CGRect)rect andImageNmaes:(NSArray *)imageNames action:(SEL)selector  
@@ -102,11 +141,44 @@
     return [button autorelease];
 }
 
+- (void)refreshPlayButton
+{
+    if ([[MCDataManager sharedMCDataManager].gameState isFirstStep]) {
+        [_btnPlay setImage:[UIImage imageNamed:@"play_red.png"] forState:UIControlStateNormal];
+        [_btnPlay setImage:[UIImage imageNamed:@"play_white.png"] forState:UIControlStateHighlighted];
+    }else {
+        [_btnPlay setImage:[UIImage imageNamed:@"resume_red.png"] forState:UIControlStateNormal];
+        [_btnPlay setImage:[UIImage imageNamed:@"resume_white.png"] forState:UIControlStateHighlighted];
+    }
+}
+
+- (void)showTutorialViewController
+{
+    MCTutorialGateViewController *tutorialViewController = [[MCTutorialGateViewController alloc] initWithGateID:0];
+    [self.navigationController pushViewController:tutorialViewController animated:YES];
+    [tutorialViewController release];
+}
+
+- (void)showNormalViewController
+{
+    int gateID = [MCDataManager sharedMCDataManager].gameState.currentGateID;
+    NSLog(@"currentGateID:%d", gateID);
+    MCNormalGateViewController *normalController = [[MCNormalGateViewController alloc] initWithGateID:gateID];
+    [self.navigationController pushViewController:normalController animated:YES];
+    [normalController release];
+}
+
 #pragma mark - action
 - (void)playAction:(id)sender
 {
     [super buttonAction:sender];
-    NSLog(@"fasd");
+    
+    if ([[MCDataManager sharedMCDataManager] isNeedTutorial]) {
+        [self showTutorialViewController];
+        [MCDataManager sharedMCDataManager].settings.isNeedTutorial = NO;
+    }else {
+        [self showNormalViewController];
+    }
 }
 
 - (void)levelsAction:(id)sender
@@ -117,8 +189,30 @@
     [levelViewController release];
 }
 
+- (void)helpAction:(id)sender
+{
+    NSLog(@"help");
+}
+
+- (void)setAction:(id)sender
+{
+    [super buttonAction:sender];
+    MCGameSettingViewController *gameSettingViewController = [[MCGameSettingViewController alloc] init];
+    [self.navigationController pushViewController:gameSettingViewController animated:YES];
+    [gameSettingViewController release];
+}
+
 #pragma mark - inherit super Class
 - (void)refreshView
 {}
+
+#pragma mark - DataManagerObserver
+- (void)updateDataWithState:(DataManageChange)dmData
+{
+    if (dmData == kDataManageStateChange) {
+        [self refreshPlayButton];
+        return;
+    }
+}
 
 @end

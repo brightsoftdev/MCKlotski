@@ -24,7 +24,6 @@
             self.currentGateID = [[dict objectForKey:KeyCurrentGateId] intValue];
         }
         self.moveCount = [[dict objectForKey:KeyMoveCount] intValue];
-        //TODO::NSCODing
     }
     return self;
 }
@@ -33,6 +32,11 @@
 {
     NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
     [super initWithCoder:coder];
+    self.currentGateID = [coder decodeIntForKey: KeyCurrentGateId];
+    self.moveCount = [coder decodeIntForKey:KeyMoveCount];
+    self.frames = [coder decodeObjectForKey:KeyFrames];
+    self.steps = [coder decodeObjectForKey:KeySteps];
+    self.isFirstStep = [coder decodeBoolForKey:KeyIsFirstStep];
     return self;
 }
 
@@ -48,6 +52,11 @@
 - (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
+    [coder encodeInt:self.currentGateID forKey:KeyCurrentGateId];
+    [coder encodeInt:self.moveCount forKey:KeyMoveCount];
+    [coder encodeObject:self.frames forKey:KeyFrames];
+    [coder encodeObject:self.steps forKey:KeySteps];
+    [coder encodeBool:self.isFirstStep forKey:KeyIsFirstStep];
 }
 
 - (void)dealloc

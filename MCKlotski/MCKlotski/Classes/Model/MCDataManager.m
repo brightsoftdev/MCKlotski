@@ -49,6 +49,8 @@ SYNTHESIZE_SINGLETON(MCDataManager);
         }
         self.theObservers = observers;
         self.gameState = [[[MCGameState alloc] init] autorelease];
+        self.settings = [[[MCSettings alloc] init] autorelease];
+        self.updatingGateID = 0;
     }
     return self;
 }
@@ -113,16 +115,19 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     }
     
     NSString *gateData = nil;
-    NSString *userData = nil;
+    NSData *userData = nil;
     NSDictionary *userDictionary = nil;
     BOOL isFirstPlayUser = [GGPath isFileExist:LOCAL_DATA_FILE];
     if (isFirstPlayUser) {
-        userData = [GGPath documentPathWithFileName:LOCAL_DATA_FILE];
-        NSData *userJsonData = [userData dataUsingEncoding:NSUTF32BigEndianStringEncoding];
-        userDictionary = [[CJSONDeserializer deserializer]
-                          deserializeAsDictionary:userJsonData error:nil];
+        userData = [GGPath documentPathWith:LOCAL_DATA_FILE];
+        NSLog(@"fsdafas:%@",userData);
+       // NSData *userJsonData = [userData dataUsingEncoding:NSUTF32BigEndianStringEncoding];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:userData];
+        self.settings = [unarchiver decodeObjectForKey:@"settings"];
+        self.gameState = [unarchiver decodeObjectForKey:@"gameState"];
+        NSLog(@"self:%d",self.gameState.currentGateID);
+        userDictionary = [unarchiver decodeObjectForKey:@"gates"];
     }
-    NSLog(@"local_user_noname.json:%@", userDictionary);
     
     // 解析布局文件
     gateData = [GGPath bundleFile:LAYOUT_DATA_FILE andFileType:@""]; // 由于json文件objc不识别，所以FileType应该为空
@@ -134,10 +139,9 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     if ([gateDictionary objectForKey:@"gates"]) {
         NSMutableArray *tempGates = [NSMutableArray arrayWithCapacity:LimitedGate];
         NSArray *dics1 = (NSArray *)[gateDictionary objectForKey:@"gates"];
-        NSDictionary *dics2 = [userDictionary objectForKey:@"gates"];
         
-        NSArray *allKeysDics2 = [dics2 allKeys];
-        // allKeysDics2 类似下面格式
+        NSArray *allKeysuserDictionary = [userDictionary allKeys];
+        // userDictionary 类似下面格式
         //        {
         //            1 =     {
         //                completedMoveCount = 3;
@@ -151,50 +155,48 @@ SYNTHESIZE_SINGLETON(MCDataManager);
         for (int i = 0; i < [dics1 count]; i++) {
             NSMutableDictionary *goGateDict = [NSMutableDictionary dictionaryWithDictionary:
                                                [dics1 objectAtIndex:i]];
-            if ([allKeysDics2 containsObject:[NSString stringWithFormat:@"%d", i+1]]) {
-                [goGateDict setValue:[[dics2 objectForKey:[NSString stringWithFormat:@"%d", i+1]] 
+            if ([allKeysuserDictionary containsObject:[NSString stringWithFormat:@"%d", i+1]]) {
+                [goGateDict setValue:[[userDictionary objectForKey:[NSString stringWithFormat:@"%d", i+1]] 
                                       objectForKey:KeyPassMoveCount] 
                               forKey:KeyPassMoveCount];
             }else {
                 [goGateDict setValue:[NSNumber numberWithInt:0] forKey:KeyPassMoveCount];
             }
+            NSLog(@"dic2:%@", goGateDict);
             MCGate *gate = [[[MCGate alloc] initWithDictionary:goGateDict] autorelease];
             [tempGates addObject:gate];
         }
         self.gates = tempGates;
     }
-    
-    if ([userDictionary objectForKey:@"game"]) {
-        NSDictionary *gdic = [userDictionary objectForKey:@"game"];
-        MCGameState *gstate = [[MCGameState alloc] initWithDictionary:gdic];
-        self.gameState = gstate;
-        [gstate release];
-    }
-    
-    if ([userDictionary objectForKey:@"settings"]) {
-        NSDictionary *sdic = [userDictionary objectForKey:@"settings"];
-        MCSettings *settings = [[MCSettings alloc] initWithDictionary:sdic];
-        self.settings = settings;
-        [settings release];
-    }
 }
 
 - (void)saveDataToLocal
 {
-//    NSString *jsonString = nil;
-//    if (self.gates.count > 0) {
-//        NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
-//        for (MCGate *gate in self.gates) {
-//            if (gate.passMoveCount != 0) {
-//                //TODO::saveDataToLocal
-//            }
-//        }
-//    }
-//    
-//    if (!jsonString) {
-//        return;
-//    }
-    //[MCUtil saveLocaData:LOCAL_DATA_FILE data:jsonString ];
+    NSMutableData *data = [NSMutableData data];
+    if (self.gates.count > 0) {
+        NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
+        for (MCGate *gate in self.gates) {
+            if (gate.passMoveCount != 0) {
+                NSDictionary *gateUserData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                              [NSNumber numberWithInt:gate.passMin], KeyPassMin, 
+                                              [NSNumber numberWithInt:gate.passMoveCount], KeyPassMoveCount,
+                                              nil];
+                [userGateDict setObject:gateUserData forKey:[NSString stringWithFormat:@"%d", gate.gateID]];
+                
+            }
+        }
+        
+        NSKeyedArchiver *archiver = [[[NSKeyedArchiver alloc] initForWritingWithMutableData:data] autorelease];
+        [archiver encodeObject:self.gameState forKey:@"gameState"];
+        [archiver encodeObject:self.settings forKey:@"settings"];
+        [archiver encodeObject:userGateDict forKey:@"gates"];
+        [archiver finishEncoding];
+    }
+    
+    if (!data) {
+        return;
+    }
+    [MCUtil saveLocalDataWithFileName:LOCAL_DATA_FILE data:data];
 }
 
 #pragma mark - public method
@@ -249,6 +251,15 @@ SYNTHESIZE_SINGLETON(MCDataManager);
         self.gates = [NSArray arrayWithArray:tempGates];
     }
     return updateGate;
+}
+
+- (BOOL)isNeedTutorial
+{
+    if(self.settings.isNeedTutorial && self.gameState.currentGateID < 1){
+        return YES;
+    }else {
+        return NO;
+    }
 }
 
 @end

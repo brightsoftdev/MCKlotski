@@ -17,6 +17,7 @@ typedef enum DM_DATA_E{
     DATA_STATE_INVALID = 0,
     kDataManageGameCompleted,
     kDataManageStateChange,
+    kDataManageSettingChange,
     DATA_STATE_COUNT,
 }DataManageChange;
 
@@ -83,4 +84,7 @@ DECLARE_SINGLETON(MCDataManager);
  * 更新Gate
  */
 - (MCGate *)updateGateWithGate:(MCGate *)newGate;
+
+// 是否需要教程
+- (BOOL)isNeedTutorial;
 @end

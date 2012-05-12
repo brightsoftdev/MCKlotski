@@ -7,9 +7,10 @@
 //
 
 #import "MCViewController.h"
+#import "MCDataManager.h"
 
 
-@interface MCRootViewController : MCViewController{
+@interface MCRootViewController : MCViewController<DataManagerObserver> {
     UIButton *_btnPlay;
 }
 

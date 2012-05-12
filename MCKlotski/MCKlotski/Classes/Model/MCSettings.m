@@ -40,6 +40,8 @@
 {
     self.isSoundEnable = YES;
     self.isNeedTutorial = YES;
+    
+    NSLog(@"self.%d----%d", self.isSoundEnable, self.isNeedTutorial);
 }
 
 - (void) encodeWithCoder:(NSCoder *)coder

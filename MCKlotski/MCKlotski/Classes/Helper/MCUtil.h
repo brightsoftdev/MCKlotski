@@ -25,7 +25,9 @@
 /**
  * 保存本地数据
  */
-+ (void)saveLocaData:(NSString *)fileName data:(NSString *)str;
++ (BOOL)saveLocalData:(NSString *)fileName data:(NSString *)str;
++ (BOOL)saveLocalDataWithFileName:(NSString *)fileName data:(NSData *)data;
+
 
 /**
  * 判断是否完成所有关
