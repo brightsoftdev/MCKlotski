@@ -69,6 +69,11 @@
     [self addSubview:_btnReset];
     
     // 添加计数label等
+    UIImage *moveImage = [UIImage imageNamed:@"move.png"]; 
+    UIImageView *moveCountImageView = [[UIImageView alloc] initWithFrame:CGRectMake(_btnUndo.frame.origin.x, 20, moveImage.size.width, moveImage.size.height)];
+    moveCountImageView.image = moveImage;
+    [self addSubview:moveCountImageView];
+    
     _lblMoveCount = [[UILabel alloc] initWithFrame:CGRectMake(_btnUndo.frame.origin.x, 35, _btnUndo.frame.size.width, 25)];
     _lblMoveCount.backgroundColor = [UIColor clearColor];
     _lblMoveCount.text = @"0";
@@ -76,6 +81,11 @@
     _lblMoveCount.textAlignment = UITextAlignmentCenter;
     _lblMoveCount.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     [self addSubview:_lblMoveCount];
+    
+    UIImage *bestImage = [UIImage imageNamed:@"best.png"]; 
+    UIImageView *bestImageView = [[UIImageView alloc] initWithFrame:CGRectMake(193+55+10, 20, bestImage.size.width, bestImage.size.height)];
+    bestImageView.image = bestImage;
+    [self addSubview:bestImageView];
     
     _lblMinValue = [[UILabel alloc] initWithFrame:CGRectMake(193+55+10, 35, 55, 30)];
     _lblMinValue.backgroundColor = [UIColor clearColor];
@@ -86,20 +96,26 @@
     [self addSubview:_lblMinValue];
     
     // 添加level标志
-    _levelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(120, 30, 65, 30)];
+    _levelImageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 25, 65, 30)];
     _levelImageView.backgroundColor = [UIColor clearColor];
     _levelImageView.image = [UIImage imageNamed:@"levelflag.png"];
     _levelImageView.contentMode = UIViewContentModeCenter;
     [self addSubview:_levelImageView];
     
-    _levelNumberView = [[MCNumberView alloc] initWithFrame:CGRectMake(120, 55, 65, 16)];
+    _levelNumberView = [[MCNumberView alloc] initWithFrame:CGRectMake(100, 55, 65, 16)];
     _levelNumberView.value = 000;
     _levelNumberView.numberType = NumberRGBWhite;
     [self addSubview:_levelNumberView];
     
-    
-    
     //TODO:: 添加返回按钮
+    UIButton *back = [[UIButton alloc] init];
+    UIImage *backImage = [UIImage imageNamed:@"back1.png"];
+    back.frame = CGRectMake(10, 30, backImage.size.width, backImage.size.height);
+    [back setBackgroundImage:backImage forState:UIControlStateNormal];
+    [back setBackgroundImage:[UIImage imageNamed:@"back2.png"] forState:UIControlStateHighlighted];
+    [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:back];
+    [back release]; 
 }
 
 #pragma mark - set
@@ -130,9 +146,10 @@
     _levelImageView.image = _levelImage;
 }
 
-#pragma mark - buttnon event 
+#pragma mark - button event 
 - (void)backAction:(id)sender
 {
+    [self.delegate backAction:sender];
 }
 
 

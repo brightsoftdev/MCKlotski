@@ -10,6 +10,7 @@
 #import "MCSelectLevelButton.h"
 #import "MCCustomGateViewController.h"
 #import "MCGate.h"
+#import "GGPageControl.h"
 
 #define ROW_SUM 6
 #define COLUMN_SUM 5
@@ -116,7 +117,7 @@
 - (void)createSubViews
 {
     // create UIScrollView
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(10, 70, 300, 300)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake((320-264)/2, 120, 264, 325)];
     _scrollView.pagingEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = YES;
     _scrollView.showsVerticalScrollIndicator = YES;
@@ -128,7 +129,10 @@
     
     
     // create UIPageControl
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _scrollView.frame.origin.y + _scrollView.frame.size.height, 320, 20)];
+    _pageControl = [[GGPageControl alloc] initWithFrame:CGRectMake(0, _scrollView.frame.origin.y + _scrollView.frame.size.height, 320, 20)];
+    _pageControl.activeImage = [UIImage imageNamed:@"red_dot.png"];
+    _pageControl.inactiveImage = [UIImage imageNamed:@"blue_dot.png"];
+    _pageControl.userInteractionEnabled = NO;
     _pageControl.currentPage = 0;
     _pageControl.backgroundColor = [UIColor clearColor];
     [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];

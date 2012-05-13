@@ -81,18 +81,11 @@
     // 添加Logo
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
     UIImageView *logoImageView = 
-        [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, logoImage.size.width, logoImage.size.height)];
+        [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, logoImage.size.width, logoImage.size.height)];
     logoImageView.image = logoImage;
     [self.view addSubview:logoImageView];
     [logoImageView release];
-    
-    // 添加tjutlogo
-    logoImage = [UIImage imageNamed:@"tjutlogo.png"];
-    CGRect tjutLogoRect = CGRectMake(5, 25, logoImage.size.width, logoImage.size.height);
-    UIImageView *tjutLogoImageView = [[UIImageView alloc] initWithFrame:tjutLogoRect];
-    tjutLogoImageView.image = logoImage;
-    [self.view addSubview:tjutLogoImageView];
-    [tjutLogoImageView release];
+
     
     
     UIImage *image = [UIImage imageNamed:@"menu_normal.png"];
@@ -157,6 +150,10 @@
     MCTutorialGateViewController *tutorialViewController = [[MCTutorialGateViewController alloc] initWithGateID:0];
     [self.navigationController pushViewController:tutorialViewController animated:YES];
     [tutorialViewController release];
+    
+    if ([[MCDataManager sharedMCDataManager] isNeedTutorial]) {
+        [MCDataManager sharedMCDataManager].settings.isNeedTutorial = NO;
+    }
 }
 
 - (void)showNormalViewController
@@ -191,7 +188,7 @@
 
 - (void)helpAction:(id)sender
 {
-    NSLog(@"help");
+    [self showTutorialViewController];
 }
 
 - (void)setAction:(id)sender

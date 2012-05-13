@@ -30,10 +30,10 @@ typedef enum BlockViewMoveFlag{
 > {
   @protected
     kBlockViewMoveFlag _moveFlag;
+    int _theGateID;
   
   @private
     NSArray *_effects; // 音效
-    int _theGateID;
     MCGameSceneView *_gameSceneView;
     MCGameSceneMenuView *_gmaeSceneMenuView;
     NSArray *_steps;
@@ -55,6 +55,7 @@ typedef enum BlockViewMoveFlag{
 @property (nonatomic, retain) NSArray *steps;
 @property (nonatomic, retain) MCAlertView *currentAlertView;
 @property (nonatomic, assign) int moveCount;
+@property (nonatomic, retain) MCResetAlertView *resetAlertView;
 
 - (id)initWithGateID:(int)gateID;
 
@@ -69,5 +70,10 @@ typedef enum BlockViewMoveFlag{
 // 重置关
 - (void)resetGateWithGateID:(int)gateID;
 - (void)resetNextGateWithGateID:(int)gateID;
+
+- (void)showResetAlertView;
+
+// 在level完成的情况下执行
+- (void)levleDidPass;
 
 @end

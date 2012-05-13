@@ -7,8 +7,13 @@
 //
 
 #import "MCCustomGateViewController.h"
+#import "MCDataManager.h"
+#import "MCGameState.h"
+#import "MCGate.h"
 
 @interface MCCustomGateViewController ()
+
+- (void)showResumeAlert;
 
 @end
 
@@ -48,6 +53,14 @@
 }
 
 #pragma  mark - overwrite
+- (void)resumeGame
+{
+    if (![[MCDataManager sharedMCDataManager].gameState isResumeWithGateID:self.theGateID]) {
+        return;
+    }
+    [self showResumeAlert];
+}
+
 - (void)windowDidShow
 {
     [super windowDidShow];
@@ -62,6 +75,23 @@
 {
     [super gotoNextLevel:gateID];
     [self resetNextGateWithGateID:gateID];
+}
+
+- (void)levleDidPass
+{
+    [super levleDidPass];
+}
+
+#pragma mark - private method 
+- (void)showResumeAlert
+{
+    [self showResetAlertView];
+}
+
+#pragma mark - delegate
+- (void)alertView:(MCAlertView *)view andButton:(UIButton *)button
+{
+    [super alertView:view andButton:button];
 }
 
 @end

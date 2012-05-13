@@ -109,7 +109,7 @@
     self.flagView = flagImg;
     [flagImg release];
     
-    UILabel *numLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 25, 25, 10)];
+    UILabel *numLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 35, 25, 10)];
     numLabel.backgroundColor = [UIColor clearColor];
     numLabel.textColor = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1.0];
     numLabel.font = [UIFont boldSystemFontOfSize:14];

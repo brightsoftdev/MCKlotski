@@ -39,7 +39,6 @@ typedef enum AlertTagEnum{
 - (void)removeSubViews;
 
 // 显示dialog
-- (void)showResetAlertView;
 - (void)showPassAllLevelAlertView;
 - (void)showPassLevelAlertView;
 - (void)showNewBestMoveAlertView;
@@ -60,9 +59,6 @@ typedef enum AlertTagEnum{
 // 判断大blockView是否在获胜区域
 - (BOOL)isGameCompleted:(MCBlockView *)blockView;
 
-// 在level完成的情况下执行
-- (void)levleDidPass;
-
 // 当移动blockView时，调用
 - (void)refreshGameGate;
 
@@ -75,6 +71,7 @@ typedef enum AlertTagEnum{
 @synthesize steps = _steps;
 @synthesize currentAlertView = _currentAlertView;
 @synthesize moveCount = _moveCount;
+@synthesize resetAlertView = _resetAlertView;
 
 #pragma mark - init & dealloc
 
@@ -152,7 +149,7 @@ typedef enum AlertTagEnum{
 {
     MCGate *tempGate = [[MCDataManager sharedMCDataManager] gateWithID:theGateID];
     if (!tempGate) {
-        NSLog(@"invlid gate!!!!");
+        NSLog(@"invalid gate!!!!");
         return;
     }
     self.gameSceneView.theGate = tempGate;
@@ -208,15 +205,6 @@ typedef enum AlertTagEnum{
     self.gameSceneMenuView = [[[MCGameSceneMenuView alloc] initWithFrame:CGRectMake(0, 0, 320, 90)] autorelease];
     self.gameSceneMenuView.delegate = self;
     [self.view addSubview:self.gameSceneMenuView];
-    
-    UIButton *back = [[UIButton alloc] init];
-    UIImage *backImage = [UIImage imageNamed:@"back1.png"];
-    back.frame = CGRectMake(10, 450, backImage.size.width, backImage.size.height);
-    [back setBackgroundImage:backImage forState:UIControlStateNormal];
-    [back setBackgroundImage:[UIImage imageNamed:@"back2.png"] forState:UIControlStateHighlighted];
-    [back addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:back];
-    [back release]; 
    
     [self refreshSubViews]; 
 }
@@ -538,16 +526,19 @@ typedef enum AlertTagEnum{
         [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
+        return;
     }
     if (self.currentAlertView == _passAllLevelAlertView) {
         [self gotoNextLevel:1];
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
+        return;
     }
     if (self.currentAlertView == _newBestMoveAlertView) {
          [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
+        return;
     }
 }
 

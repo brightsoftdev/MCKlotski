@@ -30,6 +30,7 @@
 - (id)initWithDictionary:(NSDictionary *)dict
 {
     if ((self = [super initWithDictionary:dict])) {
+        NSLog(@"0000:%@",dict);
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
         int gateid = [[dict objectForKey:KeyGateID] intValue];
         if (kInvalidGateID != gateid) {

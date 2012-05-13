@@ -26,6 +26,7 @@
 
 @implementation MCGameSceneView
 
+@synthesize theBoxView = _theBoxView;
 @synthesize delegate = _delegate;
 @synthesize blockViews = _blockViews;
 @synthesize theGate = _theGate;
@@ -134,7 +135,7 @@
     [self addSubview:gateFrameBgView];
     
     _theBoxView = [[UIView alloc] initWithFrame:
-                   CGRectMake((self.frame.size.width - kBoxWidth) / 2, 90, kBoxWidth, kBoxHeight)];
+                   CGRectMake((self.frame.size.width - kBoxWidth) / 2, 107, kBoxWidth, kBoxHeight)];
     _theBoxView.backgroundColor = [UIColor clearColor];
     [self addSubview:_theBoxView];
 }
@@ -173,7 +174,7 @@
 {
     int layoutCount = self.theGate.layout.count;
     if (0 == layoutCount || 0 != layoutCount % 3) {
-        NSLog(@"Invaluable layout!");
+        NSLog(@"Invaluable layout! layoutCount:%d", layoutCount);
         return;
     }
     
@@ -200,6 +201,9 @@
 
 - (BOOL)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture
 {
+    if ([self.delegate respondsToSelector:@selector(blockShouldMoveWith:andGesture:)]) {
+        return [self.delegate blockShouldMoveWith:blockView andGesture:blockGesture];
+    }
     return YES;
 }
 

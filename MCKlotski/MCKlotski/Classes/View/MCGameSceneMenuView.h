@@ -14,6 +14,8 @@
 
   @required
 // 返回按钮事件
+- (void)backAction:(id)sender;
+// undo按钮事件
 - (void)undoAction:(id)sender;
 // 重置按钮事件
 - (void)resetAction:(id)sender;

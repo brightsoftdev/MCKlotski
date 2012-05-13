@@ -11,11 +11,14 @@
 
 @class MCGate;
 
-@protocol GameSceneViewDelegate 
+@protocol GameSceneViewDelegate <NSObject>
 
 - (void)movingBlockView:(BOOL)isMove;
 
 - (void)blockFrameDidChangeWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
+
+  @optional
+- (BOOL)blockShouldMoveWith:(MCBlockView *)blockView andGesture:(kBlockGesture)blockGesture;
 
 @end
 
@@ -35,6 +38,7 @@
     
 }
 
+@property (nonatomic, retain) UIView *theBoxView;
 @property (nonatomic, assign) id<GameSceneViewDelegate> delegate;
 @property (nonatomic, retain) NSArray *blockViews;
 @property (nonatomic, retain) MCGate *theGate;

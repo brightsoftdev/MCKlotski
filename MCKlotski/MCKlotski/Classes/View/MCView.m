@@ -16,6 +16,8 @@
     if (self) {
         // Initialization code
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), @"MCView");
+        //self.userInteractionEnabled = NO;
+		self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
