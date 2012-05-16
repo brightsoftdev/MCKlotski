@@ -32,6 +32,12 @@
     [self addSubview:background];
     [background release];
     
+    UIImageView *_star = [[UIImageView alloc] initWithFrame:CGRectMake((self.frame.size.width - 134)/2, (self.frame.size.height - 118-128), 133, 118)];
+    _star.contentMode = UIViewContentModeCenter;
+    _star.image = [UIImage imageNamed:@"alert_better_star.png"];
+    [self addSubview:_star];
+    [_star release];
+    
     UIImage *buttonImage = [UIImage imageNamed:@"alert_continue.png"];
     UIButton *button = [[UIButton alloc] initWithFrame:
                         CGRectMake((self.frame.size.width - buttonImage.size.width) / 2,

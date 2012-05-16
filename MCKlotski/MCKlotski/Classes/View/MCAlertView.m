@@ -10,7 +10,7 @@
 #import "MCUtil.h"
 #import "GGFoundation.h"
 
-#define kTransitionDuration 0.3
+#define kTransitionDuration 0.2
 
 @interface MCAlertView (Private)
 
@@ -39,7 +39,7 @@
         _border.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.8];
         [_border addSubview:self];
         _isShowing = NO;
-        
+        self.userInteractionEnabled = NO;
         [self updateAlertFrame];
     }
     return self;
@@ -112,6 +112,7 @@
 - (void)showAnimationDidStop
 {
 	_isShowing = YES;
+    self.userInteractionEnabled = YES;
 }
 
 - (void)hideAnimation
