@@ -301,9 +301,10 @@ typedef enum AlertTagEnum{
     BOOL isNewRMin = NO;
     BOOL isPassAllLevel = NO;
     
-//    if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
-//        isPassAllLevel = YES;
-//    }
+    if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
+        NSLog(@"11111111111");
+        isPassAllLevel = YES;
+    }
     
     MCGate *gate = self.gameSceneView.theGate;
     if (gate.passMoveCount != gate.passMin) {
@@ -321,10 +322,10 @@ typedef enum AlertTagEnum{
         return;
     }
     
-//    if (isPassAllLevel) {
-//        [self showPassAllLevelAlertView];
-//        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
-//    }else{
+    if (isPassAllLevel) {
+        [self showPassAllLevelAlertView];
+        [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
+    }else{
         if(isNewRMin) {
             [self showNewBestMoveAlertView];
             [[GGSoundManager sharedGGSoundManager] playEffect:@"solved.wav"];
@@ -332,7 +333,7 @@ typedef enum AlertTagEnum{
             [self showPassLevelAlertView];
             [[GGSoundManager sharedGGSoundManager] playEffect:@"lifeadd.mp3"];
         }
-//    }
+    }
 }
 
 - (void)refreshGameGate

@@ -2,7 +2,7 @@
 //  MCDataManager.m
 //  MCKlotski
 //
-//  Created by lim edwon on 12-4-22.
+//  Created by gtts on 12-4-22.
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
@@ -217,15 +217,25 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     if (gate.passMoveCount == 0) {
         return NO;
     }
-    int alreadyFinished = 0;
-    for (MCGate *gate in self.gates) {
-        if (gate.passMoveCount != 0) {
-            alreadyFinished ++;
+    /**
+     // author：gtts
+     // date：2012.5.16
+     // mark:这段代码在逻辑上是当所有的关完过去之后，以后再去完之前的关的话，过关提示都按通“所有关”算，所以不太符合
+    
+        int alreadyFinished = 0;
+        for (MCGate *gate in self.gates) {
+            if (gate.passMoveCount != 0) {
+                alreadyFinished ++;
+            }
         }
-    }
-    NSLog(@"gtts:%@", self.gates);
-    NSLog(@"already Finished gate:%d", alreadyFinished);
-    if (alreadyFinished == LimitedGate) {
+        NSLog(@"gtts:%@", self.gates);
+        NSLog(@"already Finished gate:%d", alreadyFinished);
+        if (alreadyFinished == LimitedGate) {
+            return YES;
+        }
+     */
+    
+    if (gate.gateID == LimitedGate) {
         return YES;
     }
     return NO;

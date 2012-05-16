@@ -2,7 +2,7 @@
 //  MCSelectLevelButton.m
 //  MCKlotski
 //
-//  Created by lim edwon on 12-4-27.
+//  Created by gtts on 12-4-27.
 //  Copyright (c) 2012年 TJUT-SCCE-SIPC. All rights reserved.
 //
 
