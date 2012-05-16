@@ -101,7 +101,7 @@
 - (void)createSubViews:(CGRect)frame
 {
     UIImageView *tipBox = [[UIImageView alloc] initWithFrame:
-                           CGRectMake((self.frame.size.width - 200)/2.0, 30.0, 200, 110)];
+                           CGRectMake((self.frame.size.width - 250)/2.0, 5.0, 251, 138)];
     tipBox.backgroundColor = [UIColor clearColor];
     tipBox.contentMode = UIViewContentModeCenter;
     tipBox.image = [UIImage imageNamed:@"tipBox.png"];
