@@ -54,7 +54,7 @@
 {
     self.gate = gate;
     [self resetView];
-    
+
     self.backgroundView.image = [UIImage imageNamed:@"levelbg.png"];
     if (self.gate.isLocked) {
         UIImage *lockImage = [UIImage imageNamed:@"locked.png"];

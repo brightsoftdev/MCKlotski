@@ -47,6 +47,8 @@ typedef enum BlockViewMoveFlag{
     // 移动总数
     int _moveCount;
     
+    kTagControl _alertButtonTag;
+    
 }
 
 @property (nonatomic, assign) int theGateID;

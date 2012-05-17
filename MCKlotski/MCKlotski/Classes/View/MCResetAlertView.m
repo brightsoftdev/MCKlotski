@@ -44,14 +44,14 @@
     [self addSubview:lblContect];
     [lblContect release];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(15, 140, 100, 20)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20, 140, 100, 20)];
     button.tag = kTagControlFirst;
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:@"alert_reset.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     
-    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(125, 140, 100, 20)];
+    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(130, 140, 100, 20)];
     button2.tag = kTagControlSecond;
     [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button2 setBackgroundImage:[UIImage imageNamed:@"alert_cancel.png"] forState:UIControlStateNormal];

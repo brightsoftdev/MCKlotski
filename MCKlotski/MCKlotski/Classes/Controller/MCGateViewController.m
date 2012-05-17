@@ -92,6 +92,7 @@ typedef enum AlertTagEnum{
         NSLog(@"%@ : %@", NSStringFromSelector(_cmd), self);
         self.theGateID = gateID;
         _moveFlag = kBlockViewMoveNormal;
+        _alertButtonTag = kTagControlInvlid;
         _effects = [[NSArray arrayWithObjects:@"solved.wav", @"lifeadd.mp3", nil] retain];
         [[GGSoundManager sharedGGSoundManager] loadEffect:_effects];
     }
@@ -302,7 +303,6 @@ typedef enum AlertTagEnum{
     BOOL isPassAllLevel = NO;
     
     if ([MCUtil isCompleteAllGate:self.gameSceneView.theGate]) {
-        NSLog(@"11111111111");
         isPassAllLevel = YES;
     }
     
@@ -463,22 +463,8 @@ typedef enum AlertTagEnum{
     NSLog(@"MCAlertDelegate: %@",NSStringFromSelector(_cmd));
     // 所有dialog都需要执行
     self.currentAlertView = view;
+    _alertButtonTag = button.tag;
     [self hideWindow];
-    
-    // 特殊的dialog的特殊代码
-    if (view.tag == kAlertTagReset) {
-        if (kTagControlFirst == button.tag) {
-            // 如果是重置按钮， 则重置游戏
-            MCGameState *gameState = [[MCGameState alloc] init];
-            gameState.currentGateID = self.theGateID;
-            [MCDataManager sharedMCDataManager].gameState = gameState;
-            [gameState release];
-            [self resetGateWithGateID:self.theGateID];
-        }
-        if (kTagControlSecond == button.tag) {
-            return;
-        }
-    }
 }
 
 #pragma mark- GameSceneViewDelegate
@@ -519,24 +505,44 @@ typedef enum AlertTagEnum{
 - (void)windowDidHide
 {
     [super windowDidHide];
-    if (self.currentAlertView == _resetAlertView) {
+    if (self.currentAlertView == _resetAlertView) {        
+        if (kTagControlFirst == _alertButtonTag) {
+            // 如果是重置按钮， 则重置游戏
+            MCGameState *gameState = [[MCGameState alloc] init];
+            gameState.currentGateID = self.theGateID;
+            [MCDataManager sharedMCDataManager].gameState = gameState;
+            [gameState release];
+            [self resetGateWithGateID:self.theGateID];
+        }
         [self showWindow];
         return;
     }
     if (self.currentAlertView == _passLevelAlertView) {
-        [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        if (kTagControlFirst == _alertButtonTag) {
+            [self gotoNextLevel:self.theGateID];
+        }else if(kTagControlSecond == _alertButtonTag){
+            [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        }
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
         return;
     }
     if (self.currentAlertView == _passAllLevelAlertView) {
-        [self gotoNextLevel:1];
+        if (kTagControlFirst == _alertButtonTag) {
+            [self gotoNextLevel:self.theGateID];
+        }else if(kTagControlSecond == _alertButtonTag){
+            [self gotoNextLevel:1];
+        }
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
         return;
     }
     if (self.currentAlertView == _newBestMoveAlertView) {
-         [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        if (kTagControlFirst == _alertButtonTag) {
+            [self gotoNextLevel:self.theGateID];
+        }else if(kTagControlSecond == _alertButtonTag){
+            [self gotoNextLevel:[MCUtil nextGateIDWith:self.gameSceneView.theGate]];
+        }
         [self.gameSceneView showStar:self.gameSceneView.theGate];
         [self showWindow];
         return;

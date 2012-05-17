@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         NSLog(@"%@: %@", NSStringFromSelector(_cmd), self);
+        [self initAttributes];
     }
     return self;
 }

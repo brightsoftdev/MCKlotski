@@ -38,7 +38,13 @@
         }
         self.passMin = [[dict objectForKey:KeyPassMin] intValue];
         self.passMoveCount = [[dict objectForKey:KeyPassMoveCount] intValue];
-        self.isLocked = [[dict objectForKey:KeyLocked] boolValue];
+        if ([dict objectForKey:KeyLocked]) {
+            self.isLocked = [[dict objectForKey:KeyLocked] boolValue];
+        }
+        if (self.gateID == 1) {
+            self.isLocked = NO;
+        }
+        
         if ([dict objectForKey:KeyLayout]) {
             NSString * strLayout = [dict objectForKey:KeyLayout];
             self.layout = [self layoutFromJsonString:strLayout];
@@ -64,7 +70,7 @@
     self.gateID = kInvalidGateID;
     self.passMin = 0;
     self.passMoveCount = 0;
-    self.isLocked = YES;
+    //self.isLocked = YES;
     self.layout = nil;
 }
 

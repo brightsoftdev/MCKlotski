@@ -228,9 +228,17 @@
 {
     for (int i = 0; i < self.gateButtons.count; i++) {
         MCGate *gate = [[MCDataManager sharedMCDataManager].gates objectAtIndex:i];
+        MCGate *gateNext = nil;
+        MCSelectLevelButton *selectButtonNext = nil;
+        if ((i+1)<self.gateButtons.count) {
+             gateNext = [[MCDataManager sharedMCDataManager].gates objectAtIndex:i+1];
+             selectButtonNext = [self.gateButtons objectAtIndex:i+1];
+        }
+       
         if (gateID == gate.gateID) {
             MCSelectLevelButton *selectButton = [self.gateButtons objectAtIndex:i];
             [selectButton refreshWithGate:gate];
+            [selectButtonNext refreshWithGate:gateNext];
         }
     }
 }

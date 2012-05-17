@@ -159,10 +159,13 @@ SYNTHESIZE_SINGLETON(MCDataManager);
                 [goGateDict setValue:[[userDictionary objectForKey:[NSString stringWithFormat:@"%d", i+1]] 
                                       objectForKey:KeyPassMoveCount] 
                               forKey:KeyPassMoveCount];
+                [goGateDict setValue:[userDictionary objectForKey:KeyLocked] forKey:KeyLocked];
             }else {
                 [goGateDict setValue:[NSNumber numberWithInt:0] forKey:KeyPassMoveCount];
+                [goGateDict setValue:[NSNumber numberWithBool:YES] forKey:KeyLocked];
             }
-            NSLog(@"dic2:%@", goGateDict);
+            NSLog(@"userDictionary:%@", userDictionary);
+            NSLog(@"goGateDict:%@", goGateDict);
             MCGate *gate = [[[MCGate alloc] initWithDictionary:goGateDict] autorelease];
             [tempGates addObject:gate];
         }
@@ -176,13 +179,19 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     if (self.gates.count > 0) {
         NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
         for (MCGate *gate in self.gates) {
-            if (gate.passMoveCount != 0) {
+            
+            // gtts与2012.5.17 14：37修改
+            // 理由是：添加此if语句可以保证每次存储数据的量减少，做到了过滤的功能
+            // 缺点是：如果没有移动当前关，下回进入游戏会出现锁住不能进入的情况。即当前通过的关的下一关不能解锁。
+            //if (gate.passMoveCount != 0) 
+            {
                 NSDictionary *gateUserData = [NSDictionary dictionaryWithObjectsAndKeys:
                                               [NSNumber numberWithInt:gate.passMin], KeyPassMin, 
                                               [NSNumber numberWithInt:gate.passMoveCount], KeyPassMoveCount,
+                                              [NSNumber numberWithBool:gate.isLocked], KeyLocked,
                                               nil];
                 [userGateDict setObject:gateUserData forKey:[NSString stringWithFormat:@"%d", gate.gateID]];
-                
+                NSLog(@"gateUserData:%@", gateUserData);
             }
         }
         
@@ -206,6 +215,7 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     for (MCGate *gate in self.gates) {
         if (gate.gateID == gateID) {
             tempGate = [gate retain];
+            tempGate.isLocked = NO;
             break;
         }
     }
@@ -254,10 +264,20 @@ SYNTHESIZE_SINGLETON(MCDataManager);
     MCGate *updateGate = [self gateWithID:newGate.gateID];
     if (updateGate) {
         self.updatingGateID = updateGate.gateID;
+        newGate.isLocked = NO;
         int index = [self.gates indexOfObject:updateGate];
         [updateGate refreshWithModel:newGate];
+        
         NSMutableArray *tempGates = [NSMutableArray arrayWithArray:self.gates];
         [tempGates replaceObjectAtIndex:index withObject:updateGate];
+        // 更新下一关的gate信息
+        if (self.gates.count > (index + 1)) {
+            MCGate *gate1 = [self.gates objectAtIndex:index + 1];
+            [gate1 refreshWithModel:gate1];
+            gate1.isLocked = NO;
+            [tempGates replaceObjectAtIndex:index + 1 withObject:gate1];
+        }
+        
         self.gates = [NSArray arrayWithArray:tempGates];
     }
     return updateGate;

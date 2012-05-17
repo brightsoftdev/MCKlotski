@@ -39,16 +39,30 @@
     [self addSubview:_star];
     [_star release];
     
-    UIImage *buttonImage = [UIImage imageNamed:@"alert_continue.png"];
-    UIButton *button = [[UIButton alloc] initWithFrame:
-                        CGRectMake((self.frame.size.width - buttonImage.size.width) / 2,
-                                   (self.frame.size.height - buttonImage.size.height - 20), 
-                                   buttonImage.size.width, 
-                                   buttonImage.size.height)];
-    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:button];
-    [button release];
+    UIImage *resumeImage = [UIImage imageNamed:@"alert_resume.png"];
+    UIButton *button1 = [[UIButton alloc] initWithFrame:
+                        CGRectMake(20,
+                                   (self.frame.size.height - resumeImage.size.height - 20), 
+                                   resumeImage.size.width, 
+                                   resumeImage.size.height)];
+    [button1 setBackgroundImage:resumeImage forState:UIControlStateNormal];
+    button1.tag = kTagControlFirst;
+    [button1 addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:button1];
+    [button1 release];
+    
+    
+    UIImage *nextImage = [UIImage imageNamed:@"alert_next.png"];
+    UIButton *button2 = [[UIButton alloc] initWithFrame:
+                        CGRectMake(130,
+                                   (self.frame.size.height - nextImage.size.height - 20), 
+                                   nextImage.size.width, 
+                                   nextImage.size.height)];
+    [button2 setBackgroundImage:nextImage forState:UIControlStateNormal];
+    button2.tag = kTagControlSecond;
+    [button2 addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:button2];
+    [button2 release];
 }
 
 @end

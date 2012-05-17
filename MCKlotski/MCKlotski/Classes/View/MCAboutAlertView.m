@@ -40,10 +40,10 @@
     [self addSubview:background];
     [background release];
     
-    UIImage *buttonImage = [UIImage imageNamed:@"alert_continue.png"];
+    UIImage *buttonImage = [UIImage imageNamed:@"alert_close.png"];
     UIButton *button = [[UIButton alloc] initWithFrame:
                         CGRectMake((self.frame.size.width - buttonImage.size.width) / 2,
-                                   (self.frame.size.height - buttonImage.size.height - 20), 
+                                   (self.frame.size.height - buttonImage.size.height - 40),
                                    buttonImage.size.width, 
                                    buttonImage.size.height)];
     [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -54,7 +54,9 @@
 
 - (void)laodContent
 {
-    self.aboutWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(45, 130, 225, 260)];
+    self.aboutWebView = webView;
+    [webView release];
     self.aboutWebView.delegate = self;
     [self addSubview:self.aboutWebView];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
