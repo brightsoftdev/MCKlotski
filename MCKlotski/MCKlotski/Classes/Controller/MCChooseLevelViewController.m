@@ -15,6 +15,11 @@
 #define ROW_SUM 6
 #define COLUMN_SUM 5
 
+// scroller的宽度
+#define kLevelsWidth 264 
+// scroller的高度
+#define kLevelsHeight 325
+
 
 @interface MCChooseLevelViewController (Privates)
 
@@ -116,8 +121,16 @@
 #pragma mark - Private method
 - (void)createSubViews
 {
+    UIImage *titleImage = [UIImage imageNamed:@"title.png"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:
+                                   CGRectMake(0, 20, titleImage.size.width, titleImage.size.height)];
+    titleImageView.image = titleImage;
+    [self.view addSubview:titleImageView];
+    [titleImageView release];
+    
+    
     // create UIScrollView
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake((320-264)/2, 120, 264, 325)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake((320-264)/2, 70, kLevelsWidth, kLevelsHeight + 55)];
     _scrollView.pagingEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = YES;
     _scrollView.showsVerticalScrollIndicator = YES;
@@ -194,7 +207,7 @@
         column = num % COLUMN_SUM + num / perPageCount * COLUMN_SUM; 
         int btnWidth = btnSelect.frame.size.width;
         int btnHeight = btnSelect.frame.size.height;
-        btnSelect.frame = CGRectMake(btnWidth * column , btnHeight * row, btnWidth, btnHeight);
+        btnSelect.frame = CGRectMake(btnWidth * column , btnHeight * row + 60, btnWidth, btnHeight);
         [self.scorllView addSubview:btnSelect];
         num ++ ;
     }
@@ -202,7 +215,29 @@
 
 - (void)loadScrollTitle
 {
-    //TODO:: loadScrollTitle
+    UIImageView *sliderTitle1 = [[UIImageView alloc] initWithFrame:
+                                 CGRectMake((320-264)/2 + kLevelsWidth * 0 - 20, 0, 263, 55)];
+    sliderTitle1.image = [UIImage imageNamed:@"title_1.png"];
+    [self.scorllView addSubview:sliderTitle1];
+    [sliderTitle1 release];
+    
+    UIImageView *sliderTitle2 = [[UIImageView alloc] initWithFrame:
+                                 CGRectMake((320-264)/2 + kLevelsWidth * 1 - 20, 0, 263, 55)];
+    sliderTitle2.image = [UIImage imageNamed:@"title_2.png"];
+    [self.scorllView addSubview:sliderTitle2];
+    [sliderTitle2 release];
+    
+    UIImageView *sliderTitle3 = [[UIImageView alloc] initWithFrame:
+                                 CGRectMake((320-264)/2 + kLevelsWidth * 2 - 20, 0, 263, 55)];
+    sliderTitle3.image = [UIImage imageNamed:@"title_3.png"];
+    [self.scorllView addSubview:sliderTitle3];
+    [sliderTitle3 release];
+    
+    UIImageView *sliderTitle4 = [[UIImageView alloc] initWithFrame:
+                                 CGRectMake((320-264)/2 + kLevelsWidth * 3 - 20, 0, 263, 55)];
+    sliderTitle4.image = [UIImage imageNamed:@"title_4.png"];
+    [self.scorllView addSubview:sliderTitle4];
+    [sliderTitle4 release];
 }
 
 - (void)changePage:(id)sender

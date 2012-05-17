@@ -175,23 +175,31 @@ SYNTHESIZE_SINGLETON(MCDataManager);
 
 - (void)saveDataToLocal
 {
+    int i = 1;
     NSMutableData *data = [NSMutableData data];
     if (self.gates.count > 0) {
         NSMutableDictionary *userGateDict = [NSMutableDictionary dictionaryWithCapacity:LimitedGate];
         for (MCGate *gate in self.gates) {
-            
-            // gtts与2012.5.17 14：37修改
-            // 理由是：添加此if语句可以保证每次存储数据的量减少，做到了过滤的功能
-            // 缺点是：如果没有移动当前关，下回进入游戏会出现锁住不能进入的情况。即当前通过的关的下一关不能解锁。
-            //if (gate.passMoveCount != 0) 
+            if (gate.passMoveCount != 0) 
             {
                 NSDictionary *gateUserData = [NSDictionary dictionaryWithObjectsAndKeys:
-                                              [NSNumber numberWithInt:gate.passMin], KeyPassMin, 
-                                              [NSNumber numberWithInt:gate.passMoveCount], KeyPassMoveCount,
-                                              [NSNumber numberWithBool:gate.isLocked], KeyLocked,
-                                              nil];
+                                            [NSNumber numberWithInt:gate.passMin], KeyPassMin, 
+                                            [NSNumber numberWithInt:gate.passMoveCount], KeyPassMoveCount,
+                                            [NSNumber numberWithBool:gate.isLocked], KeyLocked,
+                                            nil];
                 [userGateDict setObject:gateUserData forKey:[NSString stringWithFormat:@"%d", gate.gateID]];
                 NSLog(@"gateUserData:%@", gateUserData);
+                i++;
+            }else {
+                MCGate *gate2 = [self gateWithID:i];
+                NSDictionary *gateUserData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                              [NSNumber numberWithInt:gate2.passMin], KeyPassMin, 
+                                              [NSNumber numberWithInt:gate2.passMoveCount], KeyPassMoveCount,
+                                              [NSNumber numberWithBool:gate2.isLocked], KeyLocked,
+                                              nil];
+                [userGateDict setObject:gateUserData forKey:[NSString stringWithFormat:@"%d", gate2.gateID]];
+                NSLog(@"gateUserData2:%@", gateUserData);
+                break;
             }
         }
         
