@@ -10,7 +10,7 @@
 #define MCKlotski_MCConfig_h
 
 // 最大关数
-#define LimitedGate 3
+#define LimitedGate 120
 
 #define kInvaluableBlockID -1
 

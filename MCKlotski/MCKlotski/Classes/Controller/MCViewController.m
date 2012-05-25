@@ -106,7 +106,7 @@
 {
     [[GGSoundManager sharedGGSoundManager] playEffect:@"Click.wav"];
 }
-#define SHAnimationDuration 0.3
+#define SHAnimationDuration 0.15
 - (void)showWindow
 {
     UIWindow *theWindow = [MCUtil window];

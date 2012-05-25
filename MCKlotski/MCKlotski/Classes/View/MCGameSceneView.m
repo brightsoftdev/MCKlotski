@@ -125,15 +125,6 @@
 #pragma mark - Priate method
 - (void)createSubViews
 {
-    // 添加游戏场景背景
-    UIImage *gateFrameImage = [UIImage imageNamed:@"gateFrame.png"];
-    UIImageView *gateFrameBgView = 
-    [[[UIImageView alloc] initWithFrame:
-      CGRectMake(0, 0,  gateFrameImage.size.width, gateFrameImage.size.height)] autorelease];
-    gateFrameBgView.backgroundColor = [UIColor clearColor];
-    gateFrameBgView.image = gateFrameImage;
-    [self addSubview:gateFrameBgView];
-    
     _theBoxView = [[UIView alloc] initWithFrame:
                    CGRectMake((self.frame.size.width - kBoxWidth) / 2, 107, kBoxWidth, kBoxHeight)];
     _theBoxView.backgroundColor = [UIColor clearColor];

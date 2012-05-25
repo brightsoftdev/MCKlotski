@@ -181,6 +181,13 @@
 - (void)levelsAction:(id)sender
 {
     [super buttonAction:sender];
+    CATransition *transition = [CATransition animation];
+    transition.duration = 1.0f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = @"cube"; // type  设置了主要的页面切换显示形式 cube 等
+    transition.subtype = kCATransitionFromRight; //type  设置了主要的页面切换显示形式 cube 等
+    transition.delegate = self;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
     MCChooseLevelViewController *levelViewController = [[MCChooseLevelViewController alloc] init];
     [self.navigationController pushViewController:levelViewController animated:YES];
     [levelViewController release];

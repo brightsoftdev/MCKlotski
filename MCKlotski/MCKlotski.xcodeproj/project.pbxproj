@@ -118,7 +118,6 @@
 		2188BD861564E38500B9333B /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 2188BD841564E38500B9333B /* title.png */; };
 		2188BD871564E38500B9333B /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2188BD851564E38500B9333B /* title@2x.png */; };
 		2188BD8A1564E39800B9333B /* gateframe.png in Resources */ = {isa = PBXBuildFile; fileRef = 2188BD881564E39800B9333B /* gateframe.png */; };
-		2188BD8B1564E39800B9333B /* gateframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2188BD891564E39800B9333B /* gateframe@2x.png */; };
 		218A64EA15575AA200E3CF05 /* MCResetAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A64E915575AA200E3CF05 /* MCResetAlertView.m */; };
 		21A0F2B7156342B80046AB04 /* Arrow5.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A0F2B5156342B80046AB04 /* Arrow5.png */; };
 		21A0F2B8156342B80046AB04 /* Arrow5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A0F2B6156342B80046AB04 /* Arrow5@2x.png */; };
@@ -289,13 +288,7 @@
 		21DC5DFD155F9E5D00B70619 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DD0155F9E5D00B70619 /* SBJsonBase.m */; };
 		21DC5DFE155F9E5D00B70619 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DD2155F9E5D00B70619 /* SBJsonParser.m */; };
 		21DC5DFF155F9E5D00B70619 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DD4155F9E5D00B70619 /* SBJsonWriter.m */; };
-		21DC5E00155F9E5D00B70619 /* POP字体mix-w5.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DD6155F9E5D00B70619 /* POP字体mix-w5.TTF */; };
-		21DC5E01155F9E5D00B70619 /* 全新硬笔隶书简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DD7155F9E5D00B70619 /* 全新硬笔隶书简.ttf */; };
-		21DC5E02155F9E5D00B70619 /* 国祥手写体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DD8155F9E5D00B70619 /* 国祥手写体.ttf */; };
-		21DC5E03155F9E5D00B70619 /* 字体图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DD9155F9E5D00B70619 /* 字体图片.png */; };
 		21DC5E04155F9E5D00B70619 /* 方正卡通简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DDA155F9E5D00B70619 /* 方正卡通简体.ttf */; };
-		21DC5E05155F9E5D00B70619 /* 钟齐王庆华毛笔简体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DDB155F9E5D00B70619 /* 钟齐王庆华毛笔简体.TTF */; };
-		21DC5E06155F9E5D00B70619 /* 韩绍杰邯郸体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5DDC155F9E5D00B70619 /* 韩绍杰邯郸体.ttf */; };
 		21DC5E07155F9E5D00B70619 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DDF155F9E5D00B70619 /* CDataScanner.m */; };
 		21DC5E08155F9E5D00B70619 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DE2155F9E5D00B70619 /* CDataScanner_Extensions.m */; };
 		21DC5E09155F9E5D00B70619 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5DE4155F9E5D00B70619 /* NSDictionary_JSONExtensions.m */; };
@@ -310,6 +303,9 @@
 		21DC5E1A155FA71C00B70619 /* MCTutorialAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DC5E19155FA71C00B70619 /* MCTutorialAlertView.m */; };
 		21DC5E1D155FAC0600B70619 /* tipbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5E1C155FAC0600B70619 /* tipbox.png */; };
 		21DC5E1F155FAC0C00B70619 /* tipbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21DC5E1E155FAC0C00B70619 /* tipbox@2x.png */; };
+		21EC5127156B3E020053F7D2 /* gateframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21EC5126156B3E020053F7D2 /* gateframe@2x.png */; };
+		21EC512A156B4C620053F7D2 /* MCLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EC5129156B4C620053F7D2 /* MCLoadingView.m */; };
+		21EC512C156B4C940053F7D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EC512B156B4C940053F7D2 /* QuartzCore.framework */; };
 		EB0AE78C1542902D008497E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78B1542902D008497E7 /* UIKit.framework */; };
 		EB0AE78E1542902D008497E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78D1542902D008497E7 /* Foundation.framework */; };
 		EB0AE7901542902D008497E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0AE78F1542902D008497E7 /* CoreGraphics.framework */; };
@@ -489,7 +485,6 @@
 		2188BD841564E38500B9333B /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		2188BD851564E38500B9333B /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
 		2188BD881564E39800B9333B /* gateframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gateframe.png; sourceTree = "<group>"; };
-		2188BD891564E39800B9333B /* gateframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gateframe@2x.png"; sourceTree = "<group>"; };
 		218A64E815575AA200E3CF05 /* MCResetAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCResetAlertView.h; sourceTree = "<group>"; };
 		218A64E915575AA200E3CF05 /* MCResetAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCResetAlertView.m; sourceTree = "<group>"; };
 		21A0F2B5156342B80046AB04 /* Arrow5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow5.png; sourceTree = "<group>"; };
@@ -648,13 +643,7 @@
 		21DC5DD2155F9E5D00B70619 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		21DC5DD3155F9E5D00B70619 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		21DC5DD4155F9E5D00B70619 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		21DC5DD6155F9E5D00B70619 /* POP字体mix-w5.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "POP字体mix-w5.TTF"; sourceTree = "<group>"; };
-		21DC5DD7155F9E5D00B70619 /* 全新硬笔隶书简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "全新硬笔隶书简.ttf"; sourceTree = "<group>"; };
-		21DC5DD8155F9E5D00B70619 /* 国祥手写体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "国祥手写体.ttf"; sourceTree = "<group>"; };
-		21DC5DD9155F9E5D00B70619 /* 字体图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "字体图片.png"; sourceTree = "<group>"; };
 		21DC5DDA155F9E5D00B70619 /* 方正卡通简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正卡通简体.ttf"; sourceTree = "<group>"; };
-		21DC5DDB155F9E5D00B70619 /* 钟齐王庆华毛笔简体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "钟齐王庆华毛笔简体.TTF"; sourceTree = "<group>"; };
-		21DC5DDC155F9E5D00B70619 /* 韩绍杰邯郸体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "韩绍杰邯郸体.ttf"; sourceTree = "<group>"; };
 		21DC5DDE155F9E5D00B70619 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		21DC5DDF155F9E5D00B70619 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		21DC5DE1155F9E5D00B70619 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
@@ -678,6 +667,10 @@
 		21DC5E19155FA71C00B70619 /* MCTutorialAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTutorialAlertView.m; sourceTree = "<group>"; };
 		21DC5E1C155FAC0600B70619 /* tipbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipbox.png; sourceTree = "<group>"; };
 		21DC5E1E155FAC0C00B70619 /* tipbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tipbox@2x.png"; sourceTree = "<group>"; };
+		21EC5126156B3E020053F7D2 /* gateframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gateframe@2x.png"; sourceTree = "<group>"; };
+		21EC5128156B4C620053F7D2 /* MCLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLoadingView.h; sourceTree = "<group>"; };
+		21EC5129156B4C620053F7D2 /* MCLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLoadingView.m; sourceTree = "<group>"; };
+		21EC512B156B4C940053F7D2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB0AE7871542902D008497E7 /* MCKlotski.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCKlotski.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0AE78B1542902D008497E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EB0AE78D1542902D008497E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -768,6 +761,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EC512C156B4C940053F7D2 /* QuartzCore.framework in Frameworks */,
 				EB0AE80E1542D9F2008497E7 /* OpenAL.framework in Frameworks */,
 				EB0AE80C1542D9D1008497E7 /* AVFoundation.framework in Frameworks */,
 				EB0AE80A1542D99C008497E7 /* AudioToolbox.framework in Frameworks */,
@@ -965,13 +959,7 @@
 		21DC5DD5155F9E5D00B70619 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				21DC5DD6155F9E5D00B70619 /* POP字体mix-w5.TTF */,
-				21DC5DD7155F9E5D00B70619 /* 全新硬笔隶书简.ttf */,
-				21DC5DD8155F9E5D00B70619 /* 国祥手写体.ttf */,
-				21DC5DD9155F9E5D00B70619 /* 字体图片.png */,
 				21DC5DDA155F9E5D00B70619 /* 方正卡通简体.ttf */,
-				21DC5DDB155F9E5D00B70619 /* 钟齐王庆华毛笔简体.TTF */,
-				21DC5DDC155F9E5D00B70619 /* 韩绍杰邯郸体.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1060,6 +1048,7 @@
 		EB0AE78A1542902D008497E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21EC512B156B4C940053F7D2 /* QuartzCore.framework */,
 				EB2144891544064200F6D171 /* CoreFoundation.framework */,
 				EB214486154405F600F6D171 /* Security.framework */,
 				EB0AE80D1542D9F2008497E7 /* OpenAL.framework */,
@@ -1303,6 +1292,8 @@
 				21A8113B1556A74C0040CA5D /* MCGameSceneMenuView.m */,
 				21DC5E15155FA6B000B70619 /* MCTutorialView.h */,
 				21DC5E16155FA6B000B70619 /* MCTutorialView.m */,
+				21EC5128156B4C620053F7D2 /* MCLoadingView.h */,
+				21EC5129156B4C620053F7D2 /* MCLoadingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1310,8 +1301,8 @@
 		EB2144BB15442AE500F6D171 /* background */ = {
 			isa = PBXGroup;
 			children = (
+				21EC5126156B3E020053F7D2 /* gateframe@2x.png */,
 				2188BD881564E39800B9333B /* gateframe.png */,
-				2188BD891564E39800B9333B /* gateframe@2x.png */,
 				2188BD841564E38500B9333B /* title.png */,
 				2188BD851564E38500B9333B /* title@2x.png */,
 				2188BD6B1564D9E600B9333B /* title_1.png */,
@@ -1612,13 +1603,7 @@
 				21DC5D98155F48E700B70619 /* best@2x.png in Resources */,
 				21DC5D99155F48E700B70619 /* move.png in Resources */,
 				21DC5D9A155F48E700B70619 /* move@2x.png in Resources */,
-				21DC5E00155F9E5D00B70619 /* POP字体mix-w5.TTF in Resources */,
-				21DC5E01155F9E5D00B70619 /* 全新硬笔隶书简.ttf in Resources */,
-				21DC5E02155F9E5D00B70619 /* 国祥手写体.ttf in Resources */,
-				21DC5E03155F9E5D00B70619 /* 字体图片.png in Resources */,
 				21DC5E04155F9E5D00B70619 /* 方正卡通简体.ttf in Resources */,
-				21DC5E05155F9E5D00B70619 /* 钟齐王庆华毛笔简体.TTF in Resources */,
-				21DC5E06155F9E5D00B70619 /* 韩绍杰邯郸体.ttf in Resources */,
 				21DC5E0F155FA0D400B70619 /* blue_dot.png in Resources */,
 				21DC5E10155FA0D400B70619 /* red_dot.png in Resources */,
 				21DC5E13155FA0E200B70619 /* blue_dot@2x.png in Resources */,
@@ -1675,7 +1660,7 @@
 				2188BD861564E38500B9333B /* title.png in Resources */,
 				2188BD871564E38500B9333B /* title@2x.png in Resources */,
 				2188BD8A1564E39800B9333B /* gateframe.png in Resources */,
-				2188BD8B1564E39800B9333B /* gateframe@2x.png in Resources */,
+				21EC5127156B3E020053F7D2 /* gateframe@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1866,6 +1851,7 @@
 				21DC5E0C155F9E5D00B70619 /* CJSONSerializer.m in Sources */,
 				21DC5E17155FA6B100B70619 /* MCTutorialView.m in Sources */,
 				21DC5E1A155FA71C00B70619 /* MCTutorialAlertView.m in Sources */,
+				21EC512A156B4C620053F7D2 /* MCLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1983,16 +1969,16 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: FU HENG (U97845K7LR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: chao meng (K8NM8KHT3L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chao meng (K8NM8KHT3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "904A4063-D29C-4264-9E7F-6CD8918221BD";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "904A4063-D29C-4264-9E7F-6CD8918221BD";
+				PROVISIONING_PROFILE = "03959BAB-EE85-4390-A022-55A86BFAC559";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "03959BAB-EE85-4390-A022-55A86BFAC559";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2005,16 +1991,16 @@
 					armv7,
 				);
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: FU HENG (U97845K7LR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: FU HENG (U97845K7LR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: chao meng (K8NM8KHT3L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chao meng (K8NM8KHT3L)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCKlotski/MCKlotski-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "MCKlotski/MCKlotski-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "904A4063-D29C-4264-9E7F-6CD8918221BD";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "904A4063-D29C-4264-9E7F-6CD8918221BD";
+				PROVISIONING_PROFILE = "03959BAB-EE85-4390-A022-55A86BFAC559";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "03959BAB-EE85-4390-A022-55A86BFAC559";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

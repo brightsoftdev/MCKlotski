@@ -196,6 +196,15 @@ typedef enum AlertTagEnum{
 #pragma mark - Priate method
 - (void)createSubViews
 {
+    // 添加游戏场景背景
+    UIImage *gateFrameImage = [UIImage imageNamed:@"gateframe.png"];
+    UIImageView *gateFrameBgView = 
+    [[[UIImageView alloc] initWithFrame:
+      CGRectMake(0, 0,  gateFrameImage.size.width, gateFrameImage.size.height)] autorelease];
+    gateFrameBgView.backgroundColor = [UIColor clearColor];
+    gateFrameBgView.image = gateFrameImage;
+    [self.view addSubview:gateFrameBgView];
+    
     self.gameSceneView = [[[MCGameSceneView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
     self.gameSceneView.delegate = self;
     MCGate *gate = [[MCDataManager sharedMCDataManager] gateWithID:self.theGateID];
